@@ -1,0 +1,38 @@
+{
+  "labels_sha256": "75e401198f9042829cd3283fcf00df46bbc38d21e70ddfe155063c78459e155c",
+  "total_labels": 2400,
+  "scene_count": 80,
+  "train_scenes": 48,
+  "validation_scenes": 16,
+  "test_scenes": 16,
+  "train_labels": 1440,
+  "validation_labels": 480,
+  "test_labels": 480,
+  "architecture": "8-128-128-7 branch-aware",
+  "best_epoch": 103,
+  "validation_loss": 0.09737199544906616,
+  "train": {
+    "branch_accuracy": 0.9138888888888889,
+    "parameter_mae": [
+      0.8469061855581208,
+      0.008049561349481659,
+      0.8508643807994027
+    ]
+  },
+  "validation": {
+    "branch_accuracy": 0.8833333333333333,
+    "parameter_mae": [
+      1.0980969019494833,
+      0.00931855961768522,
+      1.1396518940893001
+    ]
+  },
+  "test": {
+    "branch_accuracy": 0.825,
+    "parameter_mae": [
+      1.618892395699226,
+      0.015369237614373714,
+      1.4817076096188222
+    ]
+  }
+}

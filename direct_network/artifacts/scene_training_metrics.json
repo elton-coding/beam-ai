@@ -1,0 +1,16 @@
+{
+  "labels_sha256": "665da3a70fe1e0b45f2fad35fc865adb913c14d7c0179d68186de38257b1270e",
+  "training_samples": 96,
+  "validation_samples": 24,
+  "architecture": "8-64-64-7 with branch classifier and two 3-parameter regression heads",
+  "split_seed": 42,
+  "best_epoch": 50,
+  "validation_loss": 0.09807346761226654,
+  "validation_branch_accuracy": 0.875,
+  "validation_parameter_mae": [
+    1.1330710636842298,
+    0.010063829133596262,
+    0.2514545482318664
+  ],
+  "note": "Trained only for the fixed scene; labels from offline physical search. Inference has no search."
+}

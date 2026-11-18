@@ -1,0 +1,87 @@
+{
+  "method": "Focused pilot sweep -> noisy two-way reflection proxy -> threshold detection -> causal Kalman position estimate -> unchanged one-pass Airy network",
+  "scene": {
+    "frequency_hz": 120000000000.0,
+    "tx_width_m": 0.2,
+    "rx_width_m": 0.025,
+    "obstacle_z_m": 0.2,
+    "obstacle_x_m": 0.0,
+    "obstacle_depth_m": 0.03,
+    "obstacle_width_m": 0.085,
+    "receiver_z_m": 0.36,
+    "field_half_width_m": 2.0,
+    "n_grid": 16384,
+    "obstacle_step_m": 0.00075,
+    "activation_bl": 0.8
+  },
+  "sensing": {
+    "scan_min_m": -0.1,
+    "scan_max_m": 0.1,
+    "scan_beams": 21,
+    "grid_step_m": 0.001,
+    "reflectivity": 1.0,
+    "complex_noise_power": 0.0003,
+    "scan_false_alarm_probability": 0.01,
+    "seed": 20261007
+  },
+  "scan_pilots_per_frame": 21,
+  "frame_interval_s": 0.02,
+  "motion": "alternate",
+  "tracker": {
+    "measurement_std_m": 0.003,
+    "acceleration_std_m_s2": 5.0,
+    "velocity_retention_without_detection": 0.9
+  },
+  "runs": 5,
+  "trajectory_frames": 101,
+  "all": {
+    "samples": 505,
+    "detection_rate": 0.8891089108910891,
+    "max_consecutive_missed_frames": 11,
+    "measured_position_mae_mm_when_detected": 0.554275692399815,
+    "tracker_position_mae_mm": 1.1398232929294878,
+    "tracker_position_mae_mm_when_missed": 6.805763624446352,
+    "hold_position_mae_mm": 2.119668545537637,
+    "tracker_vs_true_focus_power_change_pct": 20.324934492503953,
+    "tracker_vs_estimated_focus_power_change_pct": 19.830869818537415,
+    "hold_vs_true_focus_power_change_pct": 22.043437511002566,
+    "oracle_position_vs_true_focus_power_change_pct": 29.776902420315082,
+    "tracker_vs_hold_power_change_pct": 1.824416008204298,
+    "oracle_position_vs_tracker_power_change_pct": 23.176380963523453
+  },
+  "deep_shadow": {
+    "samples": 150,
+    "detection_rate": 0.6266666666666667,
+    "max_consecutive_missed_frames": 11,
+    "measured_position_mae_mm_when_detected": 1.0273742180452794,
+    "tracker_position_mae_mm": 3.0460355299327198,
+    "tracker_position_mae_mm_when_missed": 6.805763624446352,
+    "hold_position_mae_mm": 6.120906707368307,
+    "tracker_vs_true_focus_power_change_pct": 68.49038820192177,
+    "tracker_vs_estimated_focus_power_change_pct": 66.76392838907596,
+    "hold_vs_true_focus_power_change_pct": 74.08753877212881,
+    "oracle_position_vs_true_focus_power_change_pct": 100.24890481506077,
+    "tracker_vs_hold_power_change_pct": 6.278384570494869,
+    "oracle_position_vs_tracker_power_change_pct": 77.93923268149958
+  },
+  "other_positions": {
+    "samples": 355,
+    "detection_rate": 1.0,
+    "max_consecutive_missed_frames": 0,
+    "measured_position_mae_mm_when_detected": 0.42900453349650897,
+    "tracker_position_mae_mm": 0.33438150264643257,
+    "tracker_position_mae_mm_when_missed": null,
+    "hold_position_mae_mm": 0.42900453349650897,
+    "tracker_vs_true_focus_power_change_pct": -0.026665666404993023,
+    "tracker_vs_estimated_focus_power_change_pct": 0.0,
+    "hold_vs_true_focus_power_change_pct": 0.05297218939992837,
+    "oracle_position_vs_true_focus_power_change_pct": 0.0,
+    "tracker_vs_hold_power_change_pct": -0.05754253924242296,
+    "oracle_position_vs_tracker_power_change_pct": 0.037147843251857326
+  },
+  "limitations": [
+    "Two-way power is a reciprocal square-law proxy, not a full radar waveform/channel simulation.",
+    "Fixed reflectivity and white receiver noise are assumed; clutter, multipath, hardware switching and scan time are not modeled.",
+    "True positions generate synthetic echoes and score the beam; they are never passed to the tracker or online network."
+  ]
+}

@@ -1,0 +1,6 @@
+* text=auto
+*.docx binary
+*.pdf binary
+*.npz binary
+*.keras binary
+*.png binary

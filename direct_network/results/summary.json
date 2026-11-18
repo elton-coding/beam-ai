@@ -1,0 +1,62 @@
+{
+  "scene": {
+    "frequency_hz": 120000000000.0,
+    "tx_width_m": 0.2,
+    "rx_width_m": 0.025,
+    "obstacle_z_m": 0.2,
+    "obstacle_x_m": 0.0,
+    "obstacle_depth_m": 0.03,
+    "obstacle_width_m": 0.085,
+    "receiver_z_m": 0.36,
+    "field_half_width_m": 2.0,
+    "n_grid": 16384,
+    "obstacle_step_m": 0.00075,
+    "activation_bl": 0.8
+  },
+  "method": "Offline-trained, one-pass beam prediction; geometry-based focus activation",
+  "static": {
+    "shadow_crossing": {
+      "positions": 31,
+      "active_positions": 9,
+      "mean_gain_db": 0.8935232060023676,
+      "active_mean_gain_db": 3.077691042897044,
+      "active_min_gain_db": 1.6626245509574789,
+      "active_positive_fraction": 1.0,
+      "active_mean_pointwise_power_change_pct": 107.75374888718319,
+      "mean_inference_ms": 0.06269032066132152
+    },
+    "deep_shadow": {
+      "positions": 21,
+      "active_positions": 21,
+      "mean_gain_db": 3.3534884974342742,
+      "active_mean_gain_db": 3.3534884974342742,
+      "active_min_gain_db": 1.9357441637039343,
+      "active_positive_fraction": 1.0,
+      "active_mean_pointwise_power_change_pct": 120.36224197820266,
+      "mean_inference_ms": 0.10192857076790893
+    }
+  },
+  "delayed": {
+    "frames": 39,
+    "stale_position_mae_mm": 2.214216862220534,
+    "predicted_position_mae_mm": 0.3678002315884491,
+    "predicted_direct_vs_stale_direct": {
+      "mean_pointwise_power_change_pct": 2.6328844305146593,
+      "total_power_change_pct": 0.9521825362348579,
+      "mean_pointwise_db": 0.09593420459200101,
+      "better_frames": 20
+    },
+    "predicted_direct_vs_predicted_focus": {
+      "mean_pointwise_power_change_pct": 110.08467486424945,
+      "total_power_change_pct": 82.4075752974452,
+      "mean_pointwise_db": 3.1452443023821823,
+      "better_frames": 39
+    },
+    "predicted_direct_vs_oracle_direct": {
+      "mean_pointwise_power_change_pct": 0.3346495655351722,
+      "total_power_change_pct": 0.3921343202941019,
+      "mean_pointwise_db": 0.014407473414062073,
+      "better_frames": 27
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "scene_disjoint_test_scenes": 16,
+  "physics_grid": 16384,
+  "physics_obstacle_step_m": 0.00075,
+  "labeled_positions": {
+    "positions": 480,
+    "scenes": 16,
+    "network_vs_focus_mean_pointwise_pct": 48.749173980617606,
+    "network_vs_focus_mean_db": 0.773251150007861,
+    "network_mean_normalized_power": 0.08468641566925234,
+    "strict_unit_power_upper_bound_headroom_pct": 1080.8269273144792,
+    "network_better_fraction": 0.75625,
+    "network_gain_p05_pct": -73.87707947348117,
+    "scene_mean_bootstrap_95pct_ci_pct": [
+      29.695597023024682,
+      69.92520188608577
+    ]
+  },
+  "new_positions": {
+    "positions": 336,
+    "scenes": 16,
+    "network_vs_focus_mean_pointwise_pct": 47.59652784600722,
+    "network_vs_focus_mean_db": 0.6993409412253853,
+    "network_mean_normalized_power": 0.07137753361678019,
+    "strict_unit_power_upper_bound_headroom_pct": 1301.0010563952987,
+    "network_better_fraction": 0.7559523809523809,
+    "network_gain_p05_pct": -76.94837432448347,
+    "scene_mean_bootstrap_95pct_ci_pct": [
+      29.322551206369614,
+      67.60922099428824
+    ]
+  },
+  "offline_teacher_vs_network": {
+    "mean_pointwise_pct": 186.07958367964991,
+    "mean_power_ratio_pct": 18.957439606591887,
+    "teacher_better_fraction": 0.8625,
+    "note": "Teacher is a feasible offline coarse-grid search reference, not a certified global optimum."
+  }
+}

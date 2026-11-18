@@ -1,0 +1,1028 @@
+{
+  "metrics": [
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "dedicated",
+      "frames": 8080,
+      "detection_pct": 98.51485148514851,
+      "accepted_pct": 98.51485148514851,
+      "accurate_update_pct": 97.56188118811882,
+      "mae_mm": 1.6905502536186736,
+      "p95_mm": 4.528771266193043,
+      "beam_mae_mm": 1.7087880666415118,
+      "mean_longest_gap_ms": 20.5,
+      "max_gap_ms": 160.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.50000000000001,
+      "effective_bpshz": 2.155550846535733,
+      "outage_below_1_pct": 16.3490099009901
+    },
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "periodic",
+      "frames": 8080,
+      "detection_pct": 33.10643564356436,
+      "accepted_pct": 33.10643564356436,
+      "accurate_update_pct": 32.82178217821782,
+      "mae_mm": 3.777955399568418,
+      "p95_mm": 10.637787996348619,
+      "beam_mae_mm": 3.791738108344549,
+      "mean_longest_gap_ms": 70.75,
+      "max_gap_ms": 280.0,
+      "scan_pct": 33.663366336633665,
+      "payload_pct": 97.48514851485149,
+      "effective_bpshz": 2.182874970818852,
+      "outage_below_1_pct": 16.386138613861387
+    },
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "shared",
+      "frames": 8080,
+      "detection_pct": 70.22277227722772,
+      "accepted_pct": 54.65346534653466,
+      "accurate_update_pct": 54.25742574257426,
+      "mae_mm": 21.753683540806456,
+      "p95_mm": 94.29750214805685,
+      "beam_mae_mm": 22.139986699247128,
+      "mean_longest_gap_ms": 866.25,
+      "max_gap_ms": 1620.0,
+      "scan_pct": 0.9900990099009901,
+      "payload_pct": 98.95544554455445,
+      "effective_bpshz": 1.570637320077746,
+      "outage_below_1_pct": 42.01732673267327
+    },
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "shared_recovery",
+      "frames": 8080,
+      "detection_pct": 97.68564356435644,
+      "accepted_pct": 84.1460396039604,
+      "accurate_update_pct": 83.47772277227723,
+      "mae_mm": 2.1929859671335312,
+      "p95_mm": 7.631926504976872,
+      "beam_mae_mm": 2.706032803930908,
+      "mean_longest_gap_ms": 51.5,
+      "max_gap_ms": 180.0,
+      "scan_pct": 8.514851485148515,
+      "payload_pct": 98.61683168316834,
+      "effective_bpshz": 2.234947557693404,
+      "outage_below_1_pct": 16.497524752475247
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "dedicated",
+      "frames": 2936,
+      "detection_pct": 95.91280653950953,
+      "accepted_pct": 95.91280653950953,
+      "accurate_update_pct": 93.29019073569482,
+      "mae_mm": 2.407949724376733,
+      "p95_mm": 6.940898922225434,
+      "beam_mae_mm": 2.4269941974421236,
+      "mean_longest_gap_ms": 20.5,
+      "max_gap_ms": 160.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.50000000000001,
+      "effective_bpshz": 1.1433314585270211,
+      "outage_below_1_pct": 44.75476839237057
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "periodic",
+      "frames": 2936,
+      "detection_pct": 31.641689373297005,
+      "accepted_pct": 31.641689373297005,
+      "accurate_update_pct": 30.858310626702995,
+      "mae_mm": 4.942900046088001,
+      "p95_mm": 13.419778501660755,
+      "beam_mae_mm": 4.948077551921243,
+      "mean_longest_gap_ms": 70.75,
+      "max_gap_ms": 280.0,
+      "scan_pct": 33.17438692098092,
+      "payload_pct": 97.50715258855587,
+      "effective_bpshz": 1.1442139832964622,
+      "outage_below_1_pct": 44.89100817438692
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "shared",
+      "frames": 2936,
+      "detection_pct": 66.34877384196184,
+      "accepted_pct": 25.71525885558583,
+      "accurate_update_pct": 24.795640326975477,
+      "mae_mm": 17.67677479264469,
+      "p95_mm": 55.19324947350574,
+      "beam_mae_mm": 17.90978454646479,
+      "mean_longest_gap_ms": 497.25,
+      "max_gap_ms": 1120.0,
+      "scan_pct": 0.0,
+      "payload_pct": 99.00000000000001,
+      "effective_bpshz": 0.7579348067382461,
+      "outage_below_1_pct": 65.29291553133515
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "shared_recovery",
+      "frames": 2936,
+      "detection_pct": 93.6307901907357,
+      "accepted_pct": 57.322888283378745,
+      "accurate_update_pct": 55.653950953678475,
+      "mae_mm": 3.7029806521955493,
+      "p95_mm": 10.639712834254194,
+      "beam_mae_mm": 4.001179774463545,
+      "mean_longest_gap_ms": 51.5,
+      "max_gap_ms": 180.0,
+      "scan_pct": 20.572207084468666,
+      "payload_pct": 98.07425068119892,
+      "effective_bpshz": 1.160057063973139,
+      "outage_below_1_pct": 45.16348773841962
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "dedicated",
+      "frames": 5144,
+      "detection_pct": 100.0,
+      "accepted_pct": 100.0,
+      "accurate_update_pct": 100.0,
+      "mae_mm": 1.281085858955831,
+      "p95_mm": 3.9347947266289305,
+      "beam_mae_mm": 1.2988632610368078,
+      "mean_longest_gap_ms": 0.0,
+      "max_gap_ms": 0.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.50000000000001,
+      "effective_bpshz": 2.733287262397626,
+      "outage_below_1_pct": 0.13608087091757387
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "periodic",
+      "frames": 5144,
+      "detection_pct": 33.94245723172628,
+      "accepted_pct": 33.94245723172628,
+      "accurate_update_pct": 33.94245723172628,
+      "mae_mm": 3.113049201632669,
+      "p95_mm": 8.74485275290971,
+      "beam_mae_mm": 3.1317434337059065,
+      "mean_longest_gap_ms": 40.0,
+      "max_gap_ms": 40.0,
+      "scan_pct": 33.94245723172628,
+      "payload_pct": 97.4725894245723,
+      "effective_bpshz": 2.775703248300527,
+      "outage_below_1_pct": 0.11664074650077762
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "shared",
+      "frames": 5144,
+      "detection_pct": 72.4339035769829,
+      "accepted_pct": 71.17029548989113,
+      "accurate_update_pct": 71.07309486780716,
+      "mae_mm": 24.08062834730003,
+      "p95_mm": 102.11045296185443,
+      "beam_mae_mm": 24.554425564054466,
+      "mean_longest_gap_ms": 364.0,
+      "max_gap_ms": 960.0,
+      "scan_pct": 1.5552099533437014,
+      "payload_pct": 98.93001555209953,
+      "effective_bpshz": 2.034497074969809,
+      "outage_below_1_pct": 28.732503888024887
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "shared_recovery",
+      "frames": 5144,
+      "detection_pct": 100.0,
+      "accepted_pct": 99.4556765163297,
+      "accurate_update_pct": 99.35847589424573,
+      "mae_mm": 1.3311383008539652,
+      "p95_mm": 3.970581641504341,
+      "beam_mae_mm": 1.9668120602520929,
+      "mean_longest_gap_ms": 5.75,
+      "max_gap_ms": 40.0,
+      "scan_pct": 1.6329704510108864,
+      "payload_pct": 98.92651632970453,
+      "effective_bpshz": 2.848454262507303,
+      "outage_below_1_pct": 0.13608087091757387
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "dedicated",
+      "frames": 8080,
+      "detection_pct": 96.78217821782178,
+      "accepted_pct": 96.78217821782178,
+      "accurate_update_pct": 92.94554455445545,
+      "mae_mm": 2.4478027756634804,
+      "p95_mm": 8.005885930237257,
+      "beam_mae_mm": 2.464140926825523,
+      "mean_longest_gap_ms": 40.0,
+      "max_gap_ms": 220.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.50000000000001,
+      "effective_bpshz": 1.9773205017650368,
+      "outage_below_1_pct": 22.07920792079208
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "periodic",
+      "frames": 8080,
+      "detection_pct": 32.54950495049505,
+      "accepted_pct": 32.54950495049505,
+      "accurate_update_pct": 31.31188118811881,
+      "mae_mm": 4.305273260297316,
+      "p95_mm": 11.98162985248245,
+      "beam_mae_mm": 4.321731925583461,
+      "mean_longest_gap_ms": 92.5,
+      "max_gap_ms": 280.0,
+      "scan_pct": 33.663366336633665,
+      "payload_pct": 97.48514851485149,
+      "effective_bpshz": 1.9998815906711283,
+      "outage_below_1_pct": 22.17821782178218
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "shared",
+      "frames": 8080,
+      "detection_pct": 64.07178217821782,
+      "accepted_pct": 48.68811881188119,
+      "accurate_update_pct": 47.759900990099005,
+      "mae_mm": 27.521989956080386,
+      "p95_mm": 104.06505610592002,
+      "beam_mae_mm": 27.846174301284734,
+      "mean_longest_gap_ms": 965.25,
+      "max_gap_ms": 1960.0,
+      "scan_pct": 0.9900990099009901,
+      "payload_pct": 98.95544554455445,
+      "effective_bpshz": 1.3229420004010781,
+      "outage_below_1_pct": 50.12376237623762
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "shared_recovery",
+      "frames": 8080,
+      "detection_pct": 95.01237623762377,
+      "accepted_pct": 81.83168316831683,
+      "accurate_update_pct": 79.62871287128714,
+      "mae_mm": 3.216398050185793,
+      "p95_mm": 11.172528112711912,
+      "beam_mae_mm": 3.7028073042469307,
+      "mean_longest_gap_ms": 70.75,
+      "max_gap_ms": 260.0,
+      "scan_pct": 10.222772277227723,
+      "payload_pct": 98.53997524752475,
+      "effective_bpshz": 2.026213753356961,
+      "outage_below_1_pct": 22.883663366336634
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "dedicated",
+      "frames": 3299,
+      "detection_pct": 92.11882388602606,
+      "accepted_pct": 92.11882388602606,
+      "accurate_update_pct": 82.7220369809033,
+      "mae_mm": 4.033222470714467,
+      "p95_mm": 12.032828950361443,
+      "beam_mae_mm": 4.047738753161304,
+      "mean_longest_gap_ms": 40.0,
+      "max_gap_ms": 220.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.5,
+      "effective_bpshz": 0.965554145840169,
+      "outage_below_1_pct": 53.925431949075474
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "periodic",
+      "frames": 3299,
+      "detection_pct": 30.58502576538345,
+      "accepted_pct": 30.58502576538345,
+      "accurate_update_pct": 27.553804183085784,
+      "mae_mm": 6.058555524075144,
+      "p95_mm": 15.756647283453141,
+      "beam_mae_mm": 6.072435517431449,
+      "mean_longest_gap_ms": 92.5,
+      "max_gap_ms": 280.0,
+      "scan_pct": 33.31312518945135,
+      "payload_pct": 97.5009093664747,
+      "effective_bpshz": 0.9687511274056079,
+      "outage_below_1_pct": 54.0163685965444
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "shared",
+      "frames": 3299,
+      "detection_pct": 58.29039102758412,
+      "accepted_pct": 23.976962715974537,
+      "accurate_update_pct": 22.76447408305547,
+      "mae_mm": 24.422526674728445,
+      "p95_mm": 71.56589687786835,
+      "beam_mae_mm": 24.593123606792794,
+      "mean_longest_gap_ms": 566.0,
+      "max_gap_ms": 1220.0,
+      "scan_pct": 0.0,
+      "payload_pct": 99.00000000000001,
+      "effective_bpshz": 0.6062682116813577,
+      "outage_below_1_pct": 72.99181570172779
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "shared_recovery",
+      "frames": 3299,
+      "detection_pct": 87.7841770233404,
+      "accepted_pct": 56.683843588966354,
+      "accurate_update_pct": 52.34919672628069,
+      "mae_mm": 5.302957734632393,
+      "p95_mm": 15.560168678300041,
+      "beam_mae_mm": 5.571659193463586,
+      "mean_longest_gap_ms": 70.75,
+      "max_gap_ms": 260.0,
+      "scan_pct": 22.461351924825703,
+      "payload_pct": 97.98923916338285,
+      "effective_bpshz": 0.9636929740499778,
+      "outage_below_1_pct": 55.50166717187026
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "dedicated",
+      "frames": 4781,
+      "detection_pct": 100.0,
+      "accepted_pct": 100.0,
+      "accurate_update_pct": 100.0,
+      "mae_mm": 1.3538267091558027,
+      "p95_mm": 4.001948039087544,
+      "beam_mae_mm": 1.3714219916484176,
+      "mean_longest_gap_ms": 0.0,
+      "max_gap_ms": 0.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.5,
+      "effective_bpshz": 2.675462565809408,
+      "outage_below_1_pct": 0.10458063166701526
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "periodic",
+      "frames": 4781,
+      "detection_pct": 33.90504078644635,
+      "accepted_pct": 33.90504078644635,
+      "accurate_update_pct": 33.90504078644635,
+      "mae_mm": 3.0954681592299544,
+      "p95_mm": 8.732983842573343,
+      "beam_mae_mm": 3.1137061674771,
+      "mean_longest_gap_ms": 40.0,
+      "max_gap_ms": 40.0,
+      "scan_pct": 33.90504078644635,
+      "payload_pct": 97.47427316460993,
+      "effective_bpshz": 2.711385334304877,
+      "outage_below_1_pct": 0.2091612633340305
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "shared",
+      "frames": 4781,
+      "detection_pct": 68.06107508889355,
+      "accepted_pct": 65.7393850658858,
+      "accurate_update_pct": 65.00732064421669,
+      "mae_mm": 29.660690931855342,
+      "p95_mm": 110.12296416529702,
+      "beam_mae_mm": 30.0908541258254,
+      "mean_longest_gap_ms": 391.25,
+      "max_gap_ms": 1000.0,
+      "scan_pct": 1.673290106672244,
+      "payload_pct": 98.92470194519976,
+      "effective_bpshz": 1.8174634036611403,
+      "outage_below_1_pct": 34.34427943944782
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "shared_recovery",
+      "frames": 4781,
+      "detection_pct": 100.0,
+      "accepted_pct": 99.18427107299728,
+      "accurate_update_pct": 98.45220665132818,
+      "mae_mm": 1.7766238608970821,
+      "p95_mm": 5.292067653191513,
+      "beam_mae_mm": 2.4132565026310044,
+      "mean_longest_gap_ms": 8.5,
+      "max_gap_ms": 40.0,
+      "scan_pct": 1.7778707383392596,
+      "payload_pct": 98.91999581677476,
+      "effective_bpshz": 2.759377537279516,
+      "outage_below_1_pct": 0.37649027400125495
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "dedicated",
+      "frames": 8080,
+      "detection_pct": 92.80940594059406,
+      "accepted_pct": 92.80940594059406,
+      "accurate_update_pct": 91.33663366336634,
+      "mae_mm": 2.2970446817999712,
+      "p95_mm": 6.935790072310416,
+      "beam_mae_mm": 2.316977210987915,
+      "mean_longest_gap_ms": 98.5,
+      "max_gap_ms": 480.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.50000000000001,
+      "effective_bpshz": 2.149133067965439,
+      "outage_below_1_pct": 16.695544554455445
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "periodic",
+      "frames": 8080,
+      "detection_pct": 31.361386138613863,
+      "accepted_pct": 31.361386138613863,
+      "accurate_update_pct": 30.804455445544555,
+      "mae_mm": 4.7393153613417685,
+      "p95_mm": 13.53206127665861,
+      "beam_mae_mm": 4.7493663608335694,
+      "mean_longest_gap_ms": 159.25,
+      "max_gap_ms": 640.0,
+      "scan_pct": 33.663366336633665,
+      "payload_pct": 97.48514851485149,
+      "effective_bpshz": 2.178564180386415,
+      "outage_below_1_pct": 16.497524752475247
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "shared",
+      "frames": 8080,
+      "detection_pct": 57.42574257425742,
+      "accepted_pct": 42.054455445544555,
+      "accurate_update_pct": 41.84405940594059,
+      "mae_mm": 29.31711806714665,
+      "p95_mm": 103.93027382787972,
+      "beam_mae_mm": 29.58560935805147,
+      "mean_longest_gap_ms": 1092.0,
+      "max_gap_ms": 1680.0,
+      "scan_pct": 0.9900990099009901,
+      "payload_pct": 98.95544554455445,
+      "effective_bpshz": 1.351604604812948,
+      "outage_below_1_pct": 50.309405940594054
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "shared_recovery",
+      "frames": 8080,
+      "detection_pct": 92.37623762376238,
+      "accepted_pct": 77.5,
+      "accurate_update_pct": 76.57178217821782,
+      "mae_mm": 2.9451877844976107,
+      "p95_mm": 10.729670471780567,
+      "beam_mae_mm": 3.4234913496913593,
+      "mean_longest_gap_ms": 116.25,
+      "max_gap_ms": 480.0,
+      "scan_pct": 13.254950495049506,
+      "payload_pct": 98.40352722772279,
+      "effective_bpshz": 2.2296505065561636,
+      "outage_below_1_pct": 16.65841584158416
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "dedicated",
+      "frames": 2936,
+      "detection_pct": 80.21117166212534,
+      "accepted_pct": 80.21117166212534,
+      "accurate_update_pct": 76.15803814713897,
+      "mae_mm": 4.0306975422947,
+      "p95_mm": 14.250782179485078,
+      "beam_mae_mm": 4.0440399301571,
+      "mean_longest_gap_ms": 98.5,
+      "max_gap_ms": 480.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.50000000000001,
+      "effective_bpshz": 1.127483107775753,
+      "outage_below_1_pct": 45.64032697547684
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "periodic",
+      "frames": 2936,
+      "detection_pct": 26.83923705722071,
+      "accepted_pct": 26.83923705722071,
+      "accurate_update_pct": 25.306539509536783,
+      "mae_mm": 7.520265655188464,
+      "p95_mm": 28.80931522554425,
+      "beam_mae_mm": 7.52448746432641,
+      "mean_longest_gap_ms": 159.25,
+      "max_gap_ms": 640.0,
+      "scan_pct": 33.17438692098092,
+      "payload_pct": 97.50715258855587,
+      "effective_bpshz": 1.135445629041366,
+      "outage_below_1_pct": 45.19754768392371
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "shared",
+      "frames": 2936,
+      "detection_pct": 51.46457765667575,
+      "accepted_pct": 13.453678474114442,
+      "accurate_update_pct": 13.044959128065395,
+      "mae_mm": 22.33747152038136,
+      "p95_mm": 61.35944078455374,
+      "beam_mae_mm": 22.453280822601755,
+      "mean_longest_gap_ms": 573.25,
+      "max_gap_ms": 1200.0,
+      "scan_pct": 0.0,
+      "payload_pct": 99.00000000000001,
+      "effective_bpshz": 0.7041574381411907,
+      "outage_below_1_pct": 68.39237057220708
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "shared_recovery",
+      "frames": 2936,
+      "detection_pct": 79.01907356948229,
+      "accepted_pct": 42.949591280653955,
+      "accurate_update_pct": 40.83787465940055,
+      "mae_mm": 5.657229533902391,
+      "p95_mm": 17.568697150883906,
+      "beam_mae_mm": 5.846332258078225,
+      "mean_longest_gap_ms": 116.25,
+      "max_gap_ms": 480.0,
+      "scan_pct": 32.833787465940055,
+      "payload_pct": 97.52247956403271,
+      "effective_bpshz": 1.1515029097952916,
+      "outage_below_1_pct": 45.572207084468666
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "dedicated",
+      "frames": 5144,
+      "detection_pct": 100.0,
+      "accepted_pct": 100.0,
+      "accurate_update_pct": 100.0,
+      "mae_mm": 1.307541416167676,
+      "p95_mm": 3.96218320444123,
+      "beam_mae_mm": 1.3312353479473382,
+      "mean_longest_gap_ms": 0.0,
+      "max_gap_ms": 0.0,
+      "scan_pct": 100.0,
+      "payload_pct": 94.50000000000001,
+      "effective_bpshz": 2.7322520965651513,
+      "outage_below_1_pct": 0.1749611197511664
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "periodic",
+      "frames": 5144,
+      "detection_pct": 33.94245723172628,
+      "accepted_pct": 33.94245723172628,
+      "accurate_update_pct": 33.94245723172628,
+      "mae_mm": 3.1520544626765448,
+      "p95_mm": 8.811817512374086,
+      "beam_mae_mm": 3.1654325428213257,
+      "mean_longest_gap_ms": 40.0,
+      "max_gap_ms": 40.0,
+      "scan_pct": 33.94245723172628,
+      "payload_pct": 97.4725894245723,
+      "effective_bpshz": 2.7739366661463425,
+      "outage_below_1_pct": 0.11664074650077762
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "shared",
+      "frames": 5144,
+      "detection_pct": 60.82814930015552,
+      "accepted_pct": 58.37869362363919,
+      "accurate_update_pct": 58.281493001555205,
+      "mae_mm": 33.30083545853523,
+      "p95_mm": 110.67150926226024,
+      "beam_mae_mm": 33.656471834738944,
+      "mean_longest_gap_ms": 505.5,
+      "max_gap_ms": 1000.0,
+      "scan_pct": 1.5552099533437014,
+      "payload_pct": 98.93001555209953,
+      "effective_bpshz": 1.7211428787920071,
+      "outage_below_1_pct": 39.98833592534992
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "shared_recovery",
+      "frames": 5144,
+      "detection_pct": 100.0,
+      "accepted_pct": 97.22006220839813,
+      "accurate_update_pct": 96.96734059097977,
+      "mae_mm": 1.3972572681188318,
+      "p95_mm": 4.103698148390374,
+      "beam_mae_mm": 2.0406256990257607,
+      "mean_longest_gap_ms": 19.75,
+      "max_gap_ms": 40.0,
+      "scan_pct": 2.0800933125972008,
+      "payload_pct": 98.90639580093314,
+      "effective_bpshz": 2.845016242187953,
+      "outage_below_1_pct": 0.15552099533437014
+    }
+  ],
+  "comparison_to_dedicated": [
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "periodic",
+      "rate_change_pct": 1.2676167823659545,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.1269102194173637,
+        1.3782373289098842
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "shared",
+      "rate_change_pct": -27.13522287808815,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -32.99843908723963,
+        -21.22326961532934
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "shared_recovery",
+      "rate_change_pct": 3.6833606261374774,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        3.5441479605855792,
+        3.8307920386929744
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "periodic",
+      "rate_change_pct": -0.2191080162104564,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -1.0445027060352596,
+        0.549489406995513
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "shared",
+      "rate_change_pct": -31.275286979409024,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -37.268211809292104,
+        -25.159673287817913
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "shared_recovery",
+      "rate_change_pct": 1.2183534609888191,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        0.34702304779360704,
+        2.0229854162481464
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "periodic",
+      "rate_change_pct": 1.5249930874873696,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.4210782736904966,
+        1.6371603476535972
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "shared",
+      "rate_change_pct": -27.01747687112086,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -32.962611940015336,
+        -20.917139430761477
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "shared_recovery",
+      "rate_change_pct": 4.195066203307851,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        4.106879739262351,
+        4.289201016475269
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "periodic",
+      "rate_change_pct": 1.140993019894987,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        0.962563224750192,
+        1.286356354622044
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "shared",
+      "rate_change_pct": -33.09420505071555,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -37.58777672968735,
+        -28.562290121301626
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "shared_recovery",
+      "rate_change_pct": 2.472702404505478,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.999025889795426,
+        2.860666895309302
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "periodic",
+      "rate_change_pct": 0.1560182237622998,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -0.5575958705878794,
+        0.8525179711129364
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "shared",
+      "rate_change_pct": -35.035810948224764,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -40.7105726748191,
+        -29.453359660831822
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "shared_recovery",
+      "rate_change_pct": -0.3551929792213748,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -1.5567098803557964,
+        0.8359988128308191
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "periodic",
+      "rate_change_pct": 1.3104766798377243,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.1519932471032985,
+        1.4776154259184116
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "shared",
+      "rate_change_pct": -33.36380536617808,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -37.60186523103605,
+        -28.612082045778607
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "shared_recovery",
+      "rate_change_pct": 3.037027920303914,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        2.5533306983110537,
+        3.4333907794172807
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "periodic",
+      "rate_change_pct": 1.3694411416244945,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.2034023178862585,
+        1.5107998185240612
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "shared",
+      "rate_change_pct": -37.1093104954875,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -40.47493101403865,
+        -33.4300261824231
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "shared_recovery",
+      "rate_change_pct": 3.7465078263836604,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        3.5666091774613466,
+        3.9428893672646024
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "periodic",
+      "rate_change_pct": 0.49245593732298865,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -0.4137176743409201,
+        1.2521596423475823
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "shared",
+      "rate_change_pct": -36.07978725560973,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -40.51015934102901,
+        -31.156532018953506
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "shared_recovery",
+      "rate_change_pct": 2.1463548379786257,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.339725299230959,
+        2.951233383439973
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "periodic",
+      "rate_change_pct": 1.4895137734584951,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.346440422739636,
+        1.636124565014258
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "shared",
+      "rate_change_pct": -36.77642456551891,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -40.68962625957862,
+        -32.31521621465892
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "shared_recovery",
+      "rate_change_pct": 4.104460996037229,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        3.985213602501123,
+        4.217933249122737
+      ]
+    }
+  ],
+  "comparison_to_periodic": [
+    {
+      "condition": "matched",
+      "region": "all",
+      "method": "shared_recovery",
+      "rate_change_pct": 2.3855047847755495,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        2.217215811516131,
+        2.569954360292722
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "deep",
+      "method": "shared_recovery",
+      "rate_change_pct": 1.440617986691084,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        0.4378976082952052,
+        2.5031854077825297
+      ]
+    },
+    {
+      "condition": "matched",
+      "region": "other",
+      "method": "shared_recovery",
+      "rate_change_pct": 2.6299663113688476,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        2.535921911001552,
+        2.7323662678316514
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "all",
+      "method": "shared_recovery",
+      "rate_change_pct": 1.3166860882496634,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        0.8519870172962091,
+        1.7113199076816126
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "deep",
+      "method": "shared_recovery",
+      "rate_change_pct": -0.5104148627809502,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        -1.8432435305099817,
+        0.8761302846530524
+      ]
+    },
+    {
+      "condition": "geometry_offset",
+      "region": "other",
+      "method": "shared_recovery",
+      "rate_change_pct": 1.70421786280055,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        1.1809296899437938,
+        2.1328995333312184
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "all",
+      "method": "shared_recovery",
+      "rate_change_pct": 2.3449539210126824,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        2.1096208734574575,
+        2.604249819750968
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "deep",
+      "method": "shared_recovery",
+      "rate_change_pct": 1.6457940899436085,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        0.4167672303648984,
+        3.076469170896162
+      ]
+    },
+    {
+      "condition": "high_pilot_noise",
+      "region": "other",
+      "method": "shared_recovery",
+      "rate_change_pct": 2.57656887431319,
+      "paired_scene_bootstrap_95pct_ci_pct": [
+        2.4829863990969736,
+        2.6768497519394385
+      ]
+    }
+  ],
+  "scenes": 16,
+  "runs_per_scene": 5,
+  "frames_per_run": 101,
+  "frame_ms": 20.0,
+  "pilot_ms": 0.1,
+  "feedback_ms": 0.1,
+  "subarrays": 4,
+  "dedicated_beams": 9,
+  "recovery_after_misses": 2,
+  "periodic_sweep_interval_frames": 3,
+  "nominal_pilot_noise_power": 0.0003,
+  "simulation_only": true
+}

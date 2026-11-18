@@ -1,0 +1,43 @@
+{
+  "interpretation": {
+    "best_known_airy": "Offline multi-start local search plus evaluated direct beams; feasible reference, not a certified global optimum.",
+    "theoretical_ceiling": "Unit transmitted power; rigorous for this passive normalized simulator, but allows arbitrary complex wavefronts and is loose for Airy phase-only beams."
+  },
+  "transmitted_power": 0.9999999999999998,
+  "unique_reference_positions": 59,
+  "offline_physics_evaluations": 8916,
+  "static_deep_shadow": {
+    "positions": 21,
+    "direct_mean_gain_vs_focus_db": 3.353488497432938,
+    "best_known_mean_gain_vs_focus_db": 3.4817143205829044,
+    "theoretical_mean_gain_vs_focus_db": 16.162757465408145,
+    "gap_to_best_known": {
+      "mean_db": 0.12822582314996653,
+      "min_db": 0.0,
+      "max_db": 0.5242987948644893
+    },
+    "gap_to_theoretical_ceiling": {
+      "mean_db": 12.80926896797521,
+      "min_db": 7.770778558098861,
+      "max_db": 18.997291435622465
+    },
+    "positions_with_better_known_airy": 16
+  },
+  "delayed_predicted_beam_at_true_x": {
+    "frames": 39,
+    "predicted_mean_gain_vs_true_focus_db": 3.2432904803895077,
+    "best_known_mean_gain_vs_true_focus_db": 3.358401685435283,
+    "theoretical_mean_gain_vs_true_focus_db": 15.429850020783574,
+    "gap_to_best_known": {
+      "mean_db": 0.11511120504577481,
+      "min_db": 0.0,
+      "max_db": 0.6637514603430632
+    },
+    "gap_to_theoretical_ceiling": {
+      "mean_db": 12.186559540394066,
+      "min_db": 8.106532142999702,
+      "max_db": 18.49496694397009
+    },
+    "frames_with_better_known_airy": 31
+  }
+}

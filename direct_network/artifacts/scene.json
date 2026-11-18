@@ -1,0 +1,14 @@
+{
+  "frequency_hz": 120000000000.0,
+  "tx_width_m": 0.2,
+  "rx_width_m": 0.025,
+  "obstacle_z_m": 0.2,
+  "obstacle_x_m": 0.0,
+  "obstacle_depth_m": 0.03,
+  "obstacle_width_m": 0.085,
+  "receiver_z_m": 0.36,
+  "field_half_width_m": 2.0,
+  "n_grid": 16384,
+  "obstacle_step_m": 0.00075,
+  "activation_bl": 0.8
+}

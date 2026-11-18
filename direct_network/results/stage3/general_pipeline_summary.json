@@ -1,0 +1,75 @@
+{
+  "test_scenes": 16,
+  "runs_per_scene": 5,
+  "frames_per_run": 101,
+  "communication_grid": 8192,
+  "sensing_condition": "reflective",
+  "pilot_duration_s": 0.0001,
+  "simulation_only": true,
+  "results": [
+    {
+      "mode": "active",
+      "region": "other",
+      "scenes": 16,
+      "runs_per_scene": 5,
+      "frames": 5050,
+      "detection_pct": 100.0,
+      "tracked_mae_mm": 1.0468114066318353,
+      "rate_network_bpshz": 2.8212233946144196,
+      "rate_focus_bpshz": 2.8192082881581553,
+      "network_vs_focus_pct": 0.07147774305036325,
+      "scene_bootstrap_95pct_ci_pct": [
+        0.013478743946234162,
+        0.12266182425599563
+      ]
+    },
+    {
+      "mode": "active",
+      "region": "deep",
+      "scenes": 16,
+      "runs_per_scene": 5,
+      "frames": 3030,
+      "detection_pct": 99.37293729372936,
+      "tracked_mae_mm": 2.5283556652870383,
+      "rate_network_bpshz": 1.0043084455361657,
+      "rate_focus_bpshz": 0.867117179250645,
+      "network_vs_focus_pct": 15.821537108061934,
+      "scene_bootstrap_95pct_ci_pct": [
+        9.049753182819927,
+        20.70434822829541
+      ]
+    },
+    {
+      "mode": "passive",
+      "region": "other",
+      "scenes": 16,
+      "runs_per_scene": 5,
+      "frames": 5050,
+      "detection_pct": 96.9108910891089,
+      "tracked_mae_mm": 1.3716108211114637,
+      "rate_network_bpshz": 2.462856110625008,
+      "rate_focus_bpshz": 2.45503352281756,
+      "network_vs_focus_pct": 0.31863466363060144,
+      "scene_bootstrap_95pct_ci_pct": [
+        0.22918441306350734,
+        0.439883226671251
+      ]
+    },
+    {
+      "mode": "passive",
+      "region": "deep",
+      "scenes": 16,
+      "runs_per_scene": 5,
+      "frames": 3030,
+      "detection_pct": 16.468646864686466,
+      "tracked_mae_mm": 20.11072447565087,
+      "rate_network_bpshz": 0.6405733850211471,
+      "rate_focus_bpshz": 0.5646610563817709,
+      "network_vs_focus_pct": 13.4438753622937,
+      "scene_bootstrap_95pct_ci_pct": [
+        4.127551604074425,
+        20.287125921770773
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Large local reference data (paper figure MAT files, ~542 MB)
+reference/数据结果/
+
+# Office lock files and OS clutter
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store

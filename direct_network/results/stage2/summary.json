@@ -1,0 +1,3910 @@
+{
+  "experiment": "passive-return versus cooperative-uplink pilot observation; unchanged one-pass Airy beam network",
+  "scene": {
+    "frequency_hz": 120000000000.0,
+    "tx_width_m": 0.2,
+    "rx_width_m": 0.025,
+    "obstacle_z_m": 0.2,
+    "obstacle_x_m": 0.0,
+    "obstacle_depth_m": 0.03,
+    "obstacle_width_m": 0.085,
+    "receiver_z_m": 0.36,
+    "field_half_width_m": 2.0,
+    "n_grid": 16384,
+    "obstacle_step_m": 0.00075,
+    "activation_bl": 0.8
+  },
+  "conditions": [
+    {
+      "name": "clean",
+      "noise_power": 0.0003,
+      "passive_reflectivity_db_low": 0.0,
+      "passive_reflectivity_db_high": 0.0,
+      "obstacle_reflectivity": 0.0,
+      "clutter_drift_std": 0.0,
+      "multipath_amplitude": 0.0
+    },
+    {
+      "name": "reflective",
+      "noise_power": 0.0003,
+      "passive_reflectivity_db_low": -6.0,
+      "passive_reflectivity_db_high": 0.0,
+      "obstacle_reflectivity": 0.1,
+      "clutter_drift_std": 0.15,
+      "multipath_amplitude": 0.15
+    },
+    {
+      "name": "reflective_high_noise",
+      "noise_power": 0.0006,
+      "passive_reflectivity_db_low": -6.0,
+      "passive_reflectivity_db_high": 0.0,
+      "obstacle_reflectivity": 0.1,
+      "clutter_drift_std": 0.15,
+      "multipath_amplitude": 0.15
+    },
+    {
+      "name": "weak_target_only",
+      "noise_power": 0.0003,
+      "passive_reflectivity_db_low": -6.0,
+      "passive_reflectivity_db_high": 0.0,
+      "obstacle_reflectivity": 0.0,
+      "clutter_drift_std": 0.0,
+      "multipath_amplitude": 0.0
+    },
+    {
+      "name": "obstacle_echo_only",
+      "noise_power": 0.0003,
+      "passive_reflectivity_db_low": 0.0,
+      "passive_reflectivity_db_high": 0.0,
+      "obstacle_reflectivity": 0.1,
+      "clutter_drift_std": 0.15,
+      "multipath_amplitude": 0.0
+    },
+    {
+      "name": "multipath_only",
+      "noise_power": 0.0003,
+      "passive_reflectivity_db_low": 0.0,
+      "passive_reflectivity_db_high": 0.0,
+      "obstacle_reflectivity": 0.0,
+      "clutter_drift_std": 0.0,
+      "multipath_amplitude": 0.15
+    }
+  ],
+  "trajectories": {
+    "variable": 101,
+    "steady": 101,
+    "alternate": 101
+  },
+  "main_runs_per_configuration": 20,
+  "robust_runs_per_motion": 5,
+  "pilot_durations_s": [
+    5e-05,
+    0.0001,
+    0.0002
+  ],
+  "frame_s": 0.02,
+  "data_reference_power": 0.5256572919058419,
+  "data_noise_power_at_10db_reference": 0.052565729190584186,
+  "data_snr_reference_db_sweep": [
+    0,
+    10,
+    20
+  ],
+  "position_design_grid_mm": 1.0,
+  "null_calibration_samples": 4000,
+  "null_validation_samples": 10000,
+  "instrument": [
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 5,
+      "threshold": 0.00176885407297328,
+      "null_false_alarm_rate": 0.015
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 9,
+      "threshold": 0.0020467239990920303,
+      "null_false_alarm_rate": 0.0095
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 21,
+      "threshold": 0.00236323277856938,
+      "null_false_alarm_rate": 0.0091
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 5,
+      "threshold": 0.0018591349991829902,
+      "null_false_alarm_rate": 0.0102
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 9,
+      "threshold": 0.002018220789023518,
+      "null_false_alarm_rate": 0.01
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 21,
+      "threshold": 0.00224710381097989,
+      "null_false_alarm_rate": 0.0104
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 5,
+      "threshold": 0.009899626311533767,
+      "null_false_alarm_rate": 0.0104
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 9,
+      "threshold": 0.010817496884129668,
+      "null_false_alarm_rate": 0.0105
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "threshold": 0.011597387174222448,
+      "null_false_alarm_rate": 0.0123
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 5,
+      "threshold": 0.001775987445930867,
+      "null_false_alarm_rate": 0.0126
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 9,
+      "threshold": 0.002036256528157937,
+      "null_false_alarm_rate": 0.009
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "threshold": 0.0022385853191181117,
+      "null_false_alarm_rate": 0.0127
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 5,
+      "threshold": 0.011606970603696028,
+      "null_false_alarm_rate": 0.0088
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 9,
+      "threshold": 0.012693485768462647,
+      "null_false_alarm_rate": 0.0113
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 21,
+      "threshold": 0.013750971100777198,
+      "null_false_alarm_rate": 0.0112
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 5,
+      "threshold": 0.0036479002810825612,
+      "null_false_alarm_rate": 0.0131
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 9,
+      "threshold": 0.004187529671459047,
+      "null_false_alarm_rate": 0.0072
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 21,
+      "threshold": 0.0046216497041175085,
+      "null_false_alarm_rate": 0.0093
+    },
+    {
+      "condition": "weak_target_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "threshold": 0.0023220723945127815,
+      "null_false_alarm_rate": 0.0105
+    },
+    {
+      "condition": "obstacle_echo_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "threshold": 0.011933700146183326,
+      "null_false_alarm_rate": 0.0086
+    },
+    {
+      "condition": "multipath_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "threshold": 0.00236180883749939,
+      "null_false_alarm_rate": 0.0087
+    }
+  ],
+  "rows": [
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 3.9599608119654093,
+      "tracked_mae_mm": 3.701701119669015,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 3.9599608119654093,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 14.207660431486929,
+      "network_vs_true_focus_power_pct": -9.575496601789869,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 2.7068217210931347,
+        "estimated_focus_mean_bpshz": 2.7068217210931347,
+        "hold_mean_bpshz": 2.6681847613788294,
+        "network_p05_bpshz": 1.6227076187289535,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 2.672558155003348,
+        "estimated_focus_mean_bpshz": 2.672558155003348,
+        "hold_mean_bpshz": 2.6344102707284645,
+        "network_p05_bpshz": 1.6021670159602324,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 2.604031022823775,
+        "estimated_focus_mean_bpshz": 2.604031022823775,
+        "hold_mean_bpshz": 2.5668612894277345,
+        "network_p05_bpshz": 1.5610858104227905,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6588350823182487,
+        "10db_network_mean_bpshz": 2.6725581550033484,
+        "20db_network_mean_bpshz": 5.6744327389803555
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 8.447195501282195,
+      "tracked_mae_mm": 6.656471900527942,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 8.447195501282195,
+      "network_vs_estimated_focus_power_pct": 107.45015401149769,
+      "network_vs_hold_power_pct": 33.48233144560747,
+      "network_vs_true_focus_power_pct": 102.8582023740964,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 0.9114835589097243,
+        "estimated_focus_mean_bpshz": 0.5986562403786095,
+        "hold_mean_bpshz": 0.8747726363267794,
+        "network_p05_bpshz": 0.20449912633870485,
+        "network_vs_estimated_focus_pct": 52.25491649987188
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 0.8999457923412468,
+        "estimated_focus_mean_bpshz": 0.5910783132852094,
+        "hold_mean_bpshz": 0.8636995649808706,
+        "network_p05_bpshz": 0.20191052980277185,
+        "network_vs_estimated_focus_pct": 52.254916499871904
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 0.8768702592042917,
+        "estimated_focus_mean_bpshz": 0.575922459098409,
+        "hold_mean_bpshz": 0.8415534222890534,
+        "network_p05_bpshz": 0.1967333367309059,
+        "network_vs_estimated_focus_pct": 52.254916499871925
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.14457523793535007,
+        "10db_network_mean_bpshz": 0.8999457923412468,
+        "20db_network_mean_bpshz": 2.9548938756275915
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.7991882824706165,
+      "tracked_mae_mm": 0.6404835995587911,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.7991882824706165,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 0.2865791374442772,
+      "network_vs_true_focus_power_pct": -0.14771984600218915,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 2.855076980399822,
+        "estimated_focus_mean_bpshz": 2.855076980399822,
+        "hold_mean_bpshz": 2.8523007178016835,
+        "network_p05_bpshz": 2.1824369086516566,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 2.789359095940491,
+        "estimated_focus_mean_bpshz": 2.789359095940491,
+        "hold_mean_bpshz": 2.7866467370850203,
+        "network_p05_bpshz": 2.1322017879921553,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 2.65792332702183,
+        "estimated_focus_mean_bpshz": 2.65792332702183,
+        "hold_mean_bpshz": 2.655338775651695,
+        "network_p05_bpshz": 2.0317315466731536,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.7043538649990071,
+        "10db_network_mean_bpshz": 2.7893590959404913,
+        "20db_network_mean_bpshz": 5.781804784794148
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 2.183212953662426,
+      "tracked_mae_mm": 1.7235084777547534,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 2.183212953662426,
+      "network_vs_estimated_focus_power_pct": 123.17021314453113,
+      "network_vs_hold_power_pct": 2.215991068529577,
+      "network_vs_true_focus_power_pct": 123.53511657946494,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 0.9450186961216734,
+        "estimated_focus_mean_bpshz": 0.607631222552998,
+        "hold_mean_bpshz": 0.9331586097447392,
+        "network_p05_bpshz": 0.2901708583622546,
+        "network_vs_estimated_focus_pct": 55.52503904442605
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 0.9232663476175941,
+        "estimated_focus_mean_bpshz": 0.5936448261259468,
+        "hold_mean_bpshz": 0.9116792555562411,
+        "network_p05_bpshz": 0.2834917337452206,
+        "network_vs_estimated_focus_pct": 55.52503904442607
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 0.8797616506094352,
+        "estimated_focus_mean_bpshz": 0.5656720332718447,
+        "hold_mean_bpshz": 0.8687205471792457,
+        "network_p05_bpshz": 0.2701334845111526,
+        "network_vs_estimated_focus_pct": 55.52503904442607
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.14818164212515286,
+        "10db_network_mean_bpshz": 0.923266347617594,
+        "20db_network_mean_bpshz": 3.0220169333268005
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.2902913826207271,
+      "tracked_mae_mm": 0.24859218039742081,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.2902913826207271,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 0.035164376110459236,
+      "network_vs_true_focus_power_pct": 0.06499971748096554,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.770318212590336,
+        "estimated_focus_mean_bpshz": 2.770318212590336,
+        "hold_mean_bpshz": 2.7699286160251315,
+        "network_p05_bpshz": 2.115456747772322,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.616817731153932,
+        "estimated_focus_mean_bpshz": 2.616817731153932,
+        "hold_mean_bpshz": 2.616449721733501,
+        "network_p05_bpshz": 1.9982414662334858,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 2.309816768281124,
+        "estimated_focus_mean_bpshz": 2.309816768281124,
+        "hold_mean_bpshz": 2.309491933150242,
+        "network_p05_bpshz": 1.7638109031558145,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6612222406237245,
+        "10db_network_mean_bpshz": 2.6168177311539313,
+        "20db_network_mean_bpshz": 5.42171408421573
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.1041871533908878,
+      "tracked_mae_mm": 0.8754275051157768,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.1041871533908878,
+      "network_vs_estimated_focus_power_pct": 124.97558885487952,
+      "network_vs_hold_power_pct": 0.49494583008036486,
+      "network_vs_true_focus_power_pct": 124.57598795138283,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 0.9173780218273616,
+        "estimated_focus_mean_bpshz": 0.5883787892693457,
+        "hold_mean_bpshz": 0.9162427936940445,
+        "network_p05_bpshz": 0.29725699400861116,
+        "network_vs_estimated_focus_pct": 55.916229231609485
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 0.8665470496416765,
+        "estimated_focus_mean_bpshz": 0.5557773260116774,
+        "hold_mean_bpshz": 0.86547472333105,
+        "network_p05_bpshz": 0.2807862898550997,
+        "network_vs_estimated_focus_pct": 55.916229231609485
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 0.7648851052703068,
+        "estimated_focus_mean_bpshz": 0.4905743994963411,
+        "hold_mean_bpshz": 0.763938582605061,
+        "network_p05_bpshz": 0.24784488154807685,
+        "network_vs_estimated_focus_pct": 55.916229231609485
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.1390329266285946,
+        "10db_network_mean_bpshz": 0.8665470496416764,
+        "20db_network_mean_bpshz": 2.8367434092937076
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.8176470588235294,
+      "measured_mae_mm_when_detected": 12.696599498185131,
+      "tracked_mae_mm": 14.134016909844886,
+      "tracked_mae_mm_when_missed": 24.483599237726033,
+      "hold_mae_mm": 14.097136255370584,
+      "network_vs_estimated_focus_power_pct": 10.062890531532503,
+      "network_vs_hold_power_pct": 77.73841143541111,
+      "network_vs_true_focus_power_pct": -40.58856387121888,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 1.9515087170831737,
+        "estimated_focus_mean_bpshz": 1.9288175123792137,
+        "hold_mean_bpshz": 1.888546093604623,
+        "network_p05_bpshz": 0.19738688145985409,
+        "network_vs_estimated_focus_pct": 1.176430873233314
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 1.911782246049206,
+        "estimated_focus_mean_bpshz": 1.8895529616423505,
+        "hold_mean_bpshz": 1.850101340052082,
+        "network_p05_bpshz": 0.19336871635500102,
+        "network_vs_estimated_focus_pct": 1.1764308732333362
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 1.8341593141632568,
+        "estimated_focus_mean_bpshz": 1.812832591872434,
+        "hold_mean_bpshz": 1.7749828004810912,
+        "network_p05_bpshz": 0.1855174839620252,
+        "network_vs_estimated_focus_pct": 1.176430873233314
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.43427308926987196,
+        "10db_network_mean_bpshz": 1.9117822460492062,
+        "20db_network_mean_bpshz": 4.491135597926428
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.01818181818181818,
+      "measured_mae_mm_when_detected": 39.295386161849706,
+      "tracked_mae_mm": 47.735000839866366,
+      "tracked_mae_mm_when_missed": 47.91080450590885,
+      "hold_mae_mm": 39.17151455854509,
+      "network_vs_estimated_focus_power_pct": 42.40685160034639,
+      "network_vs_hold_power_pct": 390.75092687299536,
+      "network_vs_true_focus_power_pct": -30.07434525353334,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 0.3437570685610458,
+        "estimated_focus_mean_bpshz": 0.23265934367132526,
+        "hold_mean_bpshz": 0.2979235195981764,
+        "network_p05_bpshz": 0.003419353784955019,
+        "network_vs_estimated_focus_pct": 47.75124142302525
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 0.33675927495276337,
+        "estimated_focus_mean_bpshz": 0.2279231441369693,
+        "hold_mean_bpshz": 0.29185875034142184,
+        "network_p05_bpshz": 0.0033497466866603542,
+        "network_vs_estimated_focus_pct": 47.75124142302527
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 0.3230860429120119,
+        "estimated_focus_mean_bpshz": 0.21866891932703772,
+        "hold_mean_bpshz": 0.2800085869952103,
+        "network_p05_bpshz": 0.0032137389590903556,
+        "network_vs_estimated_focus_pct": 47.75124142302527
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.05258407907003089,
+        "10db_network_mean_bpshz": 0.3367592749527634,
+        "20db_network_mean_bpshz": 1.2022073188144111
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.9992647058823529,
+      "measured_mae_mm_when_detected": 2.8719567793864798,
+      "tracked_mae_mm": 2.702494503840336,
+      "tracked_mae_mm_when_missed": 10.682447677008692,
+      "hold_mae_mm": 2.874800585899214,
+      "network_vs_estimated_focus_power_pct": 0.3042272705522191,
+      "network_vs_hold_power_pct": 6.1047648834375625,
+      "network_vs_true_focus_power_pct": -5.132801532590632,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 2.7331166179664654,
+        "estimated_focus_mean_bpshz": 2.730855979727679,
+        "hold_mean_bpshz": 2.705430499588629,
+        "network_p05_bpshz": 2.0414439160874913,
+        "network_vs_estimated_focus_pct": 0.08278130577255016
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 2.633191212750723,
+        "estimated_focus_mean_bpshz": 2.631013225647484,
+        "hold_mean_bpshz": 2.6065173258230825,
+        "network_p05_bpshz": 1.966806738442276,
+        "network_vs_estimated_focus_pct": 0.08278130577252796
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 2.4414272841201394,
+        "estimated_focus_mean_bpshz": 2.4394079103987925,
+        "hold_mean_bpshz": 2.416695941024607,
+        "network_p05_bpshz": 1.823572709255767,
+        "network_vs_estimated_focus_pct": 0.08278130577255016
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6553003118540593,
+        "10db_network_mean_bpshz": 2.6331912127507233,
+        "20db_network_mean_bpshz": 5.524687396660386
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.353030303030303,
+      "measured_mae_mm_when_detected": 7.377741125949929,
+      "tracked_mae_mm": 20.455730621597482,
+      "tracked_mae_mm_when_missed": 28.084130294011974,
+      "hold_mae_mm": 15.715930672102932,
+      "network_vs_estimated_focus_power_pct": 45.782379976318175,
+      "network_vs_hold_power_pct": 10.447544257485472,
+      "network_vs_true_focus_power_pct": 21.012352708849168,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 0.7137111584915673,
+        "estimated_focus_mean_bpshz": 0.5360481138875677,
+        "hold_mean_bpshz": 0.7259957242642262,
+        "network_p05_bpshz": 0.01145056760496972,
+        "network_vs_estimated_focus_pct": 33.143115328872
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 0.6876171834849942,
+        "estimated_focus_mean_bpshz": 0.5164496728099953,
+        "hold_mean_bpshz": 0.6994526135696028,
+        "network_p05_bpshz": 0.011031923702124413,
+        "network_vs_estimated_focus_pct": 33.14311532887202
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 0.6375409976537216,
+        "estimated_focus_mean_bpshz": 0.47883887655697,
+        "hold_mean_bpshz": 0.6485145045482985,
+        "network_p05_bpshz": 0.010228516407117423,
+        "network_vs_estimated_focus_pct": 33.14311532887202
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.11387384826833317,
+        "10db_network_mean_bpshz": 0.6876171834849942,
+        "20db_network_mean_bpshz": 2.18109375897914
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.42786311722008336,
+      "tracked_mae_mm": 0.3515051307713753,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.42786311722008336,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 0.07526829698937351,
+      "network_vs_true_focus_power_pct": 0.028939121766668796,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6807434773893615,
+        "estimated_focus_mean_bpshz": 2.6807434773893615,
+        "hold_mean_bpshz": 2.6799591369898206,
+        "network_p05_bpshz": 2.047346986632853,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.4532217154786777,
+        "estimated_focus_mean_bpshz": 2.4532217154786777,
+        "hold_mean_bpshz": 2.452503944115356,
+        "network_p05_bpshz": 1.8735832537094508,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 2.0382589214731044,
+        "estimated_focus_mean_bpshz": 2.0382589214731044,
+        "hold_mean_bpshz": 2.0376625612356105,
+        "network_p05_bpshz": 1.5566663860427932,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6198869776877782,
+        "10db_network_mean_bpshz": 2.4532217154786773,
+        "20db_network_mean_bpshz": 5.083024146727512
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.39090909090909093,
+      "measured_mae_mm_when_detected": 2.5423358349832084,
+      "tracked_mae_mm": 6.980928355758953,
+      "tracked_mae_mm_when_missed": 10.099070060492114,
+      "hold_mae_mm": 9.124559289189747,
+      "network_vs_estimated_focus_power_pct": 74.01291156298869,
+      "network_vs_hold_power_pct": 38.056658044172856,
+      "network_vs_true_focus_power_pct": 86.28754187816713,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 0.8236359131783304,
+        "estimated_focus_mean_bpshz": 0.5854522709627016,
+        "hold_mean_bpshz": 0.8105242074640621,
+        "network_p05_bpshz": 0.11774451843661868,
+        "network_vs_estimated_focus_pct": 40.68369942847197
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.7537317631841863,
+        "estimated_focus_mean_bpshz": 0.5357633942284887,
+        "hold_mean_bpshz": 0.741732882479445,
+        "network_p05_bpshz": 0.10775123093411083,
+        "network_vs_estimated_focus_pct": 40.68369942847194
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.6262379307237035,
+        "estimated_focus_mean_bpshz": 0.44513894165976386,
+        "hold_mean_bpshz": 0.616268662357204,
+        "network_p05_bpshz": 0.08952509525145241,
+        "network_vs_estimated_focus_pct": 40.68369942847199
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.12300822919996542,
+        "10db_network_mean_bpshz": 0.7537317631841864,
+        "20db_network_mean_bpshz": 2.445347819501378
+      }
+    },
+    {
+      "condition": "multipath_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.4181761320785264,
+      "tracked_mae_mm": 0.3540355637592849,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.4181761320785264,
+      "network_vs_estimated_focus_power_pct": 0.031951979222774235,
+      "network_vs_hold_power_pct": 0.05231973867717691,
+      "network_vs_true_focus_power_pct": 0.09473115921774747,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6813763885269046,
+        "estimated_focus_mean_bpshz": 2.6811035124326,
+        "hold_mean_bpshz": 2.680845321478061,
+        "network_p05_bpshz": 2.047346986632853,
+        "network_vs_estimated_focus_pct": 0.010177753042328597
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.453800909780439,
+        "estimated_focus_mean_bpshz": 2.4535511933992082,
+        "hold_mean_bpshz": 2.453314915791239,
+        "network_p05_bpshz": 1.8735832537094508,
+        "network_vs_estimated_focus_pct": 0.010177753042306392
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 2.0387401449782536,
+        "estimated_focus_mean_bpshz": 2.0385326681576017,
+        "hold_mean_bpshz": 2.038336356939847,
+        "network_p05_bpshz": 1.5566663860427932,
+        "network_vs_estimated_focus_pct": 0.010177753042306392
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6200484914636049,
+        "10db_network_mean_bpshz": 2.453800909780439,
+        "20db_network_mean_bpshz": 5.083770983973598
+      }
+    },
+    {
+      "condition": "multipath_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.41515151515151516,
+      "measured_mae_mm_when_detected": 4.0490247577960945,
+      "tracked_mae_mm": 8.503163987273865,
+      "tracked_mae_mm_when_missed": 12.039889017459133,
+      "hold_mae_mm": 9.643413423068743,
+      "network_vs_estimated_focus_power_pct": 67.2940773195825,
+      "network_vs_hold_power_pct": 20.347193276642788,
+      "network_vs_true_focus_power_pct": 86.49516325633961,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 0.8207987196724911,
+        "estimated_focus_mean_bpshz": 0.6083274781675767,
+        "hold_mean_bpshz": 0.8095189036821635,
+        "network_p05_bpshz": 0.1299512186466325,
+        "network_vs_estimated_focus_pct": 34.92711559650847
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.7511353697663729,
+        "estimated_focus_mean_bpshz": 0.5566971223283232,
+        "hold_mean_bpshz": 0.740812901478201,
+        "network_p05_bpshz": 0.118921916336172,
+        "network_vs_estimated_focus_pct": 34.92711559650847
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.6240807176132367,
+        "estimated_focus_mean_bpshz": 0.4625317267431352,
+        "hold_mean_bpshz": 0.6155042962701359,
+        "network_p05_bpshz": 0.0988062576657831,
+        "network_vs_estimated_focus_pct": 34.92711559650847
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.12151312797949142,
+        "10db_network_mean_bpshz": 0.751135369766373,
+        "20db_network_mean_bpshz": 2.4594670834266834
+      }
+    },
+    {
+      "condition": "obstacle_echo_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.759021181870875,
+      "tracked_mae_mm": 0.6231913843872151,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.759021181870875,
+      "network_vs_estimated_focus_power_pct": 0.15908761026419804,
+      "network_vs_hold_power_pct": 0.02639860614587646,
+      "network_vs_true_focus_power_pct": -0.02693090558036219,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6798673883261324,
+        "estimated_focus_mean_bpshz": 2.6785873483896943,
+        "hold_mean_bpshz": 2.679959871387471,
+        "network_p05_bpshz": 2.0755869106385947,
+        "network_vs_estimated_focus_pct": 0.04778787360462111
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.4524199824024855,
+        "estimated_focus_mean_bpshz": 2.4512485828279886,
+        "hold_mean_bpshz": 2.4525046161827424,
+        "network_p05_bpshz": 1.8994263809607834,
+        "network_vs_estimated_focus_pct": 0.04778787360462111
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 2.037592801658137,
+        "estimated_focus_mean_bpshz": 2.0366195444844117,
+        "hold_mean_bpshz": 2.037663119622705,
+        "network_p05_bpshz": 1.5781381447291114,
+        "network_vs_estimated_focus_pct": 0.04778787360462111
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6195711301024825,
+        "10db_network_mean_bpshz": 2.4524199824024855,
+        "20db_network_mean_bpshz": 5.082070595544864
+      }
+    },
+    {
+      "condition": "obstacle_echo_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.20757575757575758,
+      "measured_mae_mm_when_detected": 4.73010832961799,
+      "tracked_mae_mm": 12.578598210077349,
+      "tracked_mae_mm_when_missed": 14.913640901903854,
+      "hold_mae_mm": 16.282265583824305,
+      "network_vs_estimated_focus_power_pct": 84.08558057642836,
+      "network_vs_hold_power_pct": 376.88758352575167,
+      "network_vs_true_focus_power_pct": 71.29830489957331,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 0.7613271100139261,
+        "estimated_focus_mean_bpshz": 0.5190503307738522,
+        "hold_mean_bpshz": 0.6798047984933001,
+        "network_p05_bpshz": 0.009168563072026226,
+        "network_vs_estimated_focus_pct": 46.676933791538744
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.6967112723100415,
+        "estimated_focus_mean_bpshz": 0.4749971616533971,
+        "hold_mean_bpshz": 0.6221079741559119,
+        "network_p05_bpshz": 0.008390402967588284,
+        "network_vs_estimated_focus_pct": 46.67693379153872
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.5788624638029225,
+        "estimated_focus_mean_bpshz": 0.3946513257671569,
+        "hold_mean_bpshz": 0.5168783238963904,
+        "network_p05_bpshz": 0.006971165139920623,
+        "network_vs_estimated_focus_pct": 46.67693379153872
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.11367670491802838,
+        "10db_network_mean_bpshz": 0.6967112723100417,
+        "20db_network_mean_bpshz": 2.265728623280214
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 3.7465041564458454,
+      "tracked_mae_mm": 3.5388008220592533,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 3.7465041564458454,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 13.337800417832261,
+      "network_vs_true_focus_power_pct": -7.955050081279275,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 2.7454687753561777,
+        "estimated_focus_mean_bpshz": 2.7454687753561777,
+        "hold_mean_bpshz": 2.7008123164908295,
+        "network_p05_bpshz": 1.89626674187391,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 2.710716006047871,
+        "estimated_focus_mean_bpshz": 2.710716006047871,
+        "hold_mean_bpshz": 2.6666248188137303,
+        "network_p05_bpshz": 1.8722633653944933,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 2.641210467431259,
+        "estimated_focus_mean_bpshz": 2.641210467431259,
+        "hold_mean_bpshz": 2.598249823459532,
+        "network_p05_bpshz": 1.82425661243566,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6709907704889375,
+        "10db_network_mean_bpshz": 2.710716006047871,
+        "20db_network_mean_bpshz": 5.72788640421
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.996969696969697,
+      "measured_mae_mm_when_detected": 8.17118644151859,
+      "tracked_mae_mm": 6.911540652321049,
+      "tracked_mae_mm_when_missed": 15.890155089705045,
+      "hold_mae_mm": 8.188772562052087,
+      "network_vs_estimated_focus_power_pct": 94.71569449734778,
+      "network_vs_hold_power_pct": 36.62185704669364,
+      "network_vs_true_focus_power_pct": 101.51448371842969,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 0.8885169284514897,
+        "estimated_focus_mean_bpshz": 0.6448649495802604,
+        "hold_mean_bpshz": 0.858298063603917,
+        "network_p05_bpshz": 0.20045953223345234,
+        "network_vs_estimated_focus_pct": 37.78341170966435
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 0.8772698787242554,
+        "estimated_focus_mean_bpshz": 0.6367021021172191,
+        "hold_mean_bpshz": 0.8474335311532345,
+        "network_p05_bpshz": 0.19792206980011748,
+        "network_vs_estimated_focus_pct": 37.78341170966433
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 0.8547757792697873,
+        "estimated_focus_mean_bpshz": 0.6203764071911366,
+        "hold_mean_bpshz": 0.8257044662518697,
+        "network_p05_bpshz": 0.1928471449334478,
+        "network_vs_estimated_focus_pct": 37.78341170966431
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.13870692687316005,
+        "10db_network_mean_bpshz": 0.8772698787242554,
+        "20db_network_mean_bpshz": 2.926994406464713
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.9726571952894604,
+      "tracked_mae_mm": 0.9134132794776679,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.9726571952894604,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 0.21661219732234388,
+      "network_vs_true_focus_power_pct": 0.5560909134224331,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 2.863607248274529,
+        "estimated_focus_mean_bpshz": 2.863607248274529,
+        "hold_mean_bpshz": 2.861674776639176,
+        "network_p05_bpshz": 2.1824369086516566,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 2.797693014938286,
+        "estimated_focus_mean_bpshz": 2.797693014938286,
+        "hold_mean_bpshz": 2.7958050247472257,
+        "network_p05_bpshz": 2.1322017879921553,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 2.6658645482658017,
+        "estimated_focus_mean_bpshz": 2.6658645482658017,
+        "hold_mean_bpshz": 2.664065520963325,
+        "network_p05_bpshz": 2.0317315466731536,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.7081262007712995,
+        "10db_network_mean_bpshz": 2.7976930149382864,
+        "20db_network_mean_bpshz": 5.791308045716116
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 2.308983623939801,
+      "tracked_mae_mm": 1.8662544092765418,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 2.308983623939801,
+      "network_vs_estimated_focus_power_pct": 119.84275041155665,
+      "network_vs_hold_power_pct": 1.9255360510281423,
+      "network_vs_true_focus_power_pct": 120.56316267848759,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 0.9284121993523761,
+        "estimated_focus_mean_bpshz": 0.6165567408535647,
+        "hold_mean_bpshz": 0.9209055648322412,
+        "network_p05_bpshz": 0.2845819500007235,
+        "network_vs_estimated_focus_pct": 50.58017175630531
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 0.9070420975770017,
+        "estimated_focus_mean_bpshz": 0.6023648977137128,
+        "hold_mean_bpshz": 0.8997082500407063,
+        "network_p05_bpshz": 0.27803147033318765,
+        "network_vs_estimated_focus_pct": 50.58017175630533
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 0.8643018940262529,
+        "estimated_focus_mean_bpshz": 0.573981211434009,
+        "hold_mean_bpshz": 0.8573136204576365,
+        "network_p05_bpshz": 0.264930510998116,
+        "network_vs_estimated_focus_pct": 50.58017175630533
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.1436133335693331,
+        "10db_network_mean_bpshz": 0.9070420975770017,
+        "20db_network_mean_bpshz": 2.9978161957205303
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "alternate",
+      "region": "other",
+      "samples": 355,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.32560186043486183,
+      "tracked_mae_mm": 0.2614771166001841,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.32560186043486183,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": -0.014118160978864657,
+      "network_vs_true_focus_power_pct": 0.013953639061058882,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.704044176853076,
+        "estimated_focus_mean_bpshz": 2.704044176853076,
+        "hold_mean_bpshz": 2.7042110713982157,
+        "network_p05_bpshz": 2.0497721561105426,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.5542158715393164,
+        "estimated_focus_mean_bpshz": 2.5542158715393164,
+        "hold_mean_bpshz": 2.5543735186294487,
+        "network_p05_bpshz": 1.9361963902046815,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 2.2545592609117993,
+        "estimated_focus_mean_bpshz": 2.2545592609117993,
+        "hold_mean_bpshz": 2.254698413091916,
+        "network_p05_bpshz": 1.7090448583929592,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6368463565715393,
+        "10db_network_mean_bpshz": 2.5542158715393164,
+        "20db_network_mean_bpshz": 5.347488854059431
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "alternate",
+      "region": "deep",
+      "samples": 150,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.201535938565184,
+      "tracked_mae_mm": 1.0712292651733084,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.201535938565184,
+      "network_vs_estimated_focus_power_pct": 93.3579878989085,
+      "network_vs_hold_power_pct": -0.00032695951700338155,
+      "network_vs_true_focus_power_pct": 100.64440188069345,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 1.276112525090018,
+        "estimated_focus_mean_bpshz": 0.9242520091942602,
+        "hold_mean_bpshz": 1.2764373086170258,
+        "network_p05_bpshz": 0.3597441068483801,
+        "network_vs_estimated_focus_pct": 38.0697593725007
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 1.2054044432248716,
+        "estimated_focus_mean_bpshz": 0.8730401564420718,
+        "hold_mean_bpshz": 1.2057112308308577,
+        "network_p05_bpshz": 0.33981105607314,
+        "network_vs_estimated_focus_pct": 38.069759372500634
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 1.0639882794945799,
+        "estimated_focus_mean_bpshz": 0.7706164509376947,
+        "hold_mean_bpshz": 1.0642590752585226,
+        "network_p05_bpshz": 0.2999449545226599,
+        "network_vs_estimated_focus_pct": 38.06975937250068
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.2072819304277647,
+        "10db_network_mean_bpshz": 1.2054044432248716,
+        "20db_network_mean_bpshz": 3.47139958305217
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "steady",
+      "region": "other",
+      "samples": 340,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.3452941176470599,
+      "tracked_mae_mm": 0.2793240735649133,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.3452941176470599,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": -0.021015100251766082,
+      "network_vs_true_focus_power_pct": -0.053375304708800426,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.7489686043286463,
+        "estimated_focus_mean_bpshz": 2.7489686043286463,
+        "hold_mean_bpshz": 2.749198936875457,
+        "network_p05_bpshz": 2.081969733211549,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.5966510827167686,
+        "estimated_focus_mean_bpshz": 2.5966510827167686,
+        "hold_mean_bpshz": 2.5968686527741784,
+        "network_p05_bpshz": 1.9666099326905924,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 2.292016039493014,
+        "estimated_focus_mean_bpshz": 2.292016039493014,
+        "hold_mean_bpshz": 2.2922080845716217,
+        "network_p05_bpshz": 1.7358903316486796,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6559877560147349,
+        "10db_network_mean_bpshz": 2.5966510827167686,
+        "20db_network_mean_bpshz": 5.396040185187234
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "steady",
+      "region": "deep",
+      "samples": 165,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.1830303030303029,
+      "tracked_mae_mm": 1.001848505601794,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.1830303030303029,
+      "network_vs_estimated_focus_power_pct": 100.63878421173106,
+      "network_vs_hold_power_pct": 0.04878795561180481,
+      "network_vs_true_focus_power_pct": 104.58823719252963,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 1.2134095361114023,
+        "estimated_focus_mean_bpshz": 0.850157962211679,
+        "hold_mean_bpshz": 1.2131786129856077,
+        "network_p05_bpshz": 0.3382580490973353,
+        "network_vs_estimated_focus_pct": 42.727538886388515
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 1.1461757623426965,
+        "estimated_focus_mean_bpshz": 0.8030515843582614,
+        "hold_mean_bpshz": 1.145957634429677,
+        "network_p05_bpshz": 0.31951551867241695,
+        "network_vs_estimated_focus_pct": 42.727538886388494
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 1.0117082148052854,
+        "estimated_focus_mean_bpshz": 0.7088388286514263,
+        "hold_mean_bpshz": 1.0115156773178153,
+        "network_p05_bpshz": 0.28203045782258035,
+        "network_vs_estimated_focus_pct": 42.727538886388515
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.19475309697347643,
+        "10db_network_mean_bpshz": 1.1461757623426965,
+        "20db_network_mean_bpshz": 3.366746057346318
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.3068069013818516,
+      "tracked_mae_mm": 0.2630575599516509,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.3068069013818516,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 0.02265742286244262,
+      "network_vs_true_focus_power_pct": 0.052119485593385244,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.7701762858975045,
+        "estimated_focus_mean_bpshz": 2.7701762858975045,
+        "hold_mean_bpshz": 2.7699285528899322,
+        "network_p05_bpshz": 2.115456747772322,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.616683668473104,
+        "estimated_focus_mean_bpshz": 2.616683668473104,
+        "hold_mean_bpshz": 2.6164496620965583,
+        "network_p05_bpshz": 1.9982414662334858,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 2.3096984336243045,
+        "estimated_focus_mean_bpshz": 2.3096984336243045,
+        "hold_mean_bpshz": 2.3094918805098117,
+        "network_p05_bpshz": 1.7638109031558145,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6611790810850399,
+        "10db_network_mean_bpshz": 2.616683668473104,
+        "20db_network_mean_bpshz": 5.421546904720686
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.1974428101374734,
+      "tracked_mae_mm": 0.9517404522936915,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.1974428101374734,
+      "network_vs_estimated_focus_power_pct": 122.43617584507373,
+      "network_vs_hold_power_pct": 0.2729422688132197,
+      "network_vs_true_focus_power_pct": 124.16195461156052,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 0.9182017608892452,
+        "estimated_focus_mean_bpshz": 0.5938981095166503,
+        "hold_mean_bpshz": 0.9174513598403421,
+        "network_p05_bpshz": 0.29365573544937273,
+        "network_vs_estimated_focus_pct": 54.60594101512337
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 0.8673251461697881,
+        "estimated_focus_mean_bpshz": 0.5609908264035904,
+        "hold_mean_bpshz": 0.8666163240708245,
+        "network_p05_bpshz": 0.27738457332684807,
+        "network_vs_estimated_focus_pct": 54.60594101512335
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 0.7655719167308745,
+        "estimated_focus_mean_bpshz": 0.495176260177471,
+        "hold_mean_bpshz": 0.7649462525317893,
+        "network_p05_bpshz": 0.2448422490817989,
+        "network_vs_estimated_focus_pct": 54.60594101512335
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.13932642135040943,
+        "10db_network_mean_bpshz": 0.8673251461697882,
+        "20db_network_mean_bpshz": 2.8359656623500538
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.5735294117647058,
+      "measured_mae_mm_when_detected": 14.67670309743466,
+      "tracked_mae_mm": 20.60719901293158,
+      "tracked_mae_mm_when_missed": 29.95153359965047,
+      "hold_mae_mm": 18.164424732726058,
+      "network_vs_estimated_focus_power_pct": 48.64742877937554,
+      "network_vs_hold_power_pct": 112.03204211407616,
+      "network_vs_true_focus_power_pct": -53.44810780142355,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 1.634346340921649,
+        "estimated_focus_mean_bpshz": 1.5278763484534241,
+        "hold_mean_bpshz": 1.5316628597533661,
+        "network_p05_bpshz": 0.1707385608950409,
+        "network_vs_estimated_focus_pct": 6.968495361290072
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 1.6010762806837742,
+        "estimated_focus_mean_bpshz": 1.4967736764699549,
+        "hold_mean_bpshz": 1.5004831065198052,
+        "network_p05_bpshz": 0.16726287030016812,
+        "network_vs_estimated_focus_pct": 6.96849536129005
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 1.5360687541537228,
+        "estimated_focus_mean_bpshz": 1.4360010851471674,
+        "hold_mean_bpshz": 1.4395599034645938,
+        "network_p05_bpshz": 0.1604715976982862,
+        "network_vs_estimated_focus_pct": 6.968495361290072
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.3515992402260575,
+        "10db_network_mean_bpshz": 1.6010762806837742,
+        "20db_network_mean_bpshz": 3.982240740889985
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.019696969696969695,
+      "measured_mae_mm_when_detected": 29.49782387977806,
+      "tracked_mae_mm": 53.082057011753705,
+      "tracked_mae_mm_when_missed": 53.605566159375606,
+      "hold_mae_mm": 38.2207913511129,
+      "network_vs_estimated_focus_power_pct": -6.516266861531733,
+      "network_vs_hold_power_pct": -2.4114409912778534,
+      "network_vs_true_focus_power_pct": -53.78120350200527,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 0.25369263130104935,
+        "estimated_focus_mean_bpshz": 0.2613127618522624,
+        "hold_mean_bpshz": 0.3183365099607024,
+        "network_p05_bpshz": 0.003326821701979503,
+        "network_vs_estimated_focus_pct": -2.916095829839793
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 0.24852826135451084,
+        "estimated_focus_mean_bpshz": 0.2559932704384366,
+        "hold_mean_bpshz": 0.3118561975586598,
+        "network_p05_bpshz": 0.003259098260714838,
+        "network_vs_estimated_focus_pct": -2.9160958298398043
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 0.2384374195011976,
+        "estimated_focus_mean_bpshz": 0.2455993313611341,
+        "hold_mean_bpshz": 0.2991940900245344,
+        "network_p05_bpshz": 0.0031267710760556648,
+        "network_vs_estimated_focus_pct": -2.9160958298398154
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.03755466652072176,
+        "10db_network_mean_bpshz": 0.2485282613545109,
+        "20db_network_mean_bpshz": 0.9545539177337595
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.8375,
+      "measured_mae_mm_when_detected": 6.8269050571552,
+      "tracked_mae_mm": 8.223336779425306,
+      "tracked_mae_mm_when_missed": 18.945177152293166,
+      "hold_mae_mm": 8.105227115969747,
+      "network_vs_estimated_focus_power_pct": 2.7156085950073896,
+      "network_vs_hold_power_pct": 61.92959170154253,
+      "network_vs_true_focus_power_pct": -18.26337304676805,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 2.4621790997729343,
+        "estimated_focus_mean_bpshz": 2.451710461298889,
+        "hold_mean_bpshz": 2.3971133148784713,
+        "network_p05_bpshz": 0.4235591020064039,
+        "network_vs_estimated_focus_pct": 0.4269932620224237
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 2.3721594340765613,
+        "estimated_focus_mean_bpshz": 2.362073539220077,
+        "hold_mean_bpshz": 2.3094725176425666,
+        "network_p05_bpshz": 0.4080733687513419,
+        "network_vs_estimated_focus_pct": 0.4269932620224237
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 2.1994053210391624,
+        "estimated_focus_mean_bpshz": 2.1900539382880164,
+        "hold_mean_bpshz": 2.1412836216357083,
+        "network_p05_bpshz": 0.3783551500430516,
+        "network_vs_estimated_focus_pct": 0.4269932620224015
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.5799056869526886,
+        "10db_network_mean_bpshz": 2.3721594340765613,
+        "20db_network_mean_bpshz": 5.107256694961908
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.03636363636363636,
+      "measured_mae_mm_when_detected": 21.816334261747606,
+      "tracked_mae_mm": 38.124034250340564,
+      "tracked_mae_mm_when_missed": 38.8521679803307,
+      "hold_mae_mm": 35.31239496080478,
+      "network_vs_estimated_focus_power_pct": 11.134088648887658,
+      "network_vs_hold_power_pct": 368.86711669786456,
+      "network_vs_true_focus_power_pct": -9.786290732965904,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 0.41465424845040266,
+        "estimated_focus_mean_bpshz": 0.3518282174211524,
+        "hold_mean_bpshz": 0.31685975346324774,
+        "network_p05_bpshz": 0.003396459044613903,
+        "network_vs_estimated_focus_pct": 17.857018828607774
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 0.39949408531339603,
+        "estimated_focus_mean_bpshz": 0.33896503516210247,
+        "hold_mean_bpshz": 0.30527505230075835,
+        "network_p05_bpshz": 0.0032722811942797175,
+        "network_vs_estimated_focus_pct": 17.857018828607774
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 0.37040065871626315,
+        "estimated_focus_mean_bpshz": 0.314279677525964,
+        "hold_mean_bpshz": 0.28304319042205084,
+        "network_p05_bpshz": 0.0030339751060775074,
+        "network_vs_estimated_focus_pct": 17.857018828607774
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.061850494475769534,
+        "10db_network_mean_bpshz": 0.399494085313396,
+        "20db_network_mean_bpshz": 1.4286444346762077
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "alternate",
+      "region": "other",
+      "samples": 355,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.2455888064167446,
+      "tracked_mae_mm": 0.9674558722081488,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.2455888064167446,
+      "network_vs_estimated_focus_power_pct": 2.5372975631742256,
+      "network_vs_hold_power_pct": -0.37566616096713423,
+      "network_vs_true_focus_power_pct": 0.6866300062350661,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6221835906318063,
+        "estimated_focus_mean_bpshz": 2.603439505077574,
+        "hold_mean_bpshz": 2.626987556628909,
+        "network_p05_bpshz": 2.013570967874286,
+        "network_vs_estimated_focus_pct": 0.7199739236373848
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.3996319605986205,
+        "estimated_focus_mean_bpshz": 2.382478734970626,
+        "hold_mean_bpshz": 2.4040282013444867,
+        "network_p05_bpshz": 1.8426738946529757,
+        "network_vs_estimated_focus_pct": 0.7199739236373848
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.99373388107637,
+        "estimated_focus_mean_bpshz": 1.9794821259464928,
+        "hold_mean_bpshz": 1.9973864970892918,
+        "network_p05_bpshz": 1.530985349365037,
+        "network_vs_estimated_focus_pct": 0.7199739236373626
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.5988182374413459,
+        "10db_network_mean_bpshz": 2.3996319605986205,
+        "20db_network_mean_bpshz": 5.019686144371356
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "alternate",
+      "region": "deep",
+      "samples": 150,
+      "detection_rate": 0.22666666666666666,
+      "measured_mae_mm_when_detected": 4.401727346458064,
+      "tracked_mae_mm": 12.048840806674383,
+      "tracked_mae_mm_when_missed": 14.579723267343992,
+      "hold_mae_mm": 19.49331917515977,
+      "network_vs_estimated_focus_power_pct": 111.86410607037858,
+      "network_vs_hold_power_pct": 730.8101668710024,
+      "network_vs_true_focus_power_pct": 44.86724805909266,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 1.0057248884557533,
+        "estimated_focus_mean_bpshz": 0.7034997411350105,
+        "hold_mean_bpshz": 0.8146796129547751,
+        "network_p05_bpshz": 0.027388123716620742,
+        "network_vs_estimated_focus_pct": 42.960235754051546
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.9203663673779664,
+        "estimated_focus_mean_bpshz": 0.6437918645862912,
+        "hold_mean_bpshz": 0.745535607757868,
+        "network_p05_bpshz": 0.025063621496997035,
+        "network_vs_estimated_focus_pct": 42.96023575405157
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.7646862684671347,
+        "estimated_focus_mean_bpshz": 0.5348943812478731,
+        "hold_mean_bpshz": 0.6194281561264596,
+        "network_p05_bpshz": 0.020824106438627074,
+        "network_vs_estimated_focus_pct": 42.960235754051546
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.1572626326986793,
+        "10db_network_mean_bpshz": 0.9203663673779665,
+        "20db_network_mean_bpshz": 2.706567581779085
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "steady",
+      "region": "other",
+      "samples": 340,
+      "detection_rate": 0.9911764705882353,
+      "measured_mae_mm_when_detected": 1.1020771513353118,
+      "tracked_mae_mm": 0.8605831548672658,
+      "tracked_mae_mm_when_missed": 1.6112170873487792,
+      "hold_mae_mm": 1.1188235294117646,
+      "network_vs_estimated_focus_power_pct": 1.047403870173387,
+      "network_vs_hold_power_pct": -0.26803276448944546,
+      "network_vs_true_focus_power_pct": -0.15393429917725734,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6586481014681147,
+        "estimated_focus_mean_bpshz": 2.6523713235047164,
+        "hold_mean_bpshz": 2.662583255929413,
+        "network_p05_bpshz": 1.983777192096255,
+        "network_vs_estimated_focus_pct": 0.23664778410832366
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.4330016323267993,
+        "estimated_focus_mean_bpshz": 2.4272575810466512,
+        "hold_mean_bpshz": 2.4366027998609714,
+        "network_p05_bpshz": 1.8154087951232185,
+        "network_vs_estimated_focus_pct": 0.23664778410832366
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 2.0214590681955937,
+        "estimated_focus_mean_bpshz": 2.0166866239875185,
+        "hold_mean_bpshz": 2.0244510977410415,
+        "network_p05_bpshz": 1.5083321452087481,
+        "network_vs_estimated_focus_pct": 0.23664778410832366
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6143853795425805,
+        "10db_network_mean_bpshz": 2.433001632326799,
+        "20db_network_mean_bpshz": 5.057447898696775
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "steady",
+      "region": "deep",
+      "samples": 165,
+      "detection_rate": 0.17575757575757575,
+      "measured_mae_mm_when_detected": 5.6241379310344835,
+      "tracked_mae_mm": 22.30606622651783,
+      "tracked_mae_mm_when_missed": 25.906830060168442,
+      "hold_mae_mm": 23.020606060606063,
+      "network_vs_estimated_focus_power_pct": 22.30947431694112,
+      "network_vs_hold_power_pct": 77.02283546548291,
+      "network_vs_true_focus_power_pct": 3.015792847609167,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 0.7138770638931938,
+        "estimated_focus_mean_bpshz": 0.6040620209493581,
+        "hold_mean_bpshz": 0.6941163658448757,
+        "network_p05_bpshz": 0.014229950541313744,
+        "network_vs_estimated_focus_pct": 18.179431769480846
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.6532884366207401,
+        "estimated_focus_mean_bpshz": 0.5527936857024625,
+        "hold_mean_bpshz": 0.6352048810795137,
+        "network_p05_bpshz": 0.01302221714706352,
+        "network_vs_estimated_focus_pct": 18.17943176948087
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.5427846068033116,
+        "estimated_focus_mean_bpshz": 0.4592885569648531,
+        "hold_mean_bpshz": 0.5277598871942784,
+        "network_p05_bpshz": 0.010819507307427857,
+        "network_vs_estimated_focus_pct": 18.179431769480825
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.11057756889828516,
+        "10db_network_mean_bpshz": 0.65328843662074,
+        "20db_network_mean_bpshz": 2.0022115259379034
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.9911764705882353,
+      "measured_mae_mm_when_detected": 1.0458994989884136,
+      "tracked_mae_mm": 0.9733948603220185,
+      "tracked_mae_mm_when_missed": 14.009554863232085,
+      "hold_mae_mm": 1.1808367765599124,
+      "network_vs_estimated_focus_power_pct": 0.9588386295111365,
+      "network_vs_hold_power_pct": -0.0081223913873169,
+      "network_vs_true_focus_power_pct": -0.04564606547587344,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6779899258796864,
+        "estimated_focus_mean_bpshz": 2.6713066096529228,
+        "hold_mean_bpshz": 2.6778036161421435,
+        "network_p05_bpshz": 2.0755869106385947,
+        "network_vs_estimated_focus_pct": 0.2501890349319247
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.450701865140441,
+        "estimated_focus_mean_bpshz": 2.4445857795704504,
+        "hold_mean_bpshz": 2.4505313680011955,
+        "network_p05_bpshz": 1.8994263809607834,
+        "network_vs_estimated_focus_pct": 0.2501890349319469
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 2.03616530416967,
+        "estimated_focus_mean_bpshz": 2.031083755323566,
+        "hold_mean_bpshz": 2.0360236466452153,
+        "network_p05_bpshz": 1.5781381447291114,
+        "network_vs_estimated_focus_pct": 0.2501890349319469
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6193211361328281,
+        "10db_network_mean_bpshz": 2.4507018651404406,
+        "20db_network_mean_bpshz": 5.077061322107636
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.08484848484848485,
+      "measured_mae_mm_when_detected": 3.8228201941988154,
+      "tracked_mae_mm": 12.373670941749475,
+      "tracked_mae_mm_when_missed": 13.215580851621523,
+      "hold_mae_mm": 22.528704353091268,
+      "network_vs_estimated_focus_power_pct": 88.0232423104261,
+      "network_vs_hold_power_pct": 1502.6821872312066,
+      "network_vs_true_focus_power_pct": 65.44733681786205,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 0.6940763396587644,
+        "estimated_focus_mean_bpshz": 0.4723811669436057,
+        "hold_mean_bpshz": 0.5279919859659564,
+        "network_p05_bpshz": 0.03369958619072373,
+        "network_vs_estimated_focus_pct": 46.931416455395066
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.6351682520212748,
+        "estimated_focus_mean_bpshz": 0.4322889327171886,
+        "hold_mean_bpshz": 0.48317991501066915,
+        "network_p05_bpshz": 0.03083941352204254,
+        "network_vs_estimated_focus_pct": 46.93141645539502
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.5277294539463295,
+        "estimated_focus_mean_bpshz": 0.3591671996890713,
+        "hold_mean_bpshz": 0.40144996525719556,
+        "network_p05_bpshz": 0.025622922440190606,
+        "network_vs_estimated_focus_pct": 46.931416455395
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.10096685460767424,
+        "10db_network_mean_bpshz": 0.6351682520212749,
+        "20db_network_mean_bpshz": 2.1537550600629434
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 5.45084136777072,
+      "tracked_mae_mm": 5.134833509124445,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 5.45084136777072,
+      "network_vs_estimated_focus_power_pct": 0.031951979222774304,
+      "network_vs_hold_power_pct": 17.73657580333009,
+      "network_vs_true_focus_power_pct": -13.967686270323995,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 2.61132262921045,
+        "estimated_focus_mean_bpshz": 2.611028772188724,
+        "hold_mean_bpshz": 2.5697257904880013,
+        "network_p05_bpshz": 0.9974213426014841,
+        "network_vs_estimated_focus_pct": 0.011254453602949077
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 2.5782679123850007,
+        "estimated_focus_mean_bpshz": 2.5779777750724113,
+        "hold_mean_bpshz": 2.537197615924862,
+        "network_p05_bpshz": 0.9847957559862754,
+        "network_vs_estimated_focus_pct": 0.011254453602926873
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 2.5121584787341034,
+        "estimated_focus_mean_bpshz": 2.511875780839785,
+        "hold_mean_bpshz": 2.4721412667985834,
+        "network_p05_bpshz": 0.959544582755858,
+        "network_vs_estimated_focus_pct": 0.011254453602949077
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6293812829236235,
+        "10db_network_mean_bpshz": 2.578267912385001,
+        "20db_network_mean_bpshz": 5.539982228935916
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.9409090909090909,
+      "measured_mae_mm_when_detected": 10.90712098878113,
+      "tracked_mae_mm": 9.282556105718092,
+      "tracked_mae_mm_when_missed": 15.347331480449109,
+      "hold_mae_mm": 10.923255087522955,
+      "network_vs_estimated_focus_power_pct": 92.09946424825525,
+      "network_vs_hold_power_pct": 59.53272791520799,
+      "network_vs_true_focus_power_pct": 80.87260951484791,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 0.8241995317274504,
+        "estimated_focus_mean_bpshz": 0.5830687729495213,
+        "hold_mean_bpshz": 0.7958561921161121,
+        "network_p05_bpshz": 0.08457723871286599,
+        "network_vs_estimated_focus_pct": 41.35545753173182
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 0.8137666262625461,
+        "estimated_focus_mean_bpshz": 0.5756881555704135,
+        "hold_mean_bpshz": 0.7857820631019842,
+        "network_p05_bpshz": 0.08350664075447527,
+        "network_vs_estimated_focus_pct": 41.35545753173182
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 0.7929008153327369,
+        "estimated_focus_mean_bpshz": 0.5609269208121977,
+        "hold_mean_bpshz": 0.7656338050737281,
+        "network_p05_bpshz": 0.08136544483769385,
+        "network_vs_estimated_focus_pct": 41.35545753173177
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.12893689397379762,
+        "10db_network_mean_bpshz": 0.8137666262625459,
+        "20db_network_mean_bpshz": 2.7208276072927453
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.2586665375293258,
+      "tracked_mae_mm": 1.1231309329949049,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.2586665375293258,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 0.5323573478698241,
+      "network_vs_true_focus_power_pct": 0.0928564865407976,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 2.857362328510038,
+        "estimated_focus_mean_bpshz": 2.857362328510038,
+        "hold_mean_bpshz": 2.852347235834161,
+        "network_p05_bpshz": 2.1824369086516566,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 2.791591840130011,
+        "estimated_focus_mean_bpshz": 2.791591840130011,
+        "hold_mean_bpshz": 2.7866921843699477,
+        "network_p05_bpshz": 2.1322017879921553,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 2.660050863369958,
+        "estimated_focus_mean_bpshz": 2.660050863369958,
+        "hold_mean_bpshz": 2.6553820814415205,
+        "network_p05_bpshz": 2.0317315466731536,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.7056351102184472,
+        "10db_network_mean_bpshz": 2.791591840130011,
+        "20db_network_mean_bpshz": 5.784150389050542
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 3.414803564979906,
+      "tracked_mae_mm": 2.738824506970067,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 3.414803564979906,
+      "network_vs_estimated_focus_power_pct": 112.45749065915804,
+      "network_vs_hold_power_pct": 5.296977626930255,
+      "network_vs_true_focus_power_pct": 118.36761092197779,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 0.9259828891553367,
+        "estimated_focus_mean_bpshz": 0.6298358738527076,
+        "hold_mean_bpshz": 0.9041116626302366,
+        "network_p05_bpshz": 0.2710535801623012,
+        "network_vs_estimated_focus_pct": 47.01971221345287
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 0.9046687050059813,
+        "estimated_focus_mean_bpshz": 0.6153383729200365,
+        "hold_mean_bpshz": 0.8833009082474432,
+        "network_p05_bpshz": 0.2648144951969285,
+        "network_vs_estimated_focus_pct": 47.01971221345291
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 0.8620403367072701,
+        "estimated_focus_mean_bpshz": 0.5863433710546944,
+        "hold_mean_bpshz": 0.841679399481857,
+        "network_p05_bpshz": 0.2523363252661832,
+        "network_vs_estimated_focus_pct": 47.019712213452934
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.1437750620878826,
+        "10db_network_mean_bpshz": 0.9046687050059812,
+        "20db_network_mean_bpshz": 2.987105707173055
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.3729614375357305,
+      "tracked_mae_mm": 0.3286384330862384,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.3729614375357305,
+      "network_vs_estimated_focus_power_pct": 0.0,
+      "network_vs_hold_power_pct": 0.050245141614386646,
+      "network_vs_true_focus_power_pct": 0.08755073096179943,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.7705595566394883,
+        "estimated_focus_mean_bpshz": 2.7705595566394883,
+        "hold_mean_bpshz": 2.77003873599578,
+        "network_p05_bpshz": 2.115456747772322,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.6170457025776694,
+        "estimated_focus_mean_bpshz": 2.6170457025776694,
+        "hold_mean_bpshz": 2.616553740069892,
+        "network_p05_bpshz": 1.9982414662334858,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 2.310017994454032,
+        "estimated_focus_mean_bpshz": 2.310017994454032,
+        "hold_mean_bpshz": 2.309583748218117,
+        "network_p05_bpshz": 1.7638109031558145,
+        "network_vs_estimated_focus_pct": 0.0
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.6613154842713506,
+        "10db_network_mean_bpshz": 2.617045702577669,
+        "20db_network_mean_bpshz": 5.421976545698875
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.5891825625135214,
+      "tracked_mae_mm": 1.25429890898373,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.5891825625135214,
+      "network_vs_estimated_focus_power_pct": 120.69486482195518,
+      "network_vs_hold_power_pct": 0.593398108020851,
+      "network_vs_true_focus_power_pct": 124.0080953424744,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 0.917875431387267,
+        "estimated_focus_mean_bpshz": 0.5969858097389933,
+        "hold_mean_bpshz": 0.9156296418063274,
+        "network_p05_bpshz": 0.2758479771106757,
+        "network_vs_estimated_focus_pct": 53.75163302266248
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 0.8670168982497137,
+        "estimated_focus_mean_bpshz": 0.5639074403339304,
+        "hold_mean_bpshz": 0.8648955455584832,
+        "network_p05_bpshz": 0.26056352455309206,
+        "network_vs_estimated_focus_pct": 53.75163302266244
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 0.7652998319746078,
+        "estimated_focus_mean_bpshz": 0.4977507015238046,
+        "hold_mean_bpshz": 0.7634273530627953,
+        "network_p05_bpshz": 0.22999461943792487,
+        "network_vs_estimated_focus_pct": 53.75163302266244
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.13914793362625932,
+        "10db_network_mean_bpshz": 0.8670168982497137,
+        "20db_network_mean_bpshz": 2.834700570086844
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.5470588235294118,
+      "measured_mae_mm_when_detected": 13.49767911171587,
+      "tracked_mae_mm": 20.34907321221529,
+      "tracked_mae_mm_when_missed": 30.02792342885901,
+      "hold_mae_mm": 17.609547963675425,
+      "network_vs_estimated_focus_power_pct": 33.138086476685785,
+      "network_vs_hold_power_pct": 186.67801088222637,
+      "network_vs_true_focus_power_pct": -51.163202686782114,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 1.658701181338991,
+        "estimated_focus_mean_bpshz": 1.5874040969332681,
+        "hold_mean_bpshz": 1.5996639230905256,
+        "network_p05_bpshz": 0.05259517499980883,
+        "network_vs_estimated_focus_pct": 4.4914262564562435
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 1.6249353345059,
+        "estimated_focus_mean_bpshz": 1.5550896305288968,
+        "hold_mean_bpshz": 1.5670998858672007,
+        "network_p05_bpshz": 0.05152450558497817,
+        "network_vs_estimated_focus_pct": 4.4914262564562435
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 1.5589590733233927,
+        "estimated_focus_mean_bpshz": 1.4919492719883023,
+        "hold_mean_bpshz": 1.5034718822331419,
+        "network_p05_bpshz": 0.04943248741933975,
+        "network_vs_estimated_focus_pct": 4.4914262564562435
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.3608231698923792,
+        "10db_network_mean_bpshz": 1.6249353345059003,
+        "20db_network_mean_bpshz": 3.9757073133286984
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.00909090909090909,
+      "measured_mae_mm_when_detected": 42.860799879776394,
+      "tracked_mae_mm": 47.75499959002005,
+      "tracked_mae_mm_when_missed": 47.86183845495098,
+      "hold_mae_mm": 41.570683195844154,
+      "network_vs_estimated_focus_power_pct": 41.40064611993685,
+      "network_vs_hold_power_pct": 516.7106908457163,
+      "network_vs_true_focus_power_pct": -21.88913481944823,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 0.367234830065286,
+        "estimated_focus_mean_bpshz": 0.25705662164273896,
+        "hold_mean_bpshz": 0.25471979857180166,
+        "network_p05_bpshz": 0.0034111955582210086,
+        "network_vs_estimated_focus_pct": 42.86145508271495
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 0.3597591043810789,
+        "estimated_focus_mean_bpshz": 0.25182377162040176,
+        "hold_mean_bpshz": 0.2495345187874175,
+        "network_p05_bpshz": 0.003341754535309559,
+        "network_vs_estimated_focus_pct": 42.861455082714926
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 0.345152024253396,
+        "estimated_focus_mean_bpshz": 0.24159912416792714,
+        "hold_mean_bpshz": 0.23940282047551142,
+        "network_p05_bpshz": 0.00320607130820043,
+        "network_vs_estimated_focus_pct": 42.86145508271495
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.055933427880880314,
+        "10db_network_mean_bpshz": 0.35975910438107894,
+        "20db_network_mean_bpshz": 1.2954819652813145
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.7801470588235294,
+      "measured_mae_mm_when_detected": 6.656839876350269,
+      "tracked_mae_mm": 8.460458720332579,
+      "tracked_mae_mm_when_missed": 17.61190182789856,
+      "hold_mae_mm": 8.777021293430277,
+      "network_vs_estimated_focus_power_pct": 5.967473764540591,
+      "network_vs_hold_power_pct": 79.24421956630773,
+      "network_vs_true_focus_power_pct": -17.900808079976475,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 2.4582940936588282,
+        "estimated_focus_mean_bpshz": 2.4421574057962503,
+        "hold_mean_bpshz": 2.3763909602949567,
+        "network_p05_bpshz": 0.3858717628656194,
+        "network_vs_estimated_focus_pct": 0.6607554379696845
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 2.3684164675694253,
+        "estimated_focus_mean_bpshz": 2.3528697527299185,
+        "hold_mean_bpshz": 2.2895077925232212,
+        "network_p05_bpshz": 0.3717639154315979,
+        "network_vs_estimated_focus_pct": 0.6607554379696845
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 2.195934938596057,
+        "estimated_focus_mean_bpshz": 2.181520423765606,
+        "hold_mean_bpshz": 2.1227728411081483,
+        "network_p05_bpshz": 0.344689957186166,
+        "network_vs_estimated_focus_pct": 0.6607554379697067
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.5822277176993743,
+        "10db_network_mean_bpshz": 2.3684164675694257,
+        "20db_network_mean_bpshz": 5.086749867656186
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.015151515151515152,
+      "measured_mae_mm_when_detected": 6.966827276350856,
+      "tracked_mae_mm": 41.769843115582674,
+      "tracked_mae_mm_when_missed": 42.31031840271186,
+      "hold_mae_mm": 40.878259979680124,
+      "network_vs_estimated_focus_power_pct": 15.785720332184278,
+      "network_vs_hold_power_pct": 521.8871740620827,
+      "network_vs_true_focus_power_pct": -29.95838598137139,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 0.3393458322038555,
+        "estimated_focus_mean_bpshz": 0.2825358466071065,
+        "hold_mean_bpshz": 0.24105259763402112,
+        "network_p05_bpshz": 0.004457371419284023,
+        "network_vs_estimated_focus_pct": 20.107178002000147
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 0.3269390181043996,
+        "estimated_focus_mean_bpshz": 0.2722060609058312,
+        "hold_mean_bpshz": 0.23223947991392596,
+        "network_p05_bpshz": 0.004294405579355678,
+        "network_vs_estimated_focus_pct": 20.107178002000147
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 0.30312946328333834,
+        "estimated_focus_mean_bpshz": 0.2523824706615705,
+        "hold_mean_bpshz": 0.21532648292541823,
+        "network_p05_bpshz": 0.003981662592426873,
+        "network_vs_estimated_focus_pct": 20.10717800200017
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.05045998461585977,
+        "10db_network_mean_bpshz": 0.3269390181043996,
+        "20db_network_mean_bpshz": 1.2186454563837692
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 0.9772058823529411,
+      "measured_mae_mm_when_detected": 1.2134663669701287,
+      "tracked_mae_mm": 1.3981254099259777,
+      "tracked_mae_mm_when_missed": 17.77742736085877,
+      "hold_mae_mm": 1.9897262229900181,
+      "network_vs_estimated_focus_power_pct": 7.451677576187328,
+      "network_vs_hold_power_pct": 245.9519255701739,
+      "network_vs_true_focus_power_pct": -0.441738249801092,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6707676756250405,
+        "estimated_focus_mean_bpshz": 2.654491082374524,
+        "hold_mean_bpshz": 2.654965260791711,
+        "network_p05_bpshz": 2.0613530477022057,
+        "network_vs_estimated_focus_pct": 0.6131718941755349
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.4440925862934497,
+        "estimated_focus_mean_bpshz": 2.429197430396226,
+        "hold_mean_bpshz": 2.4296313640418234,
+        "network_p05_bpshz": 1.8864005834739228,
+        "network_vs_estimated_focus_pct": 0.6131718941755127
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 2.030673985757891,
+        "estimated_focus_mean_bpshz": 2.0182983475501044,
+        "hold_mean_bpshz": 2.0186588812592614,
+        "network_p05_bpshz": 1.5673156626968605,
+        "network_vs_estimated_focus_pct": 0.6131718941755349
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.617605108440047,
+        "10db_network_mean_bpshz": 2.4440925862934497,
+        "20db_network_mean_bpshz": 5.065118292781986
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.08333333333333333,
+      "measured_mae_mm_when_detected": 7.285118160756444,
+      "tracked_mae_mm": 14.468112932860917,
+      "tracked_mae_mm_when_missed": 15.12080392355514,
+      "hold_mae_mm": 23.392324170836872,
+      "network_vs_estimated_focus_power_pct": 66.18372103764234,
+      "network_vs_hold_power_pct": 881.3268204141632,
+      "network_vs_true_focus_power_pct": 49.01686537130858,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 0.6367190753444211,
+        "estimated_focus_mean_bpshz": 0.452407466925049,
+        "hold_mean_bpshz": 0.49379050095995053,
+        "network_p05_bpshz": 0.03511426281747505,
+        "network_vs_estimated_focus_pct": 40.74017824509233
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.5826790498491121,
+        "estimated_focus_mean_bpshz": 0.41401045324413643,
+        "hold_mean_bpshz": 0.4518812001481558,
+        "network_p05_bpshz": 0.032134022816217245,
+        "network_vs_estimated_focus_pct": 40.74017824509231
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.4841188076140471,
+        "estimated_focus_mean_bpshz": 0.3439805275583616,
+        "hold_mean_bpshz": 0.37544543236208666,
+        "network_p05_bpshz": 0.026698548392392277,
+        "network_vs_estimated_focus_pct": 40.74017824509233
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.09234101308478126,
+        "10db_network_mean_bpshz": 0.5826790498491122,
+        "20db_network_mean_bpshz": 2.0082471306558176
+      }
+    },
+    {
+      "condition": "weak_target_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "other",
+      "samples": 1360,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.5976553410470992,
+      "tracked_mae_mm": 0.4934670689946568,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.5976553410470992,
+      "network_vs_estimated_focus_power_pct": 0.13908725836286734,
+      "network_vs_hold_power_pct": 0.06034042973260325,
+      "network_vs_true_focus_power_pct": -0.0014765725034316978,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.6801989678832805,
+        "estimated_focus_mean_bpshz": 2.67903148477316,
+        "hold_mean_bpshz": 2.679739724900038,
+        "network_p05_bpshz": 2.0755869106385947,
+        "network_vs_estimated_focus_pct": 0.04357855130692201
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 2.4527234199290024,
+        "estimated_focus_mean_bpshz": 2.4516550241864183,
+        "hold_mean_bpshz": 2.4523031541077205,
+        "network_p05_bpshz": 1.8994263809607834,
+        "network_vs_estimated_focus_pct": 0.04357855130694421
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 2.0378449126848865,
+        "estimated_focus_mean_bpshz": 2.036957236230595,
+        "hold_mean_bpshz": 2.0374957348856624,
+        "network_p05_bpshz": 1.5781381447291114,
+        "network_vs_estimated_focus_pct": 0.04357855130694421
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.61963100497939,
+        "10db_network_mean_bpshz": 2.4527234199290024,
+        "20db_network_mean_bpshz": 5.0824797265376445
+      }
+    },
+    {
+      "condition": "weak_target_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "deep",
+      "samples": 660,
+      "detection_rate": 0.2772727272727273,
+      "measured_mae_mm_when_detected": 3.2355164813868256,
+      "tracked_mae_mm": 10.190853358651438,
+      "tracked_mae_mm_when_missed": 13.116822035641563,
+      "hold_mae_mm": 11.767217382898345,
+      "network_vs_estimated_focus_power_pct": 74.37515235843836,
+      "network_vs_hold_power_pct": 92.05157399907542,
+      "network_vs_true_focus_power_pct": 68.33202457908945,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 0.7686056859618015,
+        "estimated_focus_mean_bpshz": 0.5428371811900079,
+        "hold_mean_bpshz": 0.7533463784647945,
+        "network_p05_bpshz": 0.06619057576665807,
+        "network_vs_estimated_focus_pct": 41.59046443297487
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 0.703372096340276,
+        "estimated_focus_mean_bpshz": 0.49676515940325444,
+        "hold_mean_bpshz": 0.6894078864744069,
+        "network_p05_bpshz": 0.0605728072082958,
+        "network_vs_estimated_focus_pct": 41.5904644329749
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 0.5843966085230375,
+        "estimated_focus_mean_bpshz": 0.41273726367334235,
+        "hold_mean_bpshz": 0.5727944466960635,
+        "network_p05_bpshz": 0.050326908453477835,
+        "network_vs_estimated_focus_pct": 41.59046443297487
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.11496489521256237,
+        "10db_network_mean_bpshz": 0.703372096340276,
+        "20db_network_mean_bpshz": 2.29475569123604
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 5.426086997583765,
+      "tracked_mae_mm": 4.6671212757912395,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 5.426086997583765,
+      "network_vs_estimated_focus_power_pct": 35.107476063162615,
+      "network_vs_hold_power_pct": 20.505325218278784,
+      "network_vs_true_focus_power_pct": 27.160266429935355,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 2.1202260839440994,
+        "estimated_focus_mean_bpshz": 2.018015177889379,
+        "hold_mean_bpshz": 2.0822184234905357,
+        "network_p05_bpshz": 0.27308174178884903,
+        "network_vs_estimated_focus_pct": 5.0649225622585226
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 2.093387779084048,
+        "estimated_focus_mean_bpshz": 1.9924706819667286,
+        "hold_mean_bpshz": 2.0558612282564788,
+        "network_p05_bpshz": 0.26962501088012936,
+        "network_vs_estimated_focus_pct": 5.0649225622585226
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 2.0397111693639443,
+        "estimated_focus_mean_bpshz": 1.9413816901214278,
+        "hold_mean_bpshz": 2.0031468377883637,
+        "network_p05_bpshz": 0.2627115490626902,
+        "network_vs_estimated_focus_pct": 5.064922562258545
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4908095886089848,
+        "10db_network_mean_bpshz": 2.0933877790840474,
+        "20db_network_mean_bpshz": 4.78587053610272
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.2513943631570494,
+      "tracked_mae_mm": 0.9943432132267789,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.2513943631570494,
+      "network_vs_estimated_focus_power_pct": 40.243733007619085,
+      "network_vs_hold_power_pct": 0.9169810555216524,
+      "network_vs_true_focus_power_pct": 40.26350393657619,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 2.230998531081219,
+        "estimated_focus_mean_bpshz": 2.120763019915216,
+        "hold_mean_bpshz": 2.2252542864563454,
+        "network_p05_bpshz": 0.34525107360193036,
+        "network_vs_estimated_focus_pct": 5.197917453804446
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 2.179645623716178,
+        "estimated_focus_mean_bpshz": 2.0719475028327685,
+        "hold_mean_bpshz": 2.1740335995558153,
+        "network_p05_bpshz": 0.3373041179435739,
+        "network_vs_estimated_focus_pct": 5.197917453804424
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 2.076939808986096,
+        "estimated_focus_mean_bpshz": 1.974316468667874,
+        "hold_mean_bpshz": 2.071592225754756,
+        "network_p05_bpshz": 0.321410206626861,
+        "network_vs_estimated_focus_pct": 5.1979174538044015
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.5226342278224011,
+        "10db_network_mean_bpshz": 2.179645623716178,
+        "20db_network_mean_bpshz": 4.880091922433531
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.5562177235654332,
+      "tracked_mae_mm": 0.453399761741042,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.5562177235654332,
+      "network_vs_estimated_focus_power_pct": 40.833608239713115,
+      "network_vs_hold_power_pct": 0.1853899996847848,
+      "network_vs_true_focus_power_pct": 40.74680775430039,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.164902110657879,
+        "estimated_focus_mean_bpshz": 2.0574073119013,
+        "hold_mean_bpshz": 2.1642688918971524,
+        "network_p05_bpshz": 0.33465513272412184,
+        "network_vs_estimated_focus_pct": 5.224769939076412
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.0449471124420064,
+        "estimated_focus_mean_bpshz": 1.943408489869829,
+        "hold_mean_bpshz": 2.044348979681215,
+        "network_p05_bpshz": 0.3161122361879567,
+        "network_vs_estimated_focus_pct": 5.224769939076412
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 1.8050371160102632,
+        "estimated_focus_mean_bpshz": 1.7154108458068882,
+        "hold_mean_bpshz": 1.804509155249341,
+        "network_p05_bpshz": 0.27902644311562663,
+        "network_vs_estimated_focus_pct": 5.224769939076435
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4906059301104642,
+        "10db_network_mean_bpshz": 2.044947112442007,
+        "20db_network_mean_bpshz": 4.577119705280811
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.5564356435643565,
+      "measured_mae_mm_when_detected": 12.98057230954098,
+      "tracked_mae_mm": 25.11255621371329,
+      "tracked_mae_mm_when_missed": 41.42648876203682,
+      "hold_mae_mm": 22.289754908883044,
+      "network_vs_estimated_focus_power_pct": 20.630719395600405,
+      "network_vs_hold_power_pct": 180.0098273704634,
+      "network_vs_true_focus_power_pct": -37.153225114945386,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 1.4262037230115874,
+        "estimated_focus_mean_bpshz": 1.374627219633072,
+        "hold_mean_bpshz": 1.3688377278401402,
+        "network_p05_bpshz": 0.005392321527413985,
+        "network_vs_estimated_focus_pct": 3.752035653148389
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 1.3971707802454179,
+        "estimated_focus_mean_bpshz": 1.346644209388117,
+        "hold_mean_bpshz": 1.340972573116916,
+        "network_p05_bpshz": 0.005282551121015374,
+        "network_vs_estimated_focus_pct": 3.752035653148411
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 1.3404423047445333,
+        "estimated_focus_mean_bpshz": 1.2919672335160175,
+        "hold_mean_bpshz": 1.28652587924313,
+        "network_p05_bpshz": 0.00506806691043229,
+        "network_vs_estimated_focus_pct": 3.752035653148389
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.30956281861051804,
+        "10db_network_mean_bpshz": 1.3971707802454179,
+        "20db_network_mean_bpshz": 3.416535269107651
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.7881188118811882,
+      "measured_mae_mm_when_detected": 3.531408885384773,
+      "tracked_mae_mm": 8.503056799741186,
+      "tracked_mae_mm_when_missed": 28.04347215705636,
+      "hold_mae_mm": 7.070417346738053,
+      "network_vs_estimated_focus_power_pct": 15.16342567936684,
+      "network_vs_hold_power_pct": 7.523692797730444,
+      "network_vs_true_focus_power_pct": 3.4096746057015794,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 2.0733108737815975,
+        "estimated_focus_mean_bpshz": 2.0137405384135834,
+        "hold_mean_bpshz": 2.058684483888577,
+        "network_p05_bpshz": 0.023503114291933618,
+        "network_vs_estimated_focus_pct": 2.9581931848550624
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 1.9975086091292473,
+        "estimated_focus_mean_bpshz": 1.9401162232352354,
+        "hold_mean_bpshz": 1.9834169742947179,
+        "network_p05_bpshz": 0.022643817544764164,
+        "network_vs_estimated_focus_pct": 2.9581931848550624
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 1.8520386954726957,
+        "estimated_focus_mean_bpshz": 1.798825948846514,
+        "hold_mean_bpshz": 1.838973293463041,
+        "network_p05_bpshz": 0.02099476623753227,
+        "network_vs_estimated_focus_pct": 2.9581931848550624
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.47839859602902024,
+        "10db_network_mean_bpshz": 1.9975086091292473,
+        "20db_network_mean_bpshz": 4.432226109101168
+      }
+    },
+    {
+      "condition": "clean",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.800990099009901,
+      "measured_mae_mm_when_detected": 0.7650287298176645,
+      "tracked_mae_mm": 2.5175543032920693,
+      "tracked_mae_mm_when_missed": 10.099070060492114,
+      "hold_mae_mm": 3.269357906081459,
+      "network_vs_estimated_focus_power_pct": 24.18243645127354,
+      "network_vs_hold_power_pct": 12.485029303494867,
+      "network_vs_true_focus_power_pct": 28.212442992669796,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.0739657583897175,
+        "estimated_focus_mean_bpshz": 1.996143380240057,
+        "hold_mean_bpshz": 2.0691536649665534,
+        "network_p05_bpshz": 0.19593405960480004,
+        "network_vs_estimated_focus_pct": 3.898636687125223
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.8979428201745367,
+        "estimated_focus_mean_bpshz": 1.826725432297923,
+        "hold_mean_bpshz": 1.8935391417986722,
+        "network_p05_bpshz": 0.17930461973649506,
+        "network_vs_estimated_focus_pct": 3.898636687125223
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.5769055284559732,
+        "estimated_focus_mean_bpshz": 1.5177345716331017,
+        "hold_mean_bpshz": 1.5732467328892006,
+        "network_p05_bpshz": 0.1489752183968184,
+        "network_vs_estimated_focus_pct": 3.8986366871252676
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.45754045590463144,
+        "10db_network_mean_bpshz": 1.897942820174537,
+        "20db_network_mean_bpshz": 4.2212091091189725
+      }
+    },
+    {
+      "condition": "multipath_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.808910891089109,
+      "measured_mae_mm_when_detected": 1.0270210056688653,
+      "tracked_mae_mm": 3.016622078372959,
+      "tracked_mae_mm_when_missed": 12.039889017459133,
+      "hold_mae_mm": 3.4323625736891916,
+      "network_vs_estimated_focus_power_pct": 22.00868600132051,
+      "network_vs_hold_power_pct": 6.68331802335901,
+      "network_vs_true_focus_power_pct": 28.32457530976252,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.073464872960611,
+        "estimated_focus_mean_bpshz": 2.003859857672741,
+        "hold_mean_bpshz": 2.069421838435837,
+        "network_p05_bpshz": 0.2254676465122261,
+        "network_vs_estimated_focus_pct": 3.473547065746807
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.8974844462114868,
+        "estimated_focus_mean_bpshz": 1.8337869919602061,
+        "hold_mean_bpshz": 1.8937845546790584,
+        "network_p05_bpshz": 0.20633161331061803,
+        "network_vs_estimated_focus_pct": 3.4735470657468293
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.5765246885124562,
+        "estimated_focus_mean_bpshz": 1.5236016674974295,
+        "hold_mean_bpshz": 1.573450634146773,
+        "network_p05_bpshz": 0.17143059225294927,
+        "network_vs_estimated_focus_pct": 3.4735470657468293
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.457160699434142,
+        "10db_network_mean_bpshz": 1.8974844462114868,
+        "20db_network_mean_bpshz": 4.226325155082033
+      }
+    },
+    {
+      "condition": "obstacle_echo_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.7410891089108911,
+      "measured_mae_mm_when_detected": 1.1224406469619606,
+      "tracked_mae_mm": 4.529413416543397,
+      "tracked_mae_mm_when_missed": 14.913640901903854,
+      "hold_mae_mm": 5.830972323103184,
+      "network_vs_estimated_focus_power_pct": 27.58061501505051,
+      "network_vs_hold_power_pct": 123.15926100562105,
+      "network_vs_true_focus_power_pct": 23.277354060459945,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.053017594422144,
+        "estimated_focus_mean_bpshz": 1.9729960456043198,
+        "hold_mean_bpshz": 2.0264438574715538,
+        "network_p05_bpshz": 0.146491015293314,
+        "network_vs_estimated_focus_pct": 4.055839290509766
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.8787725820752517,
+        "estimated_focus_mean_bpshz": 1.805542672939261,
+        "hold_mean_bpshz": 1.8544542281937781,
+        "network_p05_bpshz": 0.13405793686386347,
+        "network_vs_estimated_focus_pct": 4.055839290509766
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.5609779387945522,
+        "estimated_focus_mean_bpshz": 1.5001348789629325,
+        "hold_mean_bpshz": 1.540773037850741,
+        "network_p05_bpshz": 0.11138201821832962,
+        "network_vs_estimated_focus_pct": 4.055839290509766
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.45427889217092815,
+        "10db_network_mean_bpshz": 1.8787725820752519,
+        "20db_network_mean_bpshz": 4.161879654111859
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.999009900990099,
+      "measured_mae_mm_when_detected": 5.189240005592459,
+      "tracked_mae_mm": 4.640785123035879,
+      "tracked_mae_mm_when_missed": 15.890155089705045,
+      "hold_mae_mm": 5.197938387980559,
+      "network_vs_estimated_focus_power_pct": 30.94671206348987,
+      "network_vs_hold_power_pct": 20.945462484687962,
+      "network_vs_true_focus_power_pct": 27.81222333842761,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 2.1387419342883094,
+        "estimated_focus_mean_bpshz": 2.0591328718848385,
+        "hold_mean_bpshz": 2.098802709111938,
+        "network_p05_bpshz": 0.2824518607659657,
+        "network_vs_estimated_focus_pct": 3.8661449919256574
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 2.1116692515757993,
+        "estimated_focus_mean_bpshz": 2.0330678988230044,
+        "hold_mean_bpshz": 2.0722355862117863,
+        "network_p05_bpshz": 0.2788765207562699,
+        "network_vs_estimated_focus_pct": 3.866144991925702
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 2.0575238861507783,
+        "estimated_focus_mean_bpshz": 1.980937952699338,
+        "hold_mean_bpshz": 2.019101340411484,
+        "network_p05_bpshz": 0.2717258407368784,
+        "network_vs_estimated_focus_pct": 3.8661449919256574
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.49707624732734684,
+        "10db_network_mean_bpshz": 2.1116692515757984,
+        "20db_network_mean_bpshz": 4.812743474253621
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.409278701680166,
+      "tracked_mae_mm": 1.2247376090159137,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.409278701680166,
+      "network_vs_estimated_focus_power_pct": 39.15654221367693,
+      "network_vs_hold_power_pct": 0.7749734564539414,
+      "network_vs_true_focus_power_pct": 39.766322282206104,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 2.231315796646499,
+        "estimated_focus_mean_bpshz": 2.1294224290181742,
+        "hold_mean_bpshz": 2.227562063870574,
+        "network_p05_bpshz": 0.3414395700660985,
+        "network_vs_estimated_focus_pct": 4.785023687165024
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 2.1799555864935094,
+        "estimated_focus_mean_bpshz": 2.0804075904985746,
+        "hold_mean_bpshz": 2.1762882567738084,
+        "network_p05_bpshz": 0.33358034722570234,
+        "network_vs_estimated_focus_pct": 4.78502368716498
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 2.077235166187533,
+        "estimated_focus_mean_bpshz": 1.9823779134593744,
+        "hold_mean_bpshz": 2.0737406425802782,
+        "network_p05_bpshz": 0.3178619015449101,
+        "network_vs_estimated_focus_pct": 4.785023687165002
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.5236814025765977,
+        "10db_network_mean_bpshz": 2.1799555864935103,
+        "20db_network_mean_bpshz": 4.878582985816568
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "alternate",
+      "region": "all",
+      "samples": 505,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.5857802994834723,
+      "tracked_mae_mm": 0.5019975567704188,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.5857802994834723,
+      "network_vs_estimated_focus_power_pct": 27.730095415517376,
+      "network_vs_hold_power_pct": -0.010021764505044476,
+      "network_vs_true_focus_power_pct": 29.904185790040984,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.279906062468009,
+        "estimated_focus_mean_bpshz": 2.175393037944517,
+        "hold_mean_bpshz": 2.2801198547305357,
+        "network_p05_bpshz": 0.5244543575345476,
+        "network_vs_estimated_focus_pct": 4.804328353567056
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.1535788136241347,
+        "estimated_focus_mean_bpshz": 2.0548567482431057,
+        "hold_mean_bpshz": 2.1537807598773924,
+        "network_p05_bpshz": 0.4953948812595462,
+        "network_vs_estimated_focus_pct": 4.804328353567033
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 1.9009243159363876,
+        "estimated_focus_mean_bpshz": 1.813784168840283,
+        "hold_mean_bpshz": 1.901102570171106,
+        "network_p05_bpshz": 0.4372759287095436,
+        "network_vs_estimated_focus_pct": 4.804328353567078
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.5092529626674479,
+        "10db_network_mean_bpshz": 2.153578813624135,
+        "20db_network_mean_bpshz": 4.7902346151463835
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "steady",
+      "region": "all",
+      "samples": 505,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.6190099009900996,
+      "tracked_mae_mm": 0.5153964127452803,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.6190099009900996,
+      "network_vs_estimated_focus_power_pct": 32.88197899987252,
+      "network_vs_hold_power_pct": 0.0017918387927669793,
+      "network_vs_true_focus_power_pct": 34.136458481517614,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.247251285010141,
+        "estimated_focus_mean_bpshz": 2.1285651272013206,
+        "hold_mean_bpshz": 2.2473309102579817,
+        "network_p05_bpshz": 0.457240912410294,
+        "network_vs_estimated_focus_pct": 5.575876269516433
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.122733403782666,
+        "estimated_focus_mean_bpshz": 2.0106235238471575,
+        "hold_mean_bpshz": 2.1228086170774603,
+        "network_p05_bpshz": 0.4319056639653964,
+        "network_vs_estimated_focus_pct": 5.575876269516433
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 1.8736976413277164,
+        "estimated_focus_mean_bpshz": 1.774740317138832,
+        "hold_mean_bpshz": 1.8737640307164176,
+        "network_p05_bpshz": 0.38123516707560134,
+        "network_vs_estimated_focus_pct": 5.575876269516411
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.5052873228626406,
+        "10db_network_mean_bpshz": 2.122733403782666,
+        "20db_network_mean_bpshz": 4.733003489952083
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.5978067527574509,
+      "tracked_mae_mm": 0.4880727624000404,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.5978067527574509,
+      "network_vs_estimated_focus_power_pct": 40.00389903848944,
+      "network_vs_hold_power_pct": 0.10443365965824107,
+      "network_vs_true_focus_power_pct": 40.6028576950678,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.165075698518568,
+        "estimated_focus_mean_bpshz": 2.059115099555245,
+        "hold_mean_bpshz": 2.1646637274380858,
+        "network_p05_bpshz": 0.33465513272412184,
+        "network_vs_estimated_focus_pct": 5.145928898593866
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.045111081977961,
+        "estimated_focus_mean_bpshz": 1.9450216507672233,
+        "hold_mean_bpshz": 2.0447219377911203,
+        "network_p05_bpshz": 0.3161122361879567,
+        "network_vs_estimated_focus_pct": 5.145928898593866
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 1.8051818488967484,
+        "estimated_focus_mean_bpshz": 1.716834753191181,
+        "hold_mean_bpshz": 1.8048383584971903,
+        "network_p05_bpshz": 0.27902644311562663,
+        "network_vs_estimated_focus_pct": 5.145928898593843
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4906727665182794,
+        "10db_network_mean_bpshz": 2.045111081977961,
+        "20db_network_mean_bpshz": 4.576753033451073
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.3925742574257426,
+      "measured_mae_mm_when_detected": 14.919672290587828,
+      "tracked_mae_mm": 31.217796180863562,
+      "tracked_mae_mm_when_missed": 42.42436087441995,
+      "hold_mae_mm": 24.717495013981164,
+      "network_vs_estimated_focus_power_pct": 30.623647035316726,
+      "network_vs_hold_power_pct": 74.6396169410397,
+      "network_vs_true_focus_power_pct": -53.55694105012847,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 1.183241663520859,
+        "estimated_focus_mean_bpshz": 1.1140486419401734,
+        "hold_mean_bpshz": 1.1352294979399216,
+        "network_p05_bpshz": 0.004359760830701646,
+        "network_vs_estimated_focus_pct": 6.21095156672713
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 1.159154650605896,
+        "estimated_focus_mean_bpshz": 1.0913701774695577,
+        "hold_mean_bpshz": 1.1121198590374508,
+        "network_p05_bpshz": 0.004271010055037797,
+        "network_vs_estimated_focus_pct": 6.210951566727152
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 1.112090199267254,
+        "estimated_focus_mean_bpshz": 1.0470579378705427,
+        "hold_mean_bpshz": 1.0669651327366536,
+        "network_p05_bpshz": 0.004097596831187893,
+        "network_vs_estimated_focus_pct": 6.210951566727152
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.24899061713421514,
+        "10db_network_mean_bpshz": 1.159154650605896,
+        "20db_network_mean_bpshz": 2.9929965313438913
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.5757425742574257,
+      "measured_mae_mm_when_detected": 7.136231197232773,
+      "tracked_mae_mm": 17.992871596655043,
+      "tracked_mae_mm_when_missed": 33.71862658826968,
+      "hold_mae_mm": 16.99469779794555,
+      "network_vs_estimated_focus_power_pct": 5.46620108785936,
+      "network_vs_hold_power_pct": 162.21610976964774,
+      "network_vs_true_focus_power_pct": -15.493633280872302,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 1.7931858315190374,
+        "estimated_focus_mean_bpshz": 1.7656103222101236,
+        "hold_mean_bpshz": 1.7174265076833983,
+        "network_p05_bpshz": 0.005444695791926598,
+        "network_vs_estimated_focus_pct": 1.5618117407920407
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 1.7276252112133492,
+        "estimated_focus_mean_bpshz": 1.7010578893793529,
+        "hold_mean_bpshz": 1.6546357220358374,
+        "network_p05_bpshz": 0.005245632411422362,
+        "network_vs_estimated_focus_pct": 1.5618117407920629
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 1.6018097382999974,
+        "estimated_focus_mean_bpshz": 1.5771771996231871,
+        "hold_mean_bpshz": 1.53413575797184,
+        "network_p05_bpshz": 0.004863615687951888,
+        "network_vs_estimated_focus_pct": 1.5618117407920629
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4106401290146854,
+        "10db_network_mean_bpshz": 1.7276252112133492,
+        "20db_network_mean_bpshz": 3.905333877244798
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "alternate",
+      "region": "all",
+      "samples": 505,
+      "detection_rate": 0.7702970297029703,
+      "measured_mae_mm_when_detected": 1.5214466736697136,
+      "tracked_mae_mm": 4.258956347792179,
+      "tracked_mae_mm_when_missed": 14.579723267343992,
+      "hold_mae_mm": 6.665706737726555,
+      "network_vs_estimated_focus_power_pct": 35.01060702075968,
+      "network_vs_hold_power_pct": 216.80824464060797,
+      "network_vs_true_focus_power_pct": 13.809585863519496,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.1420473424607014,
+        "estimated_focus_mean_bpshz": 2.0391009613322577,
+        "hold_mean_bpshz": 2.088678266428672,
+        "network_p05_bpshz": 0.1378238105477925,
+        "network_vs_estimated_focus_pct": 5.048616183339116
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.9602461408301093,
+        "estimated_focus_mean_bpshz": 1.866037090302012,
+        "hold_mean_bpshz": 1.9114066388930158,
+        "network_p05_bpshz": 0.12612634062067513,
+        "network_vs_estimated_focus_pct": 5.048616183339094
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.6286702337666963,
+        "estimated_focus_mean_bpshz": 1.5503966572241303,
+        "hold_mean_bpshz": 1.5880919403676588,
+        "network_p05_bpshz": 0.10479205258163349,
+        "network_vs_estimated_focus_pct": 5.048616183339094
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.46766310731976174,
+        "10db_network_mean_bpshz": 1.9602461408301093,
+        "20db_network_mean_bpshz": 4.332621224789493
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "steady",
+      "region": "all",
+      "samples": 505,
+      "detection_rate": 0.7247524752475247,
+      "measured_mae_mm_when_detected": 1.4603825136612023,
+      "tracked_mae_mm": 7.867523168376857,
+      "tracked_mae_mm_when_missed": 25.382464312553623,
+      "hold_mae_mm": 8.274851485148515,
+      "network_vs_estimated_focus_power_pct": 7.994416986444029,
+      "network_vs_hold_power_pct": 24.985419231442116,
+      "network_vs_true_focus_power_pct": 0.8817191250202873,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.023227861468388,
+        "estimated_focus_mean_bpshz": 1.9831217494024704,
+        "hold_mean_bpshz": 2.019420806693871,
+        "network_p05_bpshz": 0.030945576549002644,
+        "network_vs_estimated_focus_pct": 2.0223726595707925
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.8515111822446215,
+        "estimated_focus_mean_bpshz": 1.814808981577758,
+        "hold_mean_bpshz": 1.8480272422393071,
+        "network_p05_bpshz": 0.02831914393463415,
+        "network_vs_estimated_focus_pct": 2.0223726595707925
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.5383278085327692,
+        "estimated_focus_mean_bpshz": 1.5078337902078358,
+        "hold_mean_bpshz": 1.535433177463386,
+        "network_p05_bpshz": 0.02352895680363983,
+        "network_vs_estimated_focus_pct": 2.0223726595707925
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4497749067578108,
+        "10db_network_mean_bpshz": 1.8515111822446215,
+        "20db_network_mean_bpshz": 4.059202351161698
+      }
+    },
+    {
+      "condition": "reflective",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.695049504950495,
+      "measured_mae_mm_when_detected": 1.156659868597945,
+      "tracked_mae_mm": 4.698237540392376,
+      "tracked_mae_mm_when_missed": 13.23104787782173,
+      "hold_mae_mm": 8.155882618396891,
+      "network_vs_estimated_focus_power_pct": 29.40562399060216,
+      "network_vs_hold_power_pct": 490.9698995645096,
+      "network_vs_true_focus_power_pct": 21.353051312248397,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.029780536322355,
+        "estimated_focus_mean_bpshz": 1.9528458214409679,
+        "hold_mean_bpshz": 1.9753899151934884,
+        "network_p05_bpshz": 0.12452622292607711,
+        "network_vs_estimated_focus_pct": 3.9396205290092245
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.8575077143193273,
+        "estimated_focus_mean_bpshz": 1.7871026513906716,
+        "hold_mean_bpshz": 1.8077333685092416,
+        "network_p05_bpshz": 0.1139573542957167,
+        "network_vs_estimated_focus_pct": 3.939620529009269
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.5433100263739248,
+        "estimated_focus_mean_bpshz": 1.4848139896212065,
+        "hold_mean_bpshz": 1.501955018072892,
+        "network_p05_bpshz": 0.0946814519842101,
+        "network_vs_estimated_focus_pct": 3.9396205290092468
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.44995785603055016,
+        "10db_network_mean_bpshz": 1.857507714319327,
+        "20db_network_mean_bpshz": 4.121921652330657
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.9806930693069307,
+      "measured_mae_mm_when_detected": 7.16126521665889,
+      "tracked_mae_mm": 6.490030001080785,
+      "tracked_mae_mm_when_missed": 15.347331480449109,
+      "hold_mae_mm": 7.238857731650164,
+      "network_vs_estimated_focus_power_pct": 30.113416383956153,
+      "network_vs_hold_power_pct": 31.392744315131775,
+      "network_vs_true_focus_power_pct": 17.0197371050292,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9875,
+        "network_mean_bpshz": 2.027411122112044,
+        "estimated_focus_mean_bpshz": 1.9484279803580937,
+        "hold_mean_bpshz": 1.9901446345843148,
+        "network_p05_bpshz": 0.20390963098887782,
+        "network_vs_estimated_focus_pct": 4.053685460800782
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.975,
+        "network_mean_bpshz": 2.001747690186575,
+        "estimated_focus_mean_bpshz": 1.923764335037105,
+        "hold_mean_bpshz": 1.9649529303490705,
+        "network_p05_bpshz": 0.20132849641939835,
+        "network_vs_estimated_focus_pct": 4.053685460800782
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.95,
+        "network_mean_bpshz": 1.9504208263356375,
+        "estimated_focus_mean_bpshz": 1.8744370443951277,
+        "hold_mean_bpshz": 1.9145695218785812,
+        "network_p05_bpshz": 0.19616622728043942,
+        "network_vs_estimated_focus_pct": 4.053685460800804
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.46586974990041313,
+        "10db_network_mean_bpshz": 2.0017476901865754,
+        "20db_network_mean_bpshz": 4.618872303052503
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 1.9631469524389213,
+      "tracked_mae_mm": 1.6510308136006508,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 1.9631469524389213,
+      "network_vs_estimated_focus_power_pct": 36.743536552002126,
+      "network_vs_hold_power_pct": 2.089114468750955,
+      "network_vs_true_focus_power_pct": 38.737083183267735,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9775,
+        "network_mean_bpshz": 2.226317561196125,
+        "estimated_focus_mean_bpshz": 2.1295566552061573,
+        "hold_mean_bpshz": 2.21579501884674,
+        "network_p05_bpshz": 0.3211725218437085,
+        "network_vs_estimated_focus_pct": 4.543711281567209
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.955,
+        "network_mean_bpshz": 2.1750723999409716,
+        "estimated_focus_mean_bpshz": 2.0805387270812075,
+        "hold_mean_bpshz": 2.1647920644487333,
+        "network_p05_bpshz": 0.31377980394960775,
+        "network_vs_estimated_focus_pct": 4.543711281567231
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.91,
+        "network_mean_bpshz": 2.0725820774306642,
+        "estimated_focus_mean_bpshz": 1.9825028708313077,
+        "hold_mean_bpshz": 2.0627861556527196,
+        "network_p05_bpshz": 0.29899436816140634,
+        "network_vs_estimated_focus_pct": 4.543711281567231
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.522057074690639,
+        "10db_network_mean_bpshz": 2.1750723999409716,
+        "20db_network_mean_bpshz": 4.870264502892552
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "active",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 1.0,
+      "measured_mae_mm_when_detected": 0.7703406169839196,
+      "tracked_mae_mm": 0.6310819549141318,
+      "tracked_mae_mm_when_missed": null,
+      "hold_mae_mm": 0.7703406169839196,
+      "network_vs_estimated_focus_power_pct": 39.43495583291604,
+      "network_vs_hold_power_pct": 0.22771096232144925,
+      "network_vs_true_focus_power_pct": 40.57644154462434,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.9475,
+        "network_mean_bpshz": 2.1652271196758908,
+        "estimated_focus_mean_bpshz": 2.0603819957710092,
+        "hold_mean_bpshz": 2.1641426953200185,
+        "network_p05_bpshz": 0.33096060627890367,
+        "network_vs_estimated_focus_pct": 5.088625513136846
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8949999999999999,
+        "network_mean_bpshz": 2.0452541130447726,
+        "estimated_focus_mean_bpshz": 1.9462183495673386,
+        "hold_mean_bpshz": 2.044229775526561,
+        "network_p05_bpshz": 0.31262241965131266,
+        "network_vs_estimated_focus_pct": 5.088625513136824
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.79,
+        "network_mean_bpshz": 1.805308099782537,
+        "estimated_focus_mean_bpshz": 1.7178910571599975,
+        "hold_mean_bpshz": 1.804403935939646,
+        "network_p05_bpshz": 0.27594604639613074,
+        "network_vs_estimated_focus_pct": 5.088625513136824
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.49070628455562776,
+        "10db_network_mean_bpshz": 2.045254113044773,
+        "20db_network_mean_bpshz": 4.5766289497068255
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 5,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.3712871287128713,
+      "measured_mae_mm_when_detected": 13.732584077860352,
+      "tracked_mae_mm": 29.303484801002984,
+      "tracked_mae_mm_when_missed": 39.21168754465755,
+      "hold_mae_mm": 25.438433732601847,
+      "network_vs_estimated_focus_power_pct": 35.83773467695593,
+      "network_vs_hold_power_pct": 294.5104706722775,
+      "network_vs_true_focus_power_pct": -41.598408235078956,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9875,
+        "session_data_fraction_including_calibration": 0.9797396856581532,
+        "network_mean_bpshz": 1.2367369279525329,
+        "estimated_focus_mean_bpshz": 1.1527361099571545,
+        "hold_mean_bpshz": 1.1602267338913383,
+        "network_p05_bpshz": 0.004700060963323544,
+        "network_vs_estimated_focus_pct": 7.287081342363821
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.975,
+        "session_data_fraction_including_calibration": 0.9597953216374269,
+        "network_mean_bpshz": 1.2115609226829387,
+        "estimated_focus_mean_bpshz": 1.1292700924696855,
+        "hold_mean_bpshz": 1.1366082312767765,
+        "network_p05_bpshz": 0.004604382766202072,
+        "network_vs_estimated_focus_pct": 7.287081342363821
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.95,
+        "session_data_fraction_including_calibration": 0.9208253358925144,
+        "network_mean_bpshz": 1.1623686513500273,
+        "estimated_focus_mean_bpshz": 1.083419025670754,
+        "hold_mean_bpshz": 1.09045921849055,
+        "network_p05_bpshz": 0.004417433812901383,
+        "network_vs_estimated_focus_pct": 7.287081342363799
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.26120572943317655,
+        "10db_network_mean_bpshz": 1.211560922682939,
+        "20db_network_mean_bpshz": 3.099990120402326
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 9,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.5301980198019802,
+      "measured_mae_mm_when_detected": 6.659734249833002,
+      "tracked_mae_mm": 19.343722928681622,
+      "tracked_mae_mm_when_missed": 34.528625509277525,
+      "hold_mae_mm": 19.265544824581216,
+      "network_vs_estimated_focus_power_pct": 9.175415712384567,
+      "network_vs_hold_power_pct": 223.87013539165994,
+      "network_vs_true_focus_power_pct": -21.84041274082828,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9775,
+        "session_data_fraction_including_calibration": 0.9637592737212026,
+        "network_mean_bpshz": 1.7659644636784906,
+        "estimated_focus_mean_bpshz": 1.7365384805166288,
+        "hold_mean_bpshz": 1.678706148732473,
+        "network_p05_bpshz": 0.00804984172787539,
+        "network_vs_estimated_focus_pct": 1.6945194991076384
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.955,
+        "session_data_fraction_including_calibration": 0.9285232961108971,
+        "network_mean_bpshz": 1.7013990830907537,
+        "estimated_focus_mean_bpshz": 1.6730489425299693,
+        "hold_mean_bpshz": 1.6173310171162236,
+        "network_p05_bpshz": 0.007755531674915036,
+        "network_vs_estimated_focus_pct": 1.6945194991076384
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.91,
+        "session_data_fraction_including_calibration": 0.8609029599100787,
+        "network_mean_bpshz": 1.5774935456720995,
+        "estimated_focus_mean_bpshz": 1.5512080232464658,
+        "hold_mean_bpshz": 1.499547793385078,
+        "network_p05_bpshz": 0.0071907298422949776,
+        "network_vs_estimated_focus_pct": 1.6945194991076606
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4084818247116913,
+        "10db_network_mean_bpshz": 1.7013990830907535,
+        "20db_network_mean_bpshz": 3.8229137728840104
+      }
+    },
+    {
+      "condition": "reflective_high_noise",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.6851485148514852,
+      "measured_mae_mm_when_detected": 1.4547531073301336,
+      "tracked_mae_mm": 5.668517372865116,
+      "tracked_mae_mm_when_missed": 15.25029343071931,
+      "hold_mae_mm": 8.982654265355821,
+      "network_vs_estimated_focus_power_pct": 26.64135514280134,
+      "network_vs_hold_power_pct": 453.54966348949705,
+      "network_vs_true_focus_power_pct": 15.718003527393154,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.0061775388996894,
+        "estimated_focus_mean_bpshz": 1.9349984159405371,
+        "hold_mean_bpshz": 1.948838854114007,
+        "network_p05_bpshz": 0.08947556126804398,
+        "network_vs_estimated_focus_pct": 3.6785106578267834
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.8359079654750028,
+        "estimated_focus_mean_bpshz": 1.7707700022178203,
+        "hold_mean_bpshz": 1.7834357659379516,
+        "network_p05_bpshz": 0.08188153464096888,
+        "network_vs_estimated_focus_pct": 3.6785106578268056
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.5253638780475263,
+        "estimated_focus_mean_bpshz": 1.4712440103250795,
+        "hold_mean_bpshz": 1.481767358352264,
+        "network_p05_bpshz": 0.06803126168043837,
+        "network_vs_estimated_focus_pct": 3.678510657826828
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4459841663932769,
+        "10db_network_mean_bpshz": 1.835907965475003,
+        "20db_network_mean_bpshz": 4.066338606146703
+      }
+    },
+    {
+      "condition": "weak_target_only",
+      "mode": "passive",
+      "n_pilots": 21,
+      "motion": "variable",
+      "region": "all",
+      "samples": 2020,
+      "detection_rate": 0.7638613861386139,
+      "measured_mae_mm_when_detected": 0.9105060142046949,
+      "tracked_mae_mm": 3.66192001512014,
+      "tracked_mae_mm_when_missed": 13.116822035641563,
+      "hold_mae_mm": 4.247116206206416,
+      "network_vs_estimated_focus_power_pct": 24.39443526135783,
+      "network_vs_hold_power_pct": 30.116882091003035,
+      "network_vs_true_focus_power_pct": 22.325310932472462,
+      "rate_0.05ms": {
+        "online_data_fraction": 0.9475,
+        "session_data_fraction_including_calibration": 0.916994059026447,
+        "network_mean_bpshz": 2.055618984681213,
+        "estimated_focus_mean_bpshz": 1.9810670093450011,
+        "hold_mean_bpshz": 2.050324077054859,
+        "network_p05_bpshz": 0.14217148437304777,
+        "network_vs_estimated_focus_pct": 3.763223302621199
+      },
+      "rate_0.10ms": {
+        "online_data_fraction": 0.895,
+        "session_data_fraction_including_calibration": 0.8391663572224284,
+        "network_mean_bpshz": 1.8811531854891215,
+        "estimated_focus_mean_bpshz": 1.8129286327226124,
+        "hold_mean_bpshz": 1.8763076706235682,
+        "network_p05_bpshz": 0.13010501591351642,
+        "network_vs_estimated_focus_pct": 3.763223302621199
+      },
+      "rate_0.20ms": {
+        "online_data_fraction": 0.79,
+        "session_data_fraction_including_calibration": 0.6972212513107305,
+        "network_mean_bpshz": 1.562955862810223,
+        "estimated_focus_mean_bpshz": 1.50627150262278,
+        "hold_mean_bpshz": 1.5589299674573776,
+        "network_p05_bpshz": 0.10809773439592314,
+        "network_vs_estimated_focus_pct": 3.763223302621199
+      },
+      "rate_0.10ms_snr_sweep": {
+        "0db_network_mean_bpshz": 0.4547400978278523,
+        "10db_network_mean_bpshz": 1.881153185489122,
+        "20db_network_mean_bpshz": 4.171639200151971
+      }
+    }
+  ],
+  "paired_run_bootstrap": [
+    {
+      "region": "all",
+      "comparison": "active_9_minus_passive_21",
+      "mean_difference_bpshz": 0.32244787217418275,
+      "bootstrap_95pct_ci_bpshz": [
+        0.2944904430027615,
+        0.3549582202183728
+      ]
+    },
+    {
+      "region": "all",
+      "comparison": "active_9_minus_active_21",
+      "mean_difference_bpshz": 0.13484450451554836,
+      "bootstrap_95pct_ci_bpshz": [
+        0.13270427128714468,
+        0.13667589350896503
+      ]
+    },
+    {
+      "region": "all",
+      "comparison": "passive_21_minus_passive_9",
+      "mean_difference_bpshz": 0.1298825031059782,
+      "bootstrap_95pct_ci_bpshz": [
+        0.06702007875245264,
+        0.19570013649250598
+      ]
+    },
+    {
+      "region": "deep",
+      "comparison": "active_9_minus_passive_21",
+      "mean_difference_bpshz": 0.2718738455557268,
+      "bootstrap_95pct_ci_bpshz": [
+        0.19225398818927406,
+        0.36381892264878574
+      ]
+    },
+    {
+      "region": "deep",
+      "comparison": "active_9_minus_active_21",
+      "mean_difference_bpshz": 0.03971695140721339,
+      "bootstrap_95pct_ci_bpshz": [
+        0.034934968245320795,
+        0.04415971791606442
+      ]
+    },
+    {
+      "region": "deep",
+      "comparison": "passive_21_minus_passive_9",
+      "mean_difference_bpshz": 0.23567416670787883,
+      "bootstrap_95pct_ci_bpshz": [
+        0.09992850516858716,
+        0.36734282991215145
+      ]
+    }
+  ],
+  "limitations": [
+    "Target return and obstacle echo are coherent parametric proxies, not a full Maxwell radar simulation.",
+    "Passive static clutter is estimated from 64 no-target calibration sweeps; their time is amortized over the 101-frame session in reported effective rate.",
+    "Active uplink is modeled by a reciprocal one-way power response; timing, synchronization and hardware are idealized.",
+    "The receiver z coordinate and beam-network geometry remain fixed; only transverse x is estimated.",
+    "Data rate is an AWGN spectral-efficiency surrogate, not measured throughput or bit error rate."
+  ]
+}

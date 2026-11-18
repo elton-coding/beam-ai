@@ -1,0 +1,35 @@
+{
+  "definition": "100 * mean(P_scheme / P_baseline - 1), computed pointwise then averaged; not converted from mean dB",
+  "crossing_path": {
+    "deep_shadow": {
+      "positions": 9,
+      "current_vs_focus_pct": 107.75374888710797
+    },
+    "other_positions": {
+      "positions": 22,
+      "current_vs_focus_pct": 0.0
+    },
+    "all": {
+      "positions": 31,
+      "current_vs_focus_pct": 31.283346451095866
+    }
+  },
+  "dense_deep_shadow": {
+    "positions": 21,
+    "current_vs_focus_pct": 120.36224197814629,
+    "best_known_vs_focus_pct": 128.08933834292878,
+    "best_known_vs_current_pct": 3.086800778893331,
+    "theoretical_vs_focus_pct": 6463.597388188404,
+    "theoretical_vs_current_pct": 2564.021105913177
+  },
+  "delayed": {
+    "frames": 39,
+    "current_vs_true_focus_pct": 114.32578207871917,
+    "best_known_vs_true_focus_pct": 121.07447764173342,
+    "best_known_vs_current_pct": 2.7640152100851205,
+    "theoretical_vs_true_focus_pct": 5435.895063494614,
+    "theoretical_vs_current_pct": 2179.7826740953064,
+    "current_vs_predicted_focus_pct": 110.08467486421341,
+    "predicted_vs_stale_pct": 2.6328844305275196
+  }
+}

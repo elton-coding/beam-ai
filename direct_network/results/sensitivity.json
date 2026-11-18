@@ -1,0 +1,11 @@
+{
+  "fine_grid_points": 32768,
+  "fine_obstacle_step_mm": 0.375,
+  "fixed_parameters_only": true,
+  "deep_shadow_mean_gain_change_db": -0.04479108986050216,
+  "deep_shadow_max_abs_gain_change_db": 0.06898699174172318,
+  "delayed_mean_gain_base_db": 0.09593420459212416,
+  "delayed_mean_gain_fine_db": 0.09823800676506565,
+  "delayed_mean_gain_change_db": 0.002303802172941491,
+  "delayed_max_abs_frame_gain_change_db": 0.06848472479752221
+}

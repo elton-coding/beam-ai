@@ -1,0 +1,81 @@
+NC 论文原始资料包
+论文：A physics-informed Airy beam learning framework for blockage avoidance in sub-terahertz wireless networks
+DOI：10.1038/s41467-025-62443-0
+整理日期：2026-10-04
+2026-11-18 整理：本资料包已移入 reference/，下列路径相对于 reference/；原作者代码目录去掉了重复的一层嵌套。数据结果/ 体积较大，不纳入 git。
+
+收录范围：论文正文与补充材料、原作者代码/训练数据/模型、项目初期保存的论文绘图 MAT 数据、单独保存的 Notebook 与环境清单。
+说明：项目根目录的 NN-training-testing.ipynb 与原作者代码目录中的同名文件内容不同，均予保留。
+说明：requirements-original.txt（原名 requirements (1).txt）为项目初期保存的环境清单，未核实其是否为原作者发布版本。
+未收录：后来新增的 ProAiry 基线、DRS-AFNet 复现实验、报告和生成结果。
+
+文件数：66
+原始总字节数：583946691
+
+文件列表：
+s41467-025-62443-0.pdf
+supplementary_note.pdf
+AiryBeamOptimization-SWANLAB/aperture1D.m
+AiryBeamOptimization-SWANLAB/BeamPropagation1D.m
+AiryBeamOptimization-SWANLAB/FocusedSteeringVector.m
+AiryBeamOptimization-SWANLAB/Grid_Creation.m
+AiryBeamOptimization-SWANLAB/modelParam.keras
+AiryBeamOptimization-SWANLAB/NN-training-testing.ipynb
+AiryBeamOptimization-SWANLAB/OB.m
+AiryBeamOptimization-SWANLAB/plotDiffractionExample.m
+AiryBeamOptimization-SWANLAB/prop_RS_cal.m
+AiryBeamOptimization-SWANLAB/prop_RS_channel.m
+AiryBeamOptimization-SWANLAB/README.md
+AiryBeamOptimization-SWANLAB/RX_pos.m
+AiryBeamOptimization-SWANLAB/Source_Gen.m
+AiryBeamOptimization-SWANLAB/Steering_Weight.m
+AiryBeamOptimization-SWANLAB/training.csv
+AiryBeamOptimization-SWANLAB/Wavefront_Structure.m
+数据结果/Figures/Figure1/Fig1aLeft.mat
+数据结果/Figures/Figure1/Fig1aRight.mat
+数据结果/Figures/Figure1/Fig1bLeft.mat
+数据结果/Figures/Figure1/Fig1bRight.mat
+数据结果/Figures/Figure1/Fig1c.mat
+数据结果/Figures/Figure1/Fig1d.mat
+数据结果/Figures/Figure2/Fig2c.mat
+数据结果/Figures/Figure3/Fig3aBottom.mat
+数据结果/Figures/Figure3/Fig3aTop.mat
+数据结果/Figures/Figure3/Fig3bBottom.mat
+数据结果/Figures/Figure3/Fig3bTop.mat
+数据结果/Figures/Figure3/Fig3cBottom.mat
+数据结果/Figures/Figure3/Fig3cTop.mat
+数据结果/Figures/Figure3/Fig3dBottom.mat
+数据结果/Figures/Figure3/Fig3dTop.mat
+数据结果/Figures/Figure4/Fig4a_1_1.mat
+数据结果/Figures/Figure4/Fig4a_1_2.mat
+数据结果/Figures/Figure4/Fig4a_1_3.mat
+数据结果/Figures/Figure4/Fig4a_2_1.mat
+数据结果/Figures/Figure4/Fig4a_2_2.mat
+数据结果/Figures/Figure4/Fig4a_2_3.mat
+数据结果/Figures/Figure4/Fig4a_3_1.mat
+数据结果/Figures/Figure4/Fig4a_3_2.mat
+数据结果/Figures/Figure4/Fig4a_3_3.mat
+数据结果/Figures/Figure4/Fig4a_4_1.mat
+数据结果/Figures/Figure4/Fig4a_4_2.mat
+数据结果/Figures/Figure4/Fig4a_4_3.mat
+数据结果/Figures/Figure4/Fig4b_1_1.mat
+数据结果/Figures/Figure4/Fig4b_1_2.mat
+数据结果/Figures/Figure4/Fig4b_1_3.mat
+数据结果/Figures/Figure4/Fig4b_1_4.mat
+数据结果/Figures/Figure4/Fig4b_2_1.mat
+数据结果/Figures/Figure4/Fig4b_2_2.mat
+数据结果/Figures/Figure4/Fig4b_2_3.mat
+数据结果/Figures/Figure4/Fig4b_2_4.mat
+数据结果/Figures/Figure4/Fig4b_3_1.mat
+数据结果/Figures/Figure4/Fig4b_3_2.mat
+数据结果/Figures/Figure4/Fig4b_3_3.mat
+数据结果/Figures/Figure4/Fig4b_3_4.mat
+数据结果/Figures/Figure4/Fig4b_4_1.mat
+数据结果/Figures/Figure4/Fig4b_4_2.mat
+数据结果/Figures/Figure4/Fig4b_4_3.mat
+数据结果/Figures/Figure4/Fig4b_4_4.mat
+数据结果/Figures/Figure5/Fig5b.mat
+数据结果/Figures/Figure5/Fig5cBottom.mat
+数据结果/Figures/Figure5/Fig5cTop.mat
+NN-training-testing.ipynb
+requirements-original.txt
