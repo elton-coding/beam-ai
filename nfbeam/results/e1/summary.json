@@ -1,0 +1,294 @@
+{
+  "definition": "Power at the true receiver position, unit transmitted power, element-wise half-wavelength aperture; percentages are pointwise ratios to focusing.",
+  "heldout_all": {
+    "positions": 800,
+    "scenes": 16,
+    "focus_mean_power": 0.061841657783449834,
+    "legacy_net_airy": {
+      "mean_power": 0.0820794240182941,
+      "vs_focus_mean_pointwise_pct": 56.31584303854831,
+      "vs_focus_mean_db": 0.9413617503112299,
+      "better_than_focus_pct": 76.5,
+      "vs_focus_p05_pct": -75.38194708458145,
+      "worst_vs_focus_pct": -96.03010685076201,
+      "scene_bootstrap_95ci_pct": [
+        37.584756249595536,
+        78.30922066364955
+      ],
+      "mean_design_ms": 1.8351507506667986
+    },
+    "offline_teacher_airy": {
+      "mean_power": 0.10710763807159016,
+      "vs_focus_mean_pointwise_pct": 126.51059162578453,
+      "vs_focus_mean_db": 3.0908155767389247,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 33.97034529805634,
+      "worst_vs_focus_pct": 11.647555768569063,
+      "scene_bootstrap_95ci_pct": [
+        96.77719522802757,
+        162.01248853023637
+      ],
+      "mean_design_ms": null
+    },
+    "airy_online": {
+      "mean_power": 0.0980645655012773,
+      "vs_focus_mean_pointwise_pct": 132.20352501680162,
+      "vs_focus_mean_db": 3.2012068533466684,
+      "better_than_focus_pct": 99.875,
+      "vs_focus_p05_pct": 33.64123391043451,
+      "worst_vs_focus_pct": 0.0,
+      "scene_bootstrap_95ci_pct": [
+        101.18736455269166,
+        168.74005991602363
+      ],
+      "mean_design_ms": 231.86090437426174
+    },
+    "phase_only": {
+      "mean_power": 0.10929755219452537,
+      "vs_focus_mean_pointwise_pct": 201.8547379344205,
+      "vs_focus_mean_db": 4.018080590655845,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 44.99001082622264,
+      "worst_vs_focus_pct": 38.42596807643592,
+      "scene_bootstrap_95ci_pct": [
+        157.5032553017501,
+        255.22287908259625
+      ],
+      "mean_design_ms": 60.69334249943495
+    },
+    "phase_2bit": {
+      "mean_power": 0.09131880826408725,
+      "vs_focus_mean_pointwise_pct": 152.63841544591202,
+      "vs_focus_mean_db": 3.240030170639974,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 20.831926839316,
+      "worst_vs_focus_pct": 14.986650974806448,
+      "scene_bootstrap_95ci_pct": [
+        115.54815946776458,
+        197.440685903577
+      ],
+      "mean_design_ms": 31.640921250509564
+    },
+    "ceiling_amp_phase": {
+      "mean_power": 0.4073823023647989,
+      "vs_focus_mean_pointwise_pct": 966.1793435022346,
+      "vs_focus_mean_db": 9.688999288368645,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 419.77224173286294,
+      "worst_vs_focus_pct": 390.7351091596174,
+      "scene_bootstrap_95ci_pct": [
+        825.7136310280937,
+        1126.4603975037599
+      ],
+      "mean_design_ms": null
+    }
+  },
+  "heldout_labeled": {
+    "positions": 480,
+    "scenes": 16,
+    "focus_mean_power": 0.06843215158570963,
+    "legacy_net_airy": {
+      "mean_power": 0.08997319958428905,
+      "vs_focus_mean_pointwise_pct": 55.80647740438567,
+      "vs_focus_mean_db": 0.9701094882012432,
+      "better_than_focus_pct": 77.5,
+      "vs_focus_p05_pct": -73.89793971341555,
+      "worst_vs_focus_pct": -96.03010685076201,
+      "scene_bootstrap_95ci_pct": [
+        36.82832872900774,
+        78.00331173855996
+      ],
+      "mean_design_ms": 1.8675256253724608
+    },
+    "offline_teacher_airy": {
+      "mean_power": 0.10710763807159016,
+      "vs_focus_mean_pointwise_pct": 126.51059162578453,
+      "vs_focus_mean_db": 3.0908155767389247,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 33.97034529805634,
+      "worst_vs_focus_pct": 11.647555768569063,
+      "scene_bootstrap_95ci_pct": [
+        96.77719522802757,
+        162.01248853023637
+      ],
+      "mean_design_ms": null
+    },
+    "airy_online": {
+      "mean_power": 0.10596465744205347,
+      "vs_focus_mean_pointwise_pct": 126.93815427383808,
+      "vs_focus_mean_db": 3.075341376804039,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 33.026765196500456,
+      "worst_vs_focus_pct": 20.934673733468003,
+      "scene_bootstrap_95ci_pct": [
+        96.17512141189418,
+        164.03912532839004
+      ],
+      "mean_design_ms": 239.33225729081946
+    },
+    "phase_only": {
+      "mean_power": 0.11788112693259681,
+      "vs_focus_mean_pointwise_pct": 195.24986860590948,
+      "vs_focus_mean_db": 3.8765545431713657,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 43.929418906917945,
+      "worst_vs_focus_pct": 38.42596807643592,
+      "scene_bootstrap_95ci_pct": [
+        149.5580930508831,
+        251.16539927189066
+      ],
+      "mean_design_ms": 57.18921354103562
+    },
+    "phase_2bit": {
+      "mean_power": 0.09849617862357214,
+      "vs_focus_mean_pointwise_pct": 147.04799647388504,
+      "vs_focus_mean_db": 3.0980504507684032,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 19.62618902237102,
+      "worst_vs_focus_pct": 14.986650974806448,
+      "scene_bootstrap_95ci_pct": [
+        108.728775285667,
+        194.0321289982112
+      ],
+      "mean_design_ms": 32.173923959089734
+    },
+    "ceiling_amp_phase": {
+      "mean_power": 0.4355102310749444,
+      "vs_focus_mean_pointwise_pct": 935.2893280460462,
+      "vs_focus_mean_db": 9.51710970451968,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 414.4956168076815,
+      "worst_vs_focus_pct": 390.7351091596174,
+      "scene_bootstrap_95ci_pct": [
+        793.9457209167534,
+        1098.2069459882082
+      ],
+      "mean_design_ms": null
+    }
+  },
+  "heldout_new_positions": {
+    "positions": 320,
+    "scenes": 16,
+    "focus_mean_power": 0.05195591708006016,
+    "legacy_net_airy": {
+      "mean_power": 0.07023876066930167,
+      "vs_focus_mean_pointwise_pct": 57.07989148979229,
+      "vs_focus_mean_db": 0.8982401434762102,
+      "better_than_focus_pct": 75.0,
+      "vs_focus_p05_pct": -76.76520940147162,
+      "worst_vs_focus_pct": -95.87883326916713,
+      "scene_bootstrap_95ci_pct": [
+        38.03587668703687,
+        79.39338642778905
+      ],
+      "mean_design_ms": 1.7865884386083053
+    },
+    "airy_online": {
+      "mean_power": 0.08621442759011305,
+      "vs_focus_mean_pointwise_pct": 140.1015811312469,
+      "vs_focus_mean_db": 3.390005068160613,
+      "better_than_focus_pct": 99.6875,
+      "vs_focus_p05_pct": 38.43844557612847,
+      "worst_vs_focus_pct": 0.0,
+      "scene_bootstrap_95ci_pct": [
+        108.52796496294837,
+        176.32935599616968
+      ],
+      "mean_design_ms": 220.65387499942517
+    },
+    "phase_only": {
+      "mean_power": 0.09642219008741822,
+      "vs_focus_mean_pointwise_pct": 211.76204192718714,
+      "vs_focus_mean_db": 4.230369661882564,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 47.365853094666114,
+      "worst_vs_focus_pct": 38.71780775127787,
+      "scene_bootstrap_95ci_pct": [
+        168.64044593617226,
+        262.08293706729665
+      ],
+      "mean_design_ms": 65.94953593703394
+    },
+    "phase_2bit": {
+      "mean_power": 0.08055275272485987,
+      "vs_focus_mean_pointwise_pct": 161.02404390395247,
+      "vs_focus_mean_db": 3.4529997504473284,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 22.72130769098726,
+      "worst_vs_focus_pct": 15.140833006616127,
+      "scene_bootstrap_95ci_pct": [
+        124.7395140870207,
+        203.39074102257953
+      ],
+      "mean_design_ms": 30.84141718763931
+    },
+    "ceiling_amp_phase": {
+      "mean_power": 0.3651904092995807,
+      "vs_focus_mean_pointwise_pct": 1012.5143666865171,
+      "vs_focus_mean_db": 9.946833664142094,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 430.86298847920955,
+      "worst_vs_focus_pct": 393.8050808549008,
+      "scene_bootstrap_95ci_pct": [
+        872.0627315676784,
+        1169.4149145398878
+      ],
+      "mean_design_ms": null
+    }
+  },
+  "fixed_scene_deep": {
+    "positions": 20,
+    "scenes": 1,
+    "focus_mean_power": 0.05148233947900131,
+    "legacy_net_airy": {
+      "mean_power": 0.08360653060139119,
+      "vs_focus_mean_pointwise_pct": 75.4069772289602,
+      "vs_focus_mean_db": 1.866806321980139,
+      "better_than_focus_pct": 90.0,
+      "vs_focus_p05_pct": -19.079787449351354,
+      "worst_vs_focus_pct": -89.90022974455374,
+      "scene_bootstrap_95ci_pct": null,
+      "mean_design_ms": 0.5949699989287183
+    },
+    "airy_online": {
+      "mean_power": 0.09253527760307978,
+      "vs_focus_mean_pointwise_pct": 130.47935738906077,
+      "vs_focus_mean_db": 3.4691277481414082,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 55.12019972023674,
+      "worst_vs_focus_pct": 25.738429789778206,
+      "scene_bootstrap_95ci_pct": null,
+      "mean_design_ms": 104.49368500121636
+    },
+    "phase_only": {
+      "mean_power": 0.09987883004485189,
+      "vs_focus_mean_pointwise_pct": 182.67311379986864,
+      "vs_focus_mean_db": 4.137351678780298,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 58.4961249658755,
+      "worst_vs_focus_pct": 51.381060243874785,
+      "scene_bootstrap_95ci_pct": null,
+      "mean_design_ms": 46.32582000340335
+    },
+    "phase_2bit": {
+      "mean_power": 0.08307048749190975,
+      "vs_focus_mean_pointwise_pct": 135.8262142078559,
+      "vs_focus_mean_db": 3.346340533169788,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 32.07417490359445,
+      "worst_vs_focus_pct": 25.4377074973968,
+      "scene_bootstrap_95ci_pct": null,
+      "mean_design_ms": 32.66791000351077
+    },
+    "ceiling_amp_phase": {
+      "mean_power": 0.3747404139631044,
+      "vs_focus_mean_pointwise_pct": 906.4820470271146,
+      "vs_focus_mean_db": 9.77491508687839,
+      "better_than_focus_pct": 100.0,
+      "vs_focus_p05_pct": 462.2852701095917,
+      "worst_vs_focus_pct": 418.2596845897557,
+      "scene_bootstrap_95ci_pct": null,
+      "mean_design_ms": null
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "target_se_bpshz": 1.0,
+  "definition": "known position and geometry, ideal SE log2(1+P/N) without overhead; N fixed by the 0.2 m reference link",
+  "results": [
+    {
+      "tx_width_m": 0.2,
+      "method": "focus",
+      "positions": 160,
+      "se_mean": 1.0912393597347978,
+      "below_target_pct": 46.25,
+      "margin_for_90pct_db": 12.08917907700965,
+      "margin_median_db": -0.6356949700288699
+    },
+    {
+      "tx_width_m": 0.2,
+      "method": "airy_online",
+      "positions": 160,
+      "se_mean": 1.4785639923041667,
+      "below_target_pct": 33.125,
+      "margin_for_90pct_db": 6.261020366946877,
+      "margin_median_db": -2.856048322558263
+    },
+    {
+      "tx_width_m": 0.2,
+      "method": "phase_only",
+      "positions": 160,
+      "se_mean": 1.592709006451536,
+      "below_target_pct": 29.375,
+      "margin_for_90pct_db": 4.440847906260986,
+      "margin_median_db": -3.445771260086943
+    },
+    {
+      "tx_width_m": 0.3,
+      "method": "focus",
+      "positions": 160,
+      "se_mean": 2.5360859735248793,
+      "below_target_pct": 0.0,
+      "margin_for_90pct_db": -4.7896628648392765,
+      "margin_median_db": -6.75491466149146
+    },
+    {
+      "tx_width_m": 0.3,
+      "method": "airy_online",
+      "positions": 160,
+      "se_mean": 2.6021381133211436,
+      "below_target_pct": 0.0,
+      "margin_for_90pct_db": -5.227648550027975,
+      "margin_median_db": -7.003153918286751
+    },
+    {
+      "tx_width_m": 0.3,
+      "method": "phase_only",
+      "positions": 160,
+      "se_mean": 2.905359738899808,
+      "below_target_pct": 0.0,
+      "margin_for_90pct_db": -6.522078527030979,
+      "margin_median_db": -8.04147772852882
+    },
+    {
+      "tx_width_m": 0.4,
+      "method": "focus",
+      "positions": 160,
+      "se_mean": 3.1742588355418127,
+      "below_target_pct": 0.0,
+      "margin_for_90pct_db": -7.719217343706763,
+      "margin_median_db": -9.183150216934381
+    },
+    {
+      "tx_width_m": 0.4,
+      "method": "airy_online",
+      "positions": 160,
+      "se_mean": 3.1742588355418127,
+      "below_target_pct": 0.0,
+      "margin_for_90pct_db": -7.719217343706763,
+      "margin_median_db": -9.183150216934381
+    },
+    {
+      "tx_width_m": 0.4,
+      "method": "phase_only",
+      "positions": 160,
+      "se_mean": 3.4231071282508125,
+      "below_target_pct": 0.0,
+      "margin_for_90pct_db": -8.763030883524848,
+      "margin_median_db": -9.995201889837622
+    }
+  ]
+}
