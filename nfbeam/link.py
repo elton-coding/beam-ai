@@ -72,16 +72,23 @@ def make_losses(kind: str, n: int, rng: np.random.Generator) -> np.ndarray:
 # ------------------------------------------------------------------ context
 class SceneContext:
     def __init__(self, scene_id: int, scene, cond: Condition, seed: int, need_legacy: bool = True,
-                 need_codebook: bool = False, data_noise: float | None = None):
+                 need_codebook: bool = False, data_noise: float | None = None,
+                 truth: Channel | None = None, hyp_scenes: list | None = None):
         rng = np.random.default_rng(seed)
         self.scene_id, self.scene, self.cond = scene_id, scene, cond
         self.imp = Impairments(pilot_noise=cond.pilot_noise)
-        self.hyps = [Channel(s) for s in hypotheses(scene)]
+        # Geometry hypotheses: the default 3 x 3 grid around the nominal scene, or
+        # an externally supplied set (E11: centred on an echo-based estimate).
+        self.hyps = [Channel(s) for s in (hyp_scenes if hyp_scenes is not None else hypotheses(scene))]
         self.nominal = self.hyps[len(self.hyps) // 2]
         if cond.geometry == "matched":
             self.truth = self.nominal
         else:
             self.truth = Channel(random_mismatch(scene, rng, strong=cond.geometry == "strong"))
+        if truth is not None:
+            # Externally supplied truth operator (E10: full-wave channel), while
+            # sensing templates and designs keep using the angular-spectrum hypotheses.
+            self.truth = truth
         pi = np.full(len(self.hyps), 0.5 / (len(self.hyps) - 1))
         pi[len(self.hyps) // 2] = 0.5
         self.log_pi0 = np.log(pi)

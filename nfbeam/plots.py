@@ -1,4 +1,4 @@
-"""Figures for E1-E9 from the saved summaries.  Run: python -m nfbeam.plots"""
+"""Figures for E1-E11 from the saved summaries.  Run: python -m nfbeam.plots"""
 
 from __future__ import annotations
 
@@ -317,9 +317,112 @@ def fig_e9() -> None:
     save(fig, "e9_realtime")
 
 
+BC_LABEL = {"as": "角谱模型", "tm": "全波·金属 TM", "te": "全波·金属 TE", "absorber": "全波·吸收体"}
+
+
+def fig_e10() -> None:
+    s = load("e10")
+    fig, axes = plt.subplots(2, 2, figsize=(13, 7.6))
+    # (a) independent FDTD check of the boundary-integral solver
+    ax = axes[0, 0]
+    prof = RESULTS / "e10" / "fdtd_profile.csv"
+    if prof.exists():
+        p = pd.read_csv(prof)
+        ax.plot(p.x_wl, p.fdtd_db, color=ORANGE, lw=2, label="FDTD（时域，独立实现）")
+        ax.plot(p.x_wl, p.bie_db, color=BLUE, lw=1.2, ls="--", label="边界积分（本文求解器）")
+        ax.set_xlabel("观测线位置 (波长)")
+        ax.set_ylabel("总场 / 入射场 (dB)")
+        v = s["validation"]["fdtd"]
+        ax.set_title(f"求解器交叉验证：金属矩形，复数误差 {100 * v['ratio_rel_err_all']:.1f}%")
+        ax.legend(frameon=False, fontsize=9, loc="lower left")
+    # (b) gains over focus in the deep shadow
+    m = pd.DataFrame(s["beams"]["metrics"])
+    d = m[m.region == "deep"].set_index("bc")
+    groups = ["as", "tm", "te", "absorber"]
+    series = [("在线 Airy（角谱设计）", YELLOW), ("逐阵元纯相位（角谱设计）", BLUE), ("逐阵元纯相位（全波设计）", AQUA)]
+    beams = pd.read_csv(RESULTS / "e10" / "beams.csv")
+    deep = beams[(beams.region == "deep") & (beams.bc == "tm")]
+    as_airy = float(np.median(10 * np.log10(deep.as_airy / deep.as_focus)))
+    vals = [[as_airy] + [float(d.loc[b, "gain_airy_db_fullwave_median"]) for b in groups[1:]],
+            [float(d.loc["tm", "gain_phase_as_db_predicted_median"])] +
+            [float(d.loc[b, "gain_phase_as_db_fullwave_median"]) for b in groups[1:]],
+            [float("nan")] + [float(d.loc[b, "gain_phase_fw_db_median"]) for b in groups[1:]]]
+    grouped(axes[0, 1], [BC_LABEL[g] for g in groups], series, vals, fmt="{:.1f}")
+    axes[0, 1].set_title("深遮挡相对聚焦的增益中位数 (dB)")
+    axes[0, 1].legend(frameon=False, fontsize=8.5, loc="upper left")
+    # (c) model error and design mismatch loss
+    ax = axes[1, 0]
+    bcs = groups[1:]
+    vals = [[float(d.loc[b, "model_err_focus_db_median"]) for b in bcs],
+            [float(d.loc[b, "model_err_phase_db_median"]) for b in bcs],
+            [float(d.loc[b, "mismatch_loss_db_median"]) for b in bcs]]
+    grouped(ax, [BC_LABEL[b] for b in bcs],
+            [("角谱预测误差·聚焦", GRAY), ("角谱预测误差·纯相位", BLUE), ("角谱设计相对全波设计的损失", ORANGE)],
+            vals, fmt="{:+.2f}")
+    ax.axhline(0, color=INK2, lw=0.8)
+    ax.set_title("深遮挡：全波 − 角谱 (dB，中位数)")
+    ax.set_ylim(-0.9, 3.4)
+    ax.legend(frameon=False, fontsize=8.5, loc="upper right")
+    # (d) end-to-end link with the full-wave channel as truth
+    if "link" in s:
+        lm = pd.DataFrame(s["link"]["metrics"])
+        lm = lm[lm.region == "deep"]
+        truths = ["as", "tm", "te", "absorber"]
+        pols = [("legacy", "原方案", GRAY), ("focus_bayes", "新跟踪 + 聚焦", YELLOW),
+                ("proposed_warm", "新方案（实时）", BLUE), ("oracle", "真实位置参照", AQUA)]
+        vals = [[float(lm[(lm.truth == t) & (lm.policy == p)].se_mean.iloc[0]) for t in truths] for p, _, _ in pols]
+        grouped(axes[1, 1], [BC_LABEL[t] for t in truths], [(l, c) for _, l, c in pols], vals)
+        axes[1, 1].set_title("端到端深遮挡有效频谱效率 (bit/s/Hz)")
+        axes[1, 1].set_ylim(0, 2.75)
+        axes[1, 1].legend(frameon=False, fontsize=8.5, ncol=4, loc="upper left")
+    fig.suptitle("E10 全波验证：设计仍用角谱模型，真实信道换成二维全波解（16 个未见场景）", x=0.01, ha="left",
+                 fontsize=12, fontweight="bold", color=INK)
+    fig.tight_layout()
+    save(fig, "e10_fullwave")
+
+
+TRUTH_LABEL = {"metal": "金属 TM", "metal_te": "金属 TE", "lossy": "有损体 (反射 0.1)", "absorber": "匹配吸收体"}
+
+
+def fig_e11() -> None:
+    s = load("e11")
+    e = pd.DataFrame(s["estimation"])
+    e = e[e.snr_offset_db == 0]
+    truths = [t for t in TRUTH_LABEL if t in set(e.truth)]
+    g = e.set_index("truth")
+    fig, axes = plt.subplots(1, 2, figsize=(13, 3.9))
+    vals = [[float(g.loc[t, "edge_median_abs_mm"]) for t in truths],
+            [float(g.loc[t, "edge_p90_abs_mm"]) for t in truths],
+            [float(g.loc[t, "z_f_median_abs_mm"]) for t in truths]]
+    acc = {t: float(g.loc[t, "accepted_pct"]) for t in truths}
+    grouped(axes[0], [TRUTH_LABEL[t] + ("\n（估计被拒绝）" if acc[t] == 0 else "") for t in truths],
+            [("边缘误差中位数", BLUE), ("边缘误差 90% 分位", ORANGE), ("前表面距离误差中位数", AQUA)],
+            vals, fmt="{:.1f}")
+    axes[0].set_yscale("log")
+    axes[0].set_title("第一阶段回波估计误差 (mm，对数轴，标称回波信噪比)")
+    axes[0].legend(frameon=False, fontsize=8.5, loc="upper left")
+    if "link" in s:
+        lm = pd.DataFrame(s["link"]["metrics"])
+        lm = lm[lm.region == "deep"]
+        lt = [t for t in TRUTH_LABEL if t in set(lm.truth)]
+        pols = [("proposed_warm@prior", "无估计（先验）", GRAY), ("proposed_warm@echo", "回波估计", BLUE),
+                ("proposed_warm@known", "已知几何", YELLOW), ("oracle", "真实位置参照", AQUA)]
+        vals = [[float(lm[(lm.truth == t) & (lm.policy == p)].se_mean.iloc[0]) for t in lt] for p, _, _ in pols]
+        grouped(axes[1], [TRUTH_LABEL[t] + ("\n（回波估计被拒绝 → 先验）" if acc.get(t, 100) == 0 else "") for t in lt],
+                [(l, c) for _, l, c in pols], vals)
+        axes[1].set_title("新方案（实时）深遮挡有效频谱效率 (bit/s/Hz)")
+        axes[1].set_ylim(0, 1.95)
+        axes[1].legend(frameon=False, fontsize=8.5, ncol=4, loc="upper left")
+    fig.suptitle("E11 障碍物几何估计：回波扫描 + 在线假设后验（全波信道为真值）", x=0.01, ha="left",
+                 fontsize=12, fontweight="bold", color=INK)
+    fig.tight_layout()
+    save(fig, "e11_geometry")
+
+
 def main() -> None:
     for name, fn in (("e1", fig_e1), ("e2", fig_e2), ("e3", fig_e3), ("e4", fig_e4), ("e5", fig_e5),
-                     ("e6", fig_e6), ("e7", fig_e7), ("e8", fig_e8), ("e8b", fig_e8b), ("e9", fig_e9)):
+                     ("e6", fig_e6), ("e7", fig_e7), ("e8", fig_e8), ("e8b", fig_e8b), ("e9", fig_e9),
+                     ("e10", fig_e10), ("e11", fig_e11)):
         if (RESULTS / name / "summary.json").exists():
             fn()
             print("figure", name)

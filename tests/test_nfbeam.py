@@ -164,3 +164,45 @@ def test_wide_airy_search_not_worse_than_local_search():
     for x in (0.0, 0.03):
         A = ch.gram_at(x)
         assert D.quad(A, D.airy_search_wide(ch, A, x)) >= D.quad(A, D.airy_search(ch, A, x, rescale=True)) - 1e-12
+
+
+def test_boundary_integral_matches_mie_series():
+    from scipy.special import h1vp, hankel1, jv, jvp
+    from nfbeam.fullwave import Scatterer, circle
+    k = 2 * np.pi
+    a = 2.0
+    phi = np.linspace(0, 2 * np.pi, 24, endpoint=False)
+    obs = np.stack([3 * a * np.cos(phi), 3 * a * np.sin(phi)], axis=1)
+    n = np.arange(-60, 61)[:, None]
+    coef = {"tm": -jv(n, k * a) / hankel1(n, k * a), "te": -jvp(n, k * a) / h1vp(n, k * a),
+            "absorber": -(jvp(n, k * a) + 1j * jv(n, k * a)) / (h1vp(n, k * a) + 1j * hankel1(n, k * a))}
+    for bc, c in coef.items():
+        s = Scatterer(circle(a, int(2 * np.pi * a * 10)), k, bc, 10)
+        us = s.scattered(obs, s.solve(np.exp(1j * k * s.rhs_points()[:, 0])))
+        ref = np.sum((1j ** n) * c * hankel1(n, 3 * k * a) * np.exp(1j * n * phi), axis=0)
+        assert np.linalg.norm(us - ref) / np.linalg.norm(ref) < 0.01, bc
+
+
+def test_rayleigh_sommerfeld_matches_free_space_angular_spectrum():
+    from nfbeam.fullwave import aperture_field
+    ch = channel()
+    basis = np.zeros((ch.n_elements, ch.scene.n_grid), complex)
+    basis[:, ch._basis_cols] = ch._basis
+    fs = Channel._propagate(basis, ch.engine.h_direct)[:, np.abs(ch.engine.x) <= 0.16]
+    rx = np.stack([ch.x, np.full_like(ch.x, ch.scene.receiver_z_m)], axis=1)
+    rs = aperture_field(rx, ch.centers, ch.pitch, ch.k)
+    w = D.focus_beam(ch, 0.02)
+    assert abs(np.sum(np.abs(w @ rs) ** 2) / np.sum(np.abs(w @ fs) ** 2) - 1) < 0.01
+    assert np.linalg.norm(rs - fs) / np.linalg.norm(fs) < 0.06      # element discretisation only
+
+
+def test_echo_fit_recovers_geometry_from_model_data():
+    from nfbeam.geometry_est import EchoEstimator, point_focus
+    ch = channel()
+    W = np.array([point_focus(ch, x, z) for z in (0.17, 0.21) for x in np.linspace(-0.07, 0.07, 15)])
+    est = EchoEstimator(ch, W, noise_power=1e-8)
+    truth = (0.006, 0.088, 0.186)
+    amp = 0.7 * np.abs(est.model(*truth))
+    e = est.fit(amp)
+    assert abs(e.x_c - truth[0]) < 5e-4 and abs(e.width - truth[1]) < 1e-3 and abs(e.z_f - truth[2]) < 1e-3
+    assert abs(e.gamma - 0.7) < 0.02
