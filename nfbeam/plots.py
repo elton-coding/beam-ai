@@ -1,4 +1,4 @@
-"""Figures for E1-E6 from the saved summaries.  Run: python -m nfbeam.plots"""
+"""Figures for E1-E9 from the saved summaries.  Run: python -m nfbeam.plots"""
 
 from __future__ import annotations
 
@@ -212,9 +212,114 @@ def fig_e7() -> None:
     save(fig, "e7_link_budget")
 
 
+def fig_e8() -> None:
+    s = load("e8")
+    r = pd.DataFrame(s["results"])
+    meth = [("focus", "聚焦", GRAY), ("airy", "在线 Airy", ORANGE), ("phase", "逐阵元纯相位", BLUE),
+            ("ceiling", "幅相上界", AQUA)]
+    fig, axes = plt.subplots(2, 3, figsize=(14, 7.2))
+    sweeps = [("room", "同一房间：只改孔径", "发射孔径 D (m)", "D_m"),
+              ("similar", "等比例缩放：只改电尺寸", "D/λ", "D_over_lambda"),
+              ("range", "D = 0.2 m：只改距离孔径比", "z/D", "z_over_D_mean")]
+    for j, (sw, title, xl, xcol) in enumerate(sweeps):
+        g = r[(r.sweep == sw) & (r.region == ("deep_ref" if sw == "room" else "deep"))].sort_values(xcol)
+        for key, label, color in meth[1:]:
+            axes[0, j].plot(g[xcol], g[f"{key}_gain_median_db"], color=color, lw=2, marker="o", ms=6,
+                            markeredgecolor=SURFACE, markeredgewidth=1.5, label=label)
+        axes[0, j].axhline(0, color=INK2, lw=0.8)
+        axes[0, j].set_title(title)
+        for key, label, color in meth:
+            axes[1, j].plot(g[xcol], g[f"{key}_shadow_loss_median_db"], color=color, lw=2, marker="o", ms=6,
+                            markeredgecolor=SURFACE, markeredgewidth=1.5, label=label)
+        axes[1, j].set_xlabel(xl)
+        if sw == "range":
+            axes[0, j].set_xscale("log")
+            axes[1, j].set_xscale("log")
+    axes[0, 0].set_ylabel("相对聚焦的增益中位数 (dB)")
+    axes[1, 0].set_ylabel("遮挡损耗中位数 (dB)，\n相对无遮挡聚焦链路")
+    axes[0, 0].legend(frameon=False, fontsize=9, loc="upper right")
+    axes[1, 0].legend(frameon=False, fontsize=9, loc="lower right")
+    fig.suptitle("E8 孔径维度：深遮挡位置（同一房间一栏用 0.2 m 孔径下的深遮挡位置）", x=0.01, ha="left",
+                 fontsize=12, fontweight="bold", color=INK)
+    fig.tight_layout()
+    save(fig, "e8_aperture")
+
+    # Where this project and the literature sit in (D/lambda, z/D).
+    lit = pd.DataFrame(s["literature"])
+    fig, ax = plt.subplots(figsize=(7.5, 4.6))
+    for sw, label, color in (("similar", "本实验：等比例缩放", BLUE), ("range", "本实验：距离缩放", ORANGE)):
+        g = r[(r.sweep == sw) & (r.region == "all")].sort_values("D_over_lambda")
+        ax.plot(g.D_over_lambda, g.z_over_D_mean, color=color, lw=2, marker="o", ms=6,
+                markeredgecolor=SURFACE, markeredgewidth=1.5, label=label)
+    ax.scatter(lit.D_over_lambda, lit.z_over_D, s=60, color=INK2, marker="D", edgecolor=SURFACE,
+               linewidth=1.5, zorder=3, label="相关文献")
+    for _, row in lit.iterrows():
+        name = row.work.split(",")[0].split(" (")[0]
+        off, ha = {"Curving": ((-6, -11), "right"), "Zhao/Han/Bjornson closed form": ((6, -10), "left")}.get(
+            name if name.startswith("Zhao") else name.split()[0], ((6, 4), "left"))
+        ax.annotate(name, (row.D_over_lambda, row.z_over_D), fontsize=7.5, color=INK2, xytext=off, ha=ha,
+                    textcoords="offset points")
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlabel("发射孔径电尺寸 D/λ")
+    ax.set_ylabel("接收距离与孔径之比 z/D")
+    ax.legend(frameon=False, fontsize=9, loc="lower left")
+    ax.set_title("E8 扫描覆盖的参数区间与相关文献的位置")
+    fig.tight_layout()
+    save(fig, "e8_literature_map")
+
+
+def fig_e8b() -> None:
+    m = pd.DataFrame(load("e8b")["metrics_deep_ref"])
+    m = m[m.region == "deep"]
+    widths = sorted(m.tx_width_m.unique())
+    pols = [("focus_bayes", "贝叶斯跟踪 + 聚焦", GRAY), ("proposed_warm", "新方案（实时版）", BLUE),
+            ("oracle", "真实位置参照", AQUA)]
+    get = lambda w, p, k: float(m[(m.tx_width_m == w) & (m.policy == p)][k].iloc[0])
+    fig, axes = plt.subplots(1, 2, figsize=(12, 3.6))
+    grouped(axes[0], [f"{w:.1f} m" for w in widths], [(l, c) for _, l, c in pols],
+            [[get(w, p, "se_mean") for w in widths] for p, _, _ in pols])
+    axes[0].set_title("有效频谱效率 (bit/s/Hz)")
+    grouped(axes[1], [f"{w:.1f} m" for w in widths], [(l, c) for _, l, c in pols],
+            [[get(w, p, "low_rate_pct") for w in widths] for p, _, _ in pols], fmt="{:.0f}")
+    axes[1].set_title("低速率帧比例 (<1 bit/s/Hz, %)")
+    axes[0].legend(frameon=False, fontsize=9, ncol=3, loc="upper left", bbox_to_anchor=(0, -0.12))
+    fig.suptitle("E8b 不同孔径的端到端链路（0.2 m 孔径下的深遮挡位置；总发射功率固定）", x=0.01, ha="left",
+                 fontsize=12, fontweight="bold", color=INK)
+    fig.tight_layout()
+    save(fig, "e8b_aperture_link")
+
+
+def fig_e9() -> None:
+    s = load("e9")
+    t = pd.DataFrame(s["timing"])
+    m = pd.DataFrame(s["metrics"])
+    m = m[m.region == "deep"]
+    conds = {"matched": "基准", "strong_mismatch": "强失配", "d3_burst": "时延 3 帧 + 突发丢包"}
+    pols = [("proposed", "完整设计", ORANGE), ("proposed_warm", "热启动", BLUE), ("proposed_table", "现场建表 + 热启动", AQUA)]
+    get = lambda df, c, p, k: float(df[(df.condition == c) & (df.policy == p)][k].iloc[0])
+    fig, axes = plt.subplots(1, 3, figsize=(14, 3.6))
+    grouped(axes[0], list(conds.values()), [(l, c) for _, l, c in pols],
+            [[get(t, c, p, "mean_ms") for c in conds] for p, _, _ in pols], fmt="{:.1f}")
+    axes[0].axhline(s["frame_ms"], color=INK2, lw=0.8, ls="--")
+    axes[0].set_title("每帧设计耗时均值 (ms，虚线 = 帧长)")
+    grouped(axes[1], list(conds.values()), [(l, c) for _, l, c in pols],
+            [[get(t, c, p, "p99_ms") for c in conds] for p, _, _ in pols], fmt="{:.0f}")
+    axes[1].axhline(s["frame_ms"], color=INK2, lw=0.8, ls="--")
+    axes[1].set_title("每帧设计耗时 99% 分位 (ms)")
+    grouped(axes[2], list(conds.values()), [(l, c) for _, l, c in pols],
+            [[get(m, c, p, "se_mean") for c in conds] for p, _, _ in pols])
+    axes[2].set_title("深遮挡有效频谱效率 (bit/s/Hz)")
+    axes[0].legend(frameon=False, fontsize=9, ncol=3, loc="upper left", bbox_to_anchor=(0, -0.12))
+    fig.suptitle("E9 实时化：单线程耗时与链路效果（16 个未见场景 × 5 条轨迹）", x=0.01, ha="left",
+                 fontsize=12, fontweight="bold", color=INK)
+    fig.tight_layout()
+    save(fig, "e9_realtime")
+
+
 def main() -> None:
     for name, fn in (("e1", fig_e1), ("e2", fig_e2), ("e3", fig_e3), ("e4", fig_e4), ("e5", fig_e5),
-                     ("e6", fig_e6), ("e7", fig_e7)):
+                     ("e6", fig_e6), ("e7", fig_e7), ("e8", fig_e8), ("e8b", fig_e8b), ("e9", fig_e9)):
         if (RESULTS / name / "summary.json").exists():
             fn()
             print("figure", name)

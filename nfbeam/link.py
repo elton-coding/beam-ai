@@ -8,6 +8,7 @@ comparisons are paired.
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass, field, replace
 
 import numpy as np
@@ -71,7 +72,7 @@ def make_losses(kind: str, n: int, rng: np.random.Generator) -> np.ndarray:
 # ------------------------------------------------------------------ context
 class SceneContext:
     def __init__(self, scene_id: int, scene, cond: Condition, seed: int, need_legacy: bool = True,
-                 need_codebook: bool = False):
+                 need_codebook: bool = False, data_noise: float | None = None):
         rng = np.random.default_rng(seed)
         self.scene_id, self.scene, self.cond = scene_id, scene, cond
         self.imp = Impairments(pilot_noise=cond.pilot_noise)
@@ -85,7 +86,10 @@ class SceneContext:
         pi[len(self.hyps) // 2] = 0.5
         self.log_pi0 = np.log(pi)
         ref = D.focus_beam(self.nominal, 0.095)
-        self.data_noise = self.truth.power(ref, 0.095) / 10
+        # Data-link noise: 10 dB below the focused link at the edge of the
+        # track, unless fixed externally (E8 keeps the 0.2 m reference noise
+        # while the aperture changes).
+        self.data_noise = self.truth.power(ref, 0.095) / 10 if data_noise is None else data_noise
         self.scan_beams = [self._shadow_beam(x, 0.0125) for x in SCAN_X]
         self.scan_templates = [np.vstack([coop_template(h, w) for w in self.scan_beams]) for h in self.hyps]
         if need_codebook:
@@ -110,6 +114,22 @@ class SceneContext:
         self.legacy_scan_beams = [D.focus_beam(self.nominal, x) for x in SCAN_X]
         self.legacy_scan_template = np.vstack([amp(w) for w in self.legacy_scan_beams])
 
+    def build_table(self) -> float:
+        """Scene-adaptive beam table on the nominal geometry; returns build seconds.
+
+        Built once when a geometry estimate becomes available (here: at
+        context creation).  A new obstacle needs a new table, but the build is
+        an online computation from the channel model, not offline training.
+        """
+        t0 = time.perf_counter()
+        self.table = [self._shadow_beam(float(x), TABLE_SIGMA_M) for x in TABLE_X]
+        return time.perf_counter() - t0
+
+    def table_beam(self, x: float) -> np.ndarray:
+        if not hasattr(self, "table"):
+            self.table_build_s = self.build_table()
+        return self.table[int(np.argmin(np.abs(TABLE_X - x)))]
+
     def templates(self, w: np.ndarray) -> list[np.ndarray]:
         return [coop_template(h, w) for h in self.hyps]
 
@@ -118,15 +138,40 @@ class SceneContext:
 
 
 # ------------------------------------------------------------------- design
+WARM_ITERS = 5
+COLD_ITERS = 20
+REALTIME_MAX_COLUMNS = 900
+TABLE_X = np.arange(-0.11, 0.11 + 1e-9, 0.001)
+TABLE_SIGMA_M = 0.002
+
+
 def design_beam(ctx: SceneContext, px: np.ndarray, log_pi: np.ndarray, family: str,
                 prev: np.ndarray | None) -> tuple[np.ndarray, float]:
+    """Beam for the current beliefs.
+
+    ``phase``/``airy`` run the full design (fresh Gram matrix, eigen and focus
+    seeds, iteration to convergence).  ``warm`` and ``table`` are the
+    real-time variants: a matrix-free operator (receiver samples decimated to
+    at most ``REALTIME_MAX_COLUMNS`` when the belief is wide) and
+    ``WARM_ITERS`` fixed-point steps from the better of the focus beam and the
+    previous beam (``warm``; ``COLD_ITERS`` on the first frame) or of those and
+    a scene-adaptive table entry (``table``).
+    """
     keep = px > 1e-4 * px.max()
     xs, ps = X_GRID[keep], px[keep] / px[keep].sum()
     x_ref = float(ps @ xs)
-    A = D.robust_gram(ctx.hyps, np.exp(log_pi), xs, ps)
     w_focus = D.focus_beam(ctx.nominal, x_ref)
     if family == "focus":
         return w_focus, x_ref
+    if family in ("warm", "table"):
+        op = D.PowerOperator(ctx.hyps, np.exp(log_pi), xs, ps, max_columns=REALTIME_MAX_COLUMNS)
+        seeds = [w_focus] + ([prev] if prev is not None else [])
+        if family == "table":
+            seeds.append(ctx.table_beam(x_ref))
+        iters = COLD_ITERS if prev is None and family == "warm" else WARM_ITERS
+        w = D.warm_phase_only(ctx.nominal, op, seeds, iters=iters)
+        return (w if op.quad(w) >= op.quad(w_focus) else w_focus), x_ref
+    A = D.robust_gram(ctx.hyps, np.exp(log_pi), xs, ps)
     if family == "airy":
         w = D.airy_search(ctx.nominal, A, x_ref, max_eval=120)
     else:
@@ -159,7 +204,7 @@ def run_coop(ctx: SceneContext, policy: str, path: np.ndarray, rr: RunRandom,
     if policy == "codebook":
         return _run_codebook(ctx, path, rr)
     family = {"focus_bayes": "focus", "proposed": "phase", "proposed_verified": "phase",
-              "proposed_airy": "airy"}[policy]
+              "proposed_airy": "airy", "proposed_warm": "warm", "proposed_table": "table"}[policy]
     verify = policy == "proposed_verified"
     cond, imp = ctx.cond, ctx.imp
     filt = DelayedFilter(GridFilter(FilterConfig()), aware=delay_aware)
@@ -194,7 +239,9 @@ def run_coop(ctx: SceneContext, policy: str, path: np.ndarray, rr: RunRandom,
                     queue.append((t + cond.delay, t, ctx.scan_templates, y))
         px = filt.filt.marginal_x()
         est, est_sd = filt.filt.mean_std()
+        t_design = time.perf_counter()
         w, x_ref = design_beam(ctx, px, log_pi, family, prev)
+        design_ms = 1e3 * (time.perf_counter() - t_design)
         if verify and cond.delay == 0:
             overhead += 2 * TAU
             cands = [w, D.focus_beam(ctx.nominal, x_ref)]
@@ -208,7 +255,7 @@ def run_coop(ctx: SceneContext, policy: str, path: np.ndarray, rr: RunRandom,
         y_ref = coop_observe(ctx.truth, w, x, g, ph, nz[30], imp)
         if not rr.lost[t]:
             queue.append((t + cond.delay, t, ctx.templates(w), y_ref))
-        rows.append(_row(ctx, t, x, est, est_sd, scanned, overhead, power))
+        rows.append(_row(ctx, t, x, est, est_sd, scanned, overhead, power) | {"design_ms": design_ms})
     return rows
 
 

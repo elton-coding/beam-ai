@@ -48,6 +48,7 @@ class Channel:
         overlap = np.clip(np.minimum(hi, cell_hi[cols]) - np.maximum(lo, cell_lo[cols]), 0, None) / self.dx
         self._basis_cols = cols
         self._basis = overlap                      # (n, len(cols)) real
+        self._tx_gram = (overlap @ overlap.T) * self.dx
         basis = np.zeros((n, scene.n_grid), dtype=complex)
         basis[:, cols] = overlap
         field = self._propagate_blocked(basis)
@@ -74,8 +75,8 @@ class Channel:
 
     # -------------------------------------------------------------------- beams
     def tx_power(self, w: np.ndarray) -> float:
-        src = np.asarray(w) @ self._basis
-        return float(np.sum(np.abs(src) ** 2) * self.dx)
+        w = np.asarray(w)
+        return float(np.real(np.vdot(w, self._tx_gram @ w)))
 
     def normalize(self, w: np.ndarray) -> np.ndarray:
         w = np.asarray(w, dtype=complex)
@@ -83,7 +84,7 @@ class Channel:
 
     def tx_gram(self) -> np.ndarray:
         """Gram matrix T with tx power w^H T w."""
-        return (self._basis @ self._basis.T) * self.dx
+        return self._tx_gram.copy()
 
     def phase_beam(self, phase: np.ndarray) -> np.ndarray:
         return self.normalize(np.exp(1j * np.asarray(phase)))
