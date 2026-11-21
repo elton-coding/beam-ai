@@ -1,0 +1,104 @@
+﻿[ 14475 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s64_focus_te.npz: 15,590,778 cells, 14476 s
+
+Elapsed run time = 14476.2297 s
+[ 14731 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s64_phase_te.npz: 15,590,778 cells, 14732 s
+
+Elapsed run time = 14731.6834 s
+[ 16368 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s65_focus_te.npz: 14,997,492 cells, 16368 s
+
+Elapsed run time = 16367.7346 s
+[ 16979 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s65_phase_te.npz: 14,997,492 cells, 16979 s
+
+Elapsed run time = 16978.9410 s
+[ 18279 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s74_focus_te.npz: 16,715,752 cells, 18279 s
+
+Elapsed run time = 18278.5533 s
+[ 22023 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s74_phase_te.npz: 16,715,752 cells, 22023 s
+
+Elapsed run time = 22023.4209 s
+[ 22023 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s78_focus_te.npz: 15,457,856 cells, 19152 s
+
+Elapsed run time = 19152.2538 s
+[ 22023 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s78_phase_te.npz: 15,457,856 cells, 18096 s
+
+Elapsed run time = 18095.9253 s
+[ 22023 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s64_focus_tm.npz: 15,590,778 cells, 11140 s
+
+Elapsed run time = 11140.1694 s
+[ 22023 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s64_phase_tm.npz: 15,590,778 cells, 11218 s
+
+Elapsed run time = 11217.9723 s
+[ 22023 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s65_focus_tm.npz: 14,997,492 cells, 10510 s
+
+Elapsed run time = 10509.8467 s
+[ 22023 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s65_phase_tm.npz: 14,997,492 cells, 10501 s
+
+Elapsed run time = 10501.3888 s
+[ 22546 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s74_focus_tm.npz: 16,715,752 cells, 12045 s
+
+Elapsed run time = 12045.1986 s
+[ 22554 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s74_phase_tm.npz: 16,715,752 cells, 12044 s
+
+Elapsed run time = 12043.7972 s
+[ 22554 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s78_focus_tm.npz: 15,457,856 cells, 10702 s
+
+Elapsed run time = 10701.7430 s
+[ 22554 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s78_phase_tm.npz: 15,457,856 cells, 10597 s
+
+Elapsed run time = 10597.0230 s
+[ 24659 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s64_focus_free_te.npz: 15,590,778 cells, 10182 s
+
+Elapsed run time = 10182.4208 s
+[ 24659 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s65_focus_free_te.npz: 14,997,492 cells, 9647 s
+
+Elapsed run time = 9647.3920 s
+[ 26182 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s74_focus_free_te.npz: 16,715,752 cells, 9815 s
+
+Elapsed run time = 9815.1534 s
+[ 26182 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s78_focus_free_te.npz: 15,457,856 cells, 8901 s
+
+Elapsed run time = 8900.6553 s
+[ 26182 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s64_focus_free_tm.npz: 15,590,778 cells, 7882 s
+
+Elapsed run time = 7882.5218 s
+[ 26182 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s65_focus_free_tm.npz: 14,997,492 cells, 7525 s
+
+Elapsed run time = 7524.7544 s
+[ 26526 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s74_focus_free_tm.npz: 16,715,752 cells, 7370 s
+
+Elapsed run time = 7369.8511 s
+[ 26742 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/cases/s78_focus_free_tm.npz: 15,457,856 cells, 4924 s
+
+Elapsed run time = 4924.3834 s
+s64_focus_free_tm        rel 0.087  |dB| med 0.333 p90 1.358  P(x_d) diff +0.030 dB  7882 s
+s64_focus_free_te        rel 0.076  |dB| med 0.312 p90 1.315  P(x_d) diff +0.023 dB  10182 s
+s64_focus_tm             rel 0.089  |dB| med 0.220 p90 0.596  P(x_d) diff -0.166 dB  11140 s
+s64_focus_te             rel 0.956  |dB| med 2.184 p90 6.664  P(x_d) diff -1.214 dB  14476 s
+s64_phase_tm             rel 0.058  |dB| med 0.208 p90 0.510  P(x_d) diff +0.036 dB  11218 s
+s64_phase_te             rel 1.031  |dB| med 3.741 p90 11.472  P(x_d) diff -0.454 dB  14732 s
+s65_focus_free_tm        rel 0.089  |dB| med 0.316 p90 1.473  P(x_d) diff +0.033 dB  7525 s
+s65_focus_free_te        rel 0.078  |dB| med 0.282 p90 1.474  P(x_d) diff +0.025 dB  9647 s
+s65_focus_tm             rel 0.134  |dB| med 0.319 p90 0.972  P(x_d) diff -0.203 dB  10510 s
+s65_focus_te             rel 0.765  |dB| med 2.346 p90 7.832  P(x_d) diff -1.451 dB  16368 s
+s65_phase_tm             rel 0.061  |dB| med 0.240 p90 0.612  P(x_d) diff +0.006 dB  10501 s
+s65_phase_te             rel 0.763  |dB| med 2.905 p90 9.932  P(x_d) diff +1.659 dB  16979 s
+s74_focus_free_tm        rel 0.079  |dB| med 0.310 p90 1.257  P(x_d) diff +0.024 dB  7370 s
+s74_focus_free_te        rel 0.069  |dB| med 0.327 p90 1.048  P(x_d) diff +0.018 dB  9815 s
+s74_focus_tm             rel 0.084  |dB| med 0.230 p90 0.519  P(x_d) diff -0.105 dB  12045 s
+s74_focus_te             rel 1.443  |dB| med 3.548 p90 10.123  P(x_d) diff -7.836 dB  18279 s
+s74_phase_tm             rel 0.056  |dB| med 0.198 p90 0.458  P(x_d) diff +0.029 dB  12044 s
+s74_phase_te             rel 1.356  |dB| med 6.190 p90 14.938  P(x_d) diff -0.077 dB  22023 s
+s78_focus_free_tm        rel 0.093  |dB| med 0.341 p90 1.522  P(x_d) diff +0.035 dB  4924 s
+s78_focus_free_te        rel 0.083  |dB| med 0.317 p90 1.463  P(x_d) diff +0.028 dB  8901 s
+s78_focus_tm             rel 0.104  |dB| med 0.257 p90 0.677  P(x_d) diff -0.111 dB  10702 s
+s78_focus_te             rel 0.831  |dB| med 1.987 p90 7.277  P(x_d) diff -0.416 dB  19152 s
+s78_phase_tm             rel 0.077  |dB| med 0.299 p90 0.753  P(x_d) diff +0.033 dB  10597 s
+s78_phase_te             rel 0.728  |dB| med 2.726 p90 11.986  P(x_d) diff -0.312 dB  18096 s
+scene 64 tm: gain BIE 8.46 dB, MEEP 8.67 dB
+scene 64 te: gain BIE 11.07 dB, MEEP 11.83 dB
+scene 65 tm: gain BIE 8.57 dB, MEEP 8.78 dB
+scene 65 te: gain BIE 10.86 dB, MEEP 13.97 dB
+scene 74 tm: gain BIE 7.35 dB, MEEP 7.49 dB
+scene 74 te: gain BIE 9.61 dB, MEEP 17.37 dB
+scene 78 tm: gain BIE 3.26 dB, MEEP 3.40 dB
+scene 78 te: gain BIE 4.90 dB, MEEP 5.01 dB

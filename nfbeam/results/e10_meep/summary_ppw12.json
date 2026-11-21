@@ -1,0 +1,66 @@
+{
+  "ppw": 12.0,
+  "cases": [
+    {
+      "name": "s64_focus_free_tm",
+      "scene_id": 64,
+      "beam": "focus",
+      "bc": "free",
+      "pol": "tm",
+      "x_design_mm": -14.75,
+      "line_rel_err": 0.41699526558852434,
+      "line_absdb_median": 1.7822721935633719,
+      "line_absdb_p90": 8.268776560162976,
+      "power_design_meep": 1.1175186231373562,
+      "power_design_bie": 0.9571113402423561,
+      "power_design_db_diff": 0.6729230730433432,
+      "meep_seconds": 244.04098749160767
+    },
+    {
+      "name": "s64_focus_free_te",
+      "scene_id": 64,
+      "beam": "focus",
+      "bc": "free",
+      "pol": "te",
+      "x_design_mm": -14.75,
+      "line_rel_err": 0.4397532731218204,
+      "line_absdb_median": 1.8563479475864741,
+      "line_absdb_p90": 8.625009037394552,
+      "power_design_meep": 1.1358812672711527,
+      "power_design_bie": 0.9571113402423561,
+      "power_design_db_diff": 0.7437047534785762,
+      "meep_seconds": 266.777667760849
+    },
+    {
+      "name": "s64_focus_tm",
+      "scene_id": 64,
+      "beam": "focus",
+      "bc": "tm",
+      "pol": "tm",
+      "x_design_mm": -14.75,
+      "line_rel_err": 0.49366112627680697,
+      "line_absdb_median": 0.8729388187808323,
+      "line_absdb_p90": 2.3761518996064033,
+      "power_design_meep": 0.0011354540329631402,
+      "power_design_bie": 0.0011658449586504083,
+      "power_design_db_diff": -0.11471241872739746,
+      "meep_seconds": 263.27231788635254
+    },
+    {
+      "name": "s64_focus_te",
+      "scene_id": 64,
+      "beam": "focus",
+      "bc": "te",
+      "pol": "te",
+      "x_design_mm": -14.75,
+      "line_rel_err": 1.0088865689275492,
+      "line_absdb_median": 2.7139672870441505,
+      "line_absdb_p90": 7.013554548034632,
+      "power_design_meep": 0.0017589534994960979,
+      "power_design_bie": 0.003249557125261454,
+      "power_design_db_diff": -2.6656981760569813,
+      "meep_seconds": 364.3280005455017
+    }
+  ],
+  "gains": []
+}

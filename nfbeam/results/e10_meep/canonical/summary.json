@@ -1,0 +1,144 @@
+{
+  "geometry_wavelengths": {
+    "rect": [
+      -4.5,
+      7.5,
+      12.0,
+      16.0
+    ],
+    "source": [
+      0,
+      0
+    ],
+    "probe_z": 27.0
+  },
+  "bie_reference_ppw": 32,
+  "rows": [
+    {
+      "solver": "bie",
+      "bc": "tm",
+      "ppw": 8,
+      "rel_err_vs_bie_finest": 0.014386425607412625,
+      "median_abs_db": 0.1897201315789374
+    },
+    {
+      "solver": "bie",
+      "bc": "tm",
+      "ppw": 12,
+      "rel_err_vs_bie_finest": 0.004633890943926805,
+      "median_abs_db": 0.059882247613849415
+    },
+    {
+      "solver": "bie",
+      "bc": "tm",
+      "ppw": 16,
+      "rel_err_vs_bie_finest": 0.001969766213982003,
+      "median_abs_db": 0.025645567814940762
+    },
+    {
+      "solver": "bie",
+      "bc": "tm",
+      "ppw": 24,
+      "rel_err_vs_bie_finest": 0.0004560447414566472,
+      "median_abs_db": 0.006157792231327619
+    },
+    {
+      "solver": "bie",
+      "bc": "tm",
+      "ppw": 32,
+      "rel_err_vs_bie_finest": 0.0,
+      "median_abs_db": 0.0
+    },
+    {
+      "solver": "meep",
+      "bc": "tm",
+      "ppw": 20,
+      "rel_err_vs_bie_finest": 0.006046983100287737,
+      "median_abs_db": 0.03810121395368782
+    },
+    {
+      "solver": "meep",
+      "bc": "tm",
+      "ppw": 30,
+      "rel_err_vs_bie_finest": 0.0027288508419085976,
+      "median_abs_db": 0.01698030538247508
+    },
+    {
+      "solver": "meep",
+      "bc": "tm",
+      "ppw": 40,
+      "rel_err_vs_bie_finest": 0.0016486815805359923,
+      "median_abs_db": 0.0090795428471111
+    },
+    {
+      "solver": "meep",
+      "bc": "tm",
+      "ppw": 60,
+      "rel_err_vs_bie_finest": 0.0009686713225147486,
+      "median_abs_db": 0.007061794123487175
+    },
+    {
+      "solver": "bie",
+      "bc": "te",
+      "ppw": 8,
+      "rel_err_vs_bie_finest": 0.02362717638563631,
+      "median_abs_db": 0.1313237550956199
+    },
+    {
+      "solver": "bie",
+      "bc": "te",
+      "ppw": 12,
+      "rel_err_vs_bie_finest": 0.010674017295083816,
+      "median_abs_db": 0.044295554349663036
+    },
+    {
+      "solver": "bie",
+      "bc": "te",
+      "ppw": 16,
+      "rel_err_vs_bie_finest": 0.0059486632584489565,
+      "median_abs_db": 0.02377743591934589
+    },
+    {
+      "solver": "bie",
+      "bc": "te",
+      "ppw": 24,
+      "rel_err_vs_bie_finest": 0.0017957800251690692,
+      "median_abs_db": 0.005807204277255451
+    },
+    {
+      "solver": "bie",
+      "bc": "te",
+      "ppw": 32,
+      "rel_err_vs_bie_finest": 0.0,
+      "median_abs_db": 0.0
+    },
+    {
+      "solver": "meep",
+      "bc": "te",
+      "ppw": 20,
+      "rel_err_vs_bie_finest": 0.030584724313059246,
+      "median_abs_db": 0.14087060409432794
+    },
+    {
+      "solver": "meep",
+      "bc": "te",
+      "ppw": 30,
+      "rel_err_vs_bie_finest": 0.01374268410013039,
+      "median_abs_db": 0.06651182226142538
+    },
+    {
+      "solver": "meep",
+      "bc": "te",
+      "ppw": 40,
+      "rel_err_vs_bie_finest": 0.008173922927379477,
+      "median_abs_db": 0.03819422799174532
+    },
+    {
+      "solver": "meep",
+      "bc": "te",
+      "ppw": 60,
+      "rel_err_vs_bie_finest": 0.004661073752956332,
+      "median_abs_db": 0.01937913830450988
+    }
+  ]
+}

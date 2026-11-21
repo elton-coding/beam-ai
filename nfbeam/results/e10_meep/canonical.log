@@ -1,0 +1,34 @@
+﻿[  1900 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_tm.npz: 7,452,000 cells, 1892 s
+[  1965 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_te.npz: 7,452,000 cells, 1958 s
+[  2009 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/tm.npz: 7,452,000 cells, 2001 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/te.npz: 7,452,000 cells, 2249 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_tm.npz: 3,312,000 cells, 904 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_te.npz: 3,312,000 cells, 948 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/tm.npz: 3,312,000 cells, 972 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/te.npz: 3,312,000 cells, 1177 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_tm.npz: 1,863,000 cells, 422 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_te.npz: 1,863,000 cells, 458 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/tm.npz: 1,863,000 cells, 474 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/te.npz: 1,863,000 cells, 656 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_tm.npz: 828,000 cells, 124 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/free_te.npz: 828,000 cells, 138 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/tm.npz: 828,000 cells, 142 s
+[  2256 s] /mnt/d/Source/beam_ai/nfbeam/results/e10_meep/canonical/te.npz: 828,000 cells, 173 s
+bie  tm ppw  8: rel 0.0144  |dB| med 0.190
+bie  tm ppw 12: rel 0.0046  |dB| med 0.060
+bie  tm ppw 16: rel 0.0020  |dB| med 0.026
+bie  tm ppw 24: rel 0.0005  |dB| med 0.006
+bie  tm ppw 32: rel 0.0000  |dB| med 0.000
+meep tm ppw 20: rel 0.0060  |dB| med 0.038
+meep tm ppw 30: rel 0.0027  |dB| med 0.017
+meep tm ppw 40: rel 0.0016  |dB| med 0.009
+meep tm ppw 60: rel 0.0010  |dB| med 0.007
+bie  te ppw  8: rel 0.0236  |dB| med 0.131
+bie  te ppw 12: rel 0.0107  |dB| med 0.044
+bie  te ppw 16: rel 0.0059  |dB| med 0.024
+bie  te ppw 24: rel 0.0018  |dB| med 0.006
+bie  te ppw 32: rel 0.0000  |dB| med 0.000
+meep te ppw 20: rel 0.0306  |dB| med 0.141
+meep te ppw 30: rel 0.0137  |dB| med 0.067
+meep te ppw 40: rel 0.0082  |dB| med 0.038
+meep te ppw 60: rel 0.0047  |dB| med 0.019

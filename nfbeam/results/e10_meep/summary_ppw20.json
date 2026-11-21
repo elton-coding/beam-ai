@@ -1,0 +1,66 @@
+{
+  "ppw": 20.0,
+  "cases": [
+    {
+      "name": "s74_focus_free_tm",
+      "scene_id": 74,
+      "beam": "focus",
+      "bc": "free",
+      "pol": "tm",
+      "x_design_mm": -9.750000000000009,
+      "line_rel_err": 0.1679503385286739,
+      "line_absdb_median": 0.7667472796242254,
+      "line_absdb_p90": 2.677902700162355,
+      "power_design_meep": 0.977718399739789,
+      "power_design_bie": 0.9525833152432127,
+      "power_design_db_diff": 0.11310817819194137,
+      "meep_seconds": 1098.1198711395264
+    },
+    {
+      "name": "s74_focus_free_te",
+      "scene_id": 74,
+      "beam": "focus",
+      "bc": "free",
+      "pol": "te",
+      "x_design_mm": -9.750000000000009,
+      "line_rel_err": 0.1672515112655739,
+      "line_absdb_median": 0.7757896338966928,
+      "line_absdb_p90": 2.816060092836483,
+      "power_design_meep": 0.97781767683314,
+      "power_design_bie": 0.9525833152432127,
+      "power_design_db_diff": 0.1135491364987233,
+      "meep_seconds": 1190.0132818222046
+    },
+    {
+      "name": "s74_focus_tm",
+      "scene_id": 74,
+      "beam": "focus",
+      "bc": "tm",
+      "pol": "tm",
+      "x_design_mm": -9.750000000000009,
+      "line_rel_err": 0.1760118309274604,
+      "line_absdb_median": 0.44270974158314347,
+      "line_absdb_p90": 1.1230112008386708,
+      "power_design_meep": 0.002449093757835561,
+      "power_design_bie": 0.0025319595425921278,
+      "power_design_db_diff": -0.14451350548864494,
+      "meep_seconds": 1164.2797956466675
+    },
+    {
+      "name": "s74_focus_te",
+      "scene_id": 74,
+      "beam": "focus",
+      "bc": "te",
+      "pol": "te",
+      "x_design_mm": -9.750000000000009,
+      "line_rel_err": 1.0734737605719828,
+      "line_absdb_median": 1.8717154258777446,
+      "line_absdb_p90": 8.543096139119505,
+      "power_design_meep": 0.006597200033719098,
+      "power_design_bie": 0.006111746857706702,
+      "power_design_db_diff": 0.3319429461654582,
+      "meep_seconds": 1421.6041898727417
+    }
+  ],
+  "gains": []
+}

@@ -381,6 +381,82 @@ def fig_e10() -> None:
     save(fig, "e10_fullwave")
 
 
+def fig_e10_meep() -> None:
+    """E10b: MEEP (FDTD) cross-check of the boundary-integral solver."""
+    base = RESULTS / "e10_meep"
+    fig, axes = plt.subplots(2, 2, figsize=(13, 7.6))
+    # (a) canonical case: both solvers converge to the same field
+    ax = axes[0, 0]
+    c = pd.DataFrame(json.loads((base / "canonical" / "summary.json").read_text(encoding="utf-8"))["rows"])
+    c = c[c.rel_err_vs_bie_finest > 0]
+    for solver, color, name in (("bie", BLUE, "边界积分"), ("meep", ORANGE, "MEEP")):
+        for bc, ls, mk in (("te", "-", "o"), ("tm", "--", "s")):
+            r = c[(c.solver == solver) & (c.bc == bc)]
+            ax.plot(r.ppw, 100 * r.rel_err_vs_bie_finest, ls=ls, marker=mk, color=color, lw=1.8, ms=6,
+                    label=f"{name} {bc.upper()}")
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xticks([8, 12, 16, 24, 32, 40, 60], ["8", "12", "16", "24", "32", "40", "60"])
+    ax.xaxis.set_minor_formatter(plt.NullFormatter())
+    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:g}"))
+    ax.set_xlabel("每波长网格点数")
+    ax.set_ylabel("相对边界积分 32 点/波长的误差 (%)")
+    ax.set_title("规范算例（线源 + 12λ×4λ 金属块）：两种求解器收敛到同一解")
+    ax.legend(frameon=False, fontsize=8.5, ncol=2, loc="lower left")
+    # (b) scene 74, line 5 wavelengths behind the obstacle, TE
+    ax = axes[0, 1]
+    f = np.load(base / "near_sheet" / "fields.npz")
+    x = 1e3 * f["x"]
+    db = lambda u: 20 * np.log10(np.abs(u) + 1e-9)
+    ax.plot(x, db(f["meep_te_30"]), color=GRAY, lw=0.9, label="MEEP 30 点/波长")
+    ax.plot(x, db(f["bie_te"]), color=BLUE, lw=2.4, label="边界积分（本文求解器）")
+    ax.plot(x, db(f["meep_te_60"]), color=ORANGE, lw=1.1, label="MEEP 60 点/波长")
+    from nfbeam.scenes import load_scenes
+    sc = dict(load_scenes())[74]
+    for e in (sc.obstacle_x_m - sc.obstacle_width_m / 2, sc.obstacle_x_m + sc.obstacle_width_m / 2):
+        ax.axvline(1e3 * e, color=INK2, lw=0.8, ls=":")
+    ax.set_ylim(-45, 27)
+    ax.set_xlabel("横向位置 x (mm)")
+    ax.set_ylabel("|Hz| (dB)")
+    ax.set_title("场景 74，金属 TE，障碍物后 5λ 处的场（虚线为障碍物两侧边）")
+    ax.legend(frameon=False, fontsize=8.5, loc="upper center", ncol=3)
+    # (c) MEEP's difference from the boundary integral vs its own resolution
+    ax = axes[1, 0]
+    for sub, bc, color, mk, fill, name in (("near_sheet", "te", ORANGE, "o", True, "TE，短计算域"),
+                                           ("near", "te", ORANGE, "o", False, "TE，完整计算域"),
+                                           ("near_sheet", "tm", AQUA, "s", True, "TM，短计算域"),
+                                           ("near", "tm", AQUA, "s", False, "TM，完整计算域")):
+        rows = [r for r in json.loads((base / sub / "summary.json").read_text(encoding="utf-8"))["rows"]
+                if r["bc"] == bc and isinstance(r["ppw"], (int, float))]
+        if not rows:
+            continue
+        ppw = [r["ppw"] for r in rows]
+        err = [100 * r["rel_err"] for r in rows]
+        ax.plot(ppw, err, marker=mk, color=color, lw=1.6, ms=7, ls="-" if fill else "--",
+                mfc=color if fill else SURFACE, label=name)
+    ax.set_yscale("log")
+    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:g}"))
+    ax.set_xticks([20, 30, 45, 60])
+    ax.set_xlabel("MEEP 每波长网格点数")
+    ax.set_ylabel("与边界积分的相对差 (%)")
+    ax.set_title("同一条线：MEEP 的 TE 到 60 点/波长才收敛到边界积分解")
+    ax.legend(frameon=False, fontsize=8.5, loc="lower left")
+    # (d) receiver line, TM: phase-only gain over focus at the design point
+    ax = axes[1, 1]
+    g = pd.DataFrame(json.loads((base / "summary_ppw30.json").read_text(encoding="utf-8"))["gains"])
+    g = g[g.bc == "tm"]
+    grouped(ax, [f"场景 {i}" for i in g.scene_id], [("边界积分", BLUE), ("MEEP 30 点/波长", ORANGE)],
+            [list(g.gain_bie_db), list(g.gain_meep_db)], fmt="{:.2f}")
+    ax.set_ylim(0, 10.5)
+    ax.set_ylabel("dB")
+    ax.set_title("接收线，金属 TM：逐阵元纯相位相对聚焦的增益")
+    ax.legend(frameon=False, fontsize=8.5, loc="upper right")
+    fig.suptitle("E10b MEEP 独立复核：开源 FDTD 与本文边界积分求解器对比", x=0.01, ha="left",
+                 fontsize=12, fontweight="bold", color=INK)
+    fig.tight_layout()
+    save(fig, "e10_meep")
+
+
 TRUTH_LABEL = {"metal": "金属 TM", "metal_te": "金属 TE", "lossy": "有损体 (反射 0.1)", "absorber": "匹配吸收体"}
 
 
@@ -426,6 +502,9 @@ def main() -> None:
         if (RESULTS / name / "summary.json").exists():
             fn()
             print("figure", name)
+    if (RESULTS / "e10_meep" / "near_sheet" / "summary.json").exists():
+        fig_e10_meep()
+        print("figure e10_meep")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,14 @@
+﻿[   565 s] Using MPI version 4.1, 3 processes
+[   876 s] Using MPI version 4.1, 3 processes
+[   876 s] Using MPI version 4.1, 3 processes
+[   876 s] Using MPI version 4.1, 3 processes
+[   876 s] Using MPI version 4.1, 3 processes
+[   876 s] Using MPI version 4.1, 3 processes
+[   876 s] Using MPI version 4.1, 3 processes
+[   876 s] Using MPI version 4.1, 3 processes
+{'bc': 'tm', 'ppw': 20.0, 'free_rel_err': 0.03194842125014422, 'rel_err': 0.05170784491971564}
+{'bc': 'tm', 'ppw': 30.0, 'free_rel_err': 0.013460810914821611, 'rel_err': 0.023877618869905384}
+{'bc': 'tm', 'ppw': 'richardson 20/30', 'self_change': 0.03038062516532207, 'rel_err': 0.01477272444235382}
+{'bc': 'te', 'ppw': 20.0, 'free_rel_err': 0.0319370067167317, 'rel_err': 1.1498357813684448}
+{'bc': 'te', 'ppw': 30.0, 'free_rel_err': 0.013242773896901643, 'rel_err': 1.4216646446272494}
+{'bc': 'te', 'ppw': 'richardson 20/30', 'self_change': 0.963439678222174, 'rel_err': 1.9623796915397178}

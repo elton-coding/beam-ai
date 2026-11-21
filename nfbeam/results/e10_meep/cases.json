@@ -1,0 +1,290 @@
+[
+  {
+    "name": "s64_focus_free_tm",
+    "scene_id": 64,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s64_focus_free_te",
+    "scene_id": 64,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s64_focus_tm",
+    "scene_id": 64,
+    "beam": "focus",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s64_focus_te",
+    "scene_id": 64,
+    "beam": "focus",
+    "bc": "te",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s64_phase_free_tm",
+    "scene_id": 64,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s64_phase_free_te",
+    "scene_id": 64,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s64_phase_tm",
+    "scene_id": 64,
+    "beam": "phase",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s64_phase_te",
+    "scene_id": 64,
+    "beam": "phase",
+    "bc": "te",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_focus_free_tm",
+    "scene_id": 65,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_focus_free_te",
+    "scene_id": 65,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_focus_tm",
+    "scene_id": 65,
+    "beam": "focus",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_focus_te",
+    "scene_id": 65,
+    "beam": "focus",
+    "bc": "te",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_phase_free_tm",
+    "scene_id": 65,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_phase_free_te",
+    "scene_id": 65,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_phase_tm",
+    "scene_id": 65,
+    "beam": "phase",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s65_phase_te",
+    "scene_id": 65,
+    "beam": "phase",
+    "bc": "te",
+    "pol": "te",
+    "x_design": -0.01475,
+    "region": "deep"
+  },
+  {
+    "name": "s74_focus_free_tm",
+    "scene_id": 74,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s74_focus_free_te",
+    "scene_id": 74,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "te",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s74_focus_tm",
+    "scene_id": 74,
+    "beam": "focus",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s74_focus_te",
+    "scene_id": 74,
+    "beam": "focus",
+    "bc": "te",
+    "pol": "te",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s74_phase_free_tm",
+    "scene_id": 74,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s74_phase_free_te",
+    "scene_id": 74,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "te",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s74_phase_tm",
+    "scene_id": 74,
+    "beam": "phase",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s74_phase_te",
+    "scene_id": 74,
+    "beam": "phase",
+    "bc": "te",
+    "pol": "te",
+    "x_design": -0.009750000000000009,
+    "region": "deep"
+  },
+  {
+    "name": "s78_focus_free_tm",
+    "scene_id": 78,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  },
+  {
+    "name": "s78_focus_free_te",
+    "scene_id": 78,
+    "beam": "focus",
+    "bc": "free",
+    "pol": "te",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  },
+  {
+    "name": "s78_focus_tm",
+    "scene_id": 78,
+    "beam": "focus",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  },
+  {
+    "name": "s78_focus_te",
+    "scene_id": 78,
+    "beam": "focus",
+    "bc": "te",
+    "pol": "te",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  },
+  {
+    "name": "s78_phase_free_tm",
+    "scene_id": 78,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "tm",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  },
+  {
+    "name": "s78_phase_free_te",
+    "scene_id": 78,
+    "beam": "phase",
+    "bc": "free",
+    "pol": "te",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  },
+  {
+    "name": "s78_phase_tm",
+    "scene_id": 78,
+    "beam": "phase",
+    "bc": "tm",
+    "pol": "tm",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  },
+  {
+    "name": "s78_phase_te",
+    "scene_id": 78,
+    "beam": "phase",
+    "bc": "te",
+    "pol": "te",
+    "x_design": 0.02024999999999999,
+    "region": "deep"
+  }
+]
